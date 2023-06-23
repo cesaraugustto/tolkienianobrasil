@@ -1,0 +1,104 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS File for leaflet-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    
+    <!-- JS leaflet (DEVE ESTAR APÓS O CSS) -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    
+    <title>Tolkieniano Brasil</title>
+    <style>
+        body{
+            min-height: 100vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url('./background-blue.png');
+        }
+        #map {
+            width: auto;
+            height: 280px;
+  position: relative;
+}
+
+#map .image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./map.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media(max-width: 426px){
+    #map{
+        width: 100%;
+        height: 280px;
+    }
+    #logo{
+        height: 30px;
+        width: auto;
+
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="header">
+            <div class="row p-3">
+                <div class="col-4 col-xl-5"></div>
+                <div class="col">
+                    <img src="./logo-withoutbg.png" id="logo" class="text-center">
+                </div>
+                <div class="col-4 col-xl-5"></div>
+                <h5 class="pt-3 text-white text-center">
+                    Interactive map for Middle Earth, the greatest work of fiction and fantasy ever written.
+                </h5>
+            </div>            
+        </div>
+
+        <div id="map"></div>
+
+        <div class="row">
+            <div class="col-xl-3"></div>
+            <div class="col-12 col-xl">
+                <p class=" pt-3 h4 text-white text-center">
+                    This is a work made by fans for fans. The administrative team of the literary community Tolkieniano Brasil is developing a web application that will help several readers to locate themselves during moments of doubt.
+                </p>
+            </div>
+            <div class="col-xl-3"></div>
+        </div>
+        <div class="row">
+            <div class="col-xl-3"></div>
+            <div class="col-12 col-xl">
+                <p class="h6 text-white text-center">
+                    Future points to be added:
+                    a) Distance between locations. It is possible to trace in real-world comparisons how far the characters have walked. Ex: Silmarillion, page 140, edition Martins Fontes Br. Tolkien states that the distance between Menegroth and Angband is approximately 150 leagues.
+                    <br><br> @tolkienianobrasil
+                </p>
+            </div>
+            <div class="col-xl-3"></div>
+        </div>
+        
+    </div>
+
+
+<script src="./index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>
