@@ -103,46 +103,7 @@ document.getElementById('regionsFilter').addEventListener('change', function(eve
 
 
   
-
 // Tratamento do evento 'click' no marcador
-markerLorien.on('click', function() {
-    if (map.tap) {
-      if (markerLorien.isPopupOpen()) {
-        markerLorien.closePopup();
-      } else {
-        markerLorien.openPopup();
-      }
-    }
-  });
-  markerGondor.on('click', function() {
-    if (map.tap) {
-      if (markerGondor.isPopupOpen()) {
-        markerGondor.closePopup();
-      } else {
-        markerGondor.openPopup();
-      }
-    }
-});
-markerMordor.on('click', function() {
-    if (map.tap) {
-      if (markerMordor.isPopupOpen()) {
-        markerMordor.closePopup();
-      } else {
-        markerMordor.openPopup();
-      }
-    }
-  });
-  markerGreyports.on('click', function() {
-    if (map.tap) {
-      if (markerGreyports.isPopupOpen()) {
-        markerGreyports.closePopup();
-      } else {
-        markerGreyports.openPopup();
-      }
-    }
-  });
-
-  
   map.on('popupopen', function() {
     map.tap = true;
   });
