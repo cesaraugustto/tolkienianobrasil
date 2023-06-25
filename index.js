@@ -14,7 +14,6 @@ var portsIcon = L.icon({
     iconSize: [32, 32], // Tamanho da imagem do ícone
   });
 
-
 var map = L.map('map', {
   crs: L.CRS.Simple,
   minZoom: -2,
@@ -27,14 +26,10 @@ var map = L.map('map', {
 }).setView([564, 995], -3);
 var imageOverlay = L.imageOverlay(imageUrl, imageBounds).addTo(map);
 
-
-
 var markerLorien = L.marker([600, 1050], { icon: kingdomIcon }).addTo(map);
 var markerGondor= L.marker([300, 1100], { icon: kingdomIcon }).addTo(map);
 var markerMordor= L.marker([430, 1400], { icon: kingdomIcon }).addTo(map);
 var markerGreyports= L.marker([830, 600], { icon: portsIcon }).addTo(map);
-
-
 
 // Adiciona o texto do popup ao criar o marcador
 markerLorien.bindPopup("<b><b>Dear user!</b><br>I am in the kingdom of <strong>Lothlorien</strong>, which the queen is Galadriel, daughter of Finarfin.");
@@ -45,7 +40,7 @@ markerGreyports.bindPopup("<b><b>Dear user!</b><br>I am in the <strong>Grey Port
 
 
 
-
+// Crie um polígono com base nas coordenadas dos vértices
 var coordenadas = "930,1000,1030,800,1000,600,800,600,750,630,600,730,550,950";
 var paresCoordenadas = coordenadas.split(","); // Separar as coordenadas em pares
 var arrayCoordenadas = [];
@@ -61,7 +56,6 @@ var polygonPoints = arrayCoordenadas;
 // Defina a cor de preenchimento do polígono
 var polygon = L.polygon(polygonPoints, { fillColor: 'red' }).addTo(map);
 polygon.bindPopup("<b><b>Dear user!</b><br>I am in the <strong>region of Arnor</strong>.");
-
 
 
 
@@ -97,15 +91,15 @@ document.getElementById('portsFilter').addEventListener('change', function(event
   });
   
   // Repita o mesmo tratamento para os outros filtros (vilas, montanhas, etc.)
-  document.getElementById('regionsFilter').addEventListener('change', function(event) {
+document.getElementById('regionsFilter').addEventListener('change', function(event) {
     if (event.target.checked) {
       // Mostrar o marcador de Lothlórien
-      polygon.addTo(map)
+      polygon.addTo(map);
     } else {
       // Ocultar o marcador de Lothlórien
       polygon.removeFrom(map);
     }
-  });
+  }); 
 
 
   
@@ -129,7 +123,7 @@ markerLorien.on('click', function() {
       }
     }
 });
-markerMordor.on('click', function() {
+markemarkerMordor.on('click', function() {
     if (map.tap) {
       if (markerMordor.isPopupOpen()) {
         markerMordor.closePopup();
@@ -147,15 +141,7 @@ markerMordor.on('click', function() {
       }
     }
   });
-  polygon.on('click', function() {
-    if (map.tap) {
-        if (polygon.isPopupOpen()) {
-            polygon.closePopup();
-        } else {
-            polygon.openPopup();
-        }
-    }
-});
+
   
   map.on('popupopen', function() {
     map.tap = true;
