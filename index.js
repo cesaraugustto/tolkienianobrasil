@@ -123,7 +123,7 @@ markerLorien.on('click', function() {
       }
     }
 });
-markemarkerMordor.on('click', function() {
+markerMordor.on('click', function() {
     if (map.tap) {
       if (markerMordor.isPopupOpen()) {
         markerMordor.closePopup();
