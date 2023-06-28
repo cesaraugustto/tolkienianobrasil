@@ -1,0 +1,52 @@
+{
+    "places": [
+        {
+            "id": 1,
+            "name": "Lothlorien",
+            "type": "Kingdom",
+            "description": "Lothlorien is an elven kingdom protected by Galadriel and Celeborn, known for its magic, beauty and tranquility.",
+            "coords": "7250,4200",
+            "image": ""
+          },
+        {
+            "id": 2,
+            "name": "Gondor",
+            "type": "Kingdom",
+            "description": "Gondor is a human kingdom in Middle Earth, known for its majestic capital Minas Tirith and its courage in the fight against Sauron.",
+            "coords": "1700,4700",
+            "image": ""
+        },
+        {
+            "id": 3,
+            "name": "Mordor",
+            "type": "Kingdom",
+            "description": "Mordor is a barren and desolate land in Middle-earth, known as the realm of Sauron and the home of Mount Doom.",
+            "coords": "1800,5300",
+            "image": ""
+        },
+        {
+            "id": 4,
+            "name": "Grey Ports",
+            "type": "Kingdom",
+            "description": "The Grey Havens, also known as the Ports of Grey, are a haven for the Elves in Middle-earth, serving as a departure point for those seeking passage to the Undying Lands.",
+            "coords": "3200,2300",
+            "image": ""
+        },
+        {
+            "id": 5,
+            "name": "Erebor",
+            "type": "Kingdom",
+            "description": "A dwarven kingdom reclaimed from a dragon, rich in gold and home to Thorin Oakenshield.",
+            "coords": "3400,5150",
+            "image": ""
+        },
+        {
+            "id": 6,
+            "name": "Lindon",
+            "type": "Kingdom",
+            "description": "A realm of Elves ruled by Gil-galad, located in the western part of Middle-earth.",
+            "coords": "3500,1800",
+            "image": ""
+        }
+    ]
+}

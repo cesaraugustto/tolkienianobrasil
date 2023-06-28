@@ -1,3 +1,23 @@
+import fetchJSON from './connection.js';
+
+fetchJSON()
+  .then(places => {
+    // Aqui você pode fazer a manipulação e exibição dos lugares
+
+    const placeId = 6; // ID do lugar que você deseja exibir
+
+    // Encontra o lugar com o ID específico
+    const selectedPlace = places.find(place => place.id === placeId);
+
+    if (selectedPlace) {
+      // Exibe o alert com as informações do lugar selecionado
+      alert(`Nome do local: ${selectedPlace.name}\nTipo do local: ${selectedPlace.type}\nDescrição: ${selectedPlace.description}`);
+    } else {
+      alert('Local não encontrado!');
+    }
+});
+
+
 // Inicializar o mapa
 var imageUrl = './img/map.jpg';
 var imageHeight = 4384; // Altura da imagem em pixels
@@ -31,15 +51,8 @@ L.imageOverlay(imageUrl, imageBounds).addTo(map);
 
 
 
-
-
-
-
-
-
-
 //Adicionando marcado padrão ao mapa (vertical/horizontal)
-var markerLorien = L.marker([2750, 4200]).addTo(map);
+var markerLorien = L.marker([7250, 4200]).addTo(map);
 var markerGondor= L.marker([1700, 4700]).addTo(map);
 var markerMordor= L.marker([1800, 5300]).addTo(map);
 var markerGreyports= L.marker([3200, 2300]).addTo(map);
