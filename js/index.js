@@ -1,23 +1,3 @@
-import fetchJSON from './connection.js';
-
-fetchJSON()
-  .then(places => {
-    // Aqui você pode fazer a manipulação e exibição dos lugares
-
-    const placeId = 6; // ID do lugar que você deseja exibir
-
-    // Encontra o lugar com o ID específico
-    const selectedPlace = places.find(place => place.id === placeId);
-
-    if (selectedPlace) {
-      // Exibe o alert com as informações do lugar selecionado
-      alert(`Nome do local: ${selectedPlace.name}\nTipo do local: ${selectedPlace.type}\nDescrição: ${selectedPlace.description}`);
-    } else {
-      alert('Local não encontrado!');
-    }
-});
-
-
 // Inicializar o mapa
 var imageUrl = './img/map.jpg';
 var imageHeight = 4384; // Altura da imagem em pixels
@@ -49,15 +29,88 @@ L.imageOverlay(imageUrl, imageBounds).addTo(map);
 
 
 
+// Função para criar e exibir marcadores no mapa
+function createMarkers(places) {
+  const markers = [];
+
+  places.forEach(place => {
+    const coords = place.coords.split(',');
+    const lat = parseFloat(coords[0].trim());
+    const lng = parseFloat(coords[1].trim());
+
+    // Criação do marcador com as coordenadas
+    const marker = L.marker([lat, lng]);
+
+    // Definir o tipo do marcador com base no valor do lugar
+    marker.type = place.type;
+
+    // Adição de um pop-up com informações adicionais
+    marker.bindPopup(`
+      <h3>${place.name}</h3>
+      <p>${place.description}</p>
+    `);
+
+    // Armazena o marcador na lista de marcadores
+    markers.push(marker);
+  });
+
+  return markers;
+}
+
+// Função para mostrar os marcadores no mapa
+function showMarkers(markers) {
+  markers.forEach(marker => {
+    marker.addTo(map); // Adiciona o marcador ao mapa
+  });
+}
+
+// Função para ocultar todos os marcadores do mapa
+function hideMarkers(markers) {
+  markers.forEach(marker => {
+    marker.removeFrom(map); // Remove o marcador do mapa
+  });
+}
+
+// Carregar e exibir os marcadores ao abrir a página
+fetchJSON()
+  .then(places => {
+    const markers = createMarkers(places);
+    showMarkers(markers);
+
+    // Tratamento do evento de mudança no filtro
+    document.getElementById('CityFilter').addEventListener('change', function(event) {
+      const checkbox = event.target;
+  
+      if (checkbox.checked) {
+        showMarkers(markers.filter(marker => marker.type === checkbox.value));
+      } else {
+        hideMarkers(markers.filter(marker => marker.type === checkbox.value));
+      }
+    });
+    document.getElementById('StructureFilter').addEventListener('change', function(event) {
+      const checkbox = event.target;
+  
+      if (checkbox.checked) {
+        showMarkers(markers.filter(marker => marker.type === checkbox.value));
+      } else {
+        hideMarkers(markers.filter(marker => marker.type === checkbox.value));
+      }
+    });
 
 
-//Adicionando marcado padrão ao mapa (vertical/horizontal)
-var markerLorien = L.marker([7250, 4200]).addTo(map);
-var markerGondor= L.marker([1700, 4700]).addTo(map);
-var markerMordor= L.marker([1800, 5300]).addTo(map);
-var markerGreyports= L.marker([3200, 2300]).addTo(map);
-var markerErebor= L.marker([3400, 5150]).addTo(map);
-var markerLindon= L.marker([3500, 1800]).addTo(map);
+  })
+  .catch(error => {
+    console.error('Erro ao carregar o arquivo JSON:', error);
+  });
+
+
+
+
+
+
+
+
+
 
 // Crie um polígono com base nas coordenadas dos vértices (vertical/horizontal)
 var coordenadas = "3800,3700,3000,4100,2000,3500,1900,3000,2300,3000,2700,2100,3800,2400";
@@ -75,17 +128,9 @@ var polygonPoints = arrayCoordenadas;
 // Defina a cor de preenchimento do polígono
 var polygon = L.polygon(polygonPoints, { fillColor: 'red' }).addTo(map);
 
-// Adiciona o texto do popup ao criar o marcador
-markerLorien.bindPopup("<b><b>Dear user!</b><br>I am in the kingdom of <strong>Lothlorien</strong>, which the queen is Galadriel, daughter of Finarfin.");
-markerGondor.bindPopup("<b><b>Dear user!</b><br>I am in the kingdom of <strong>Gondor</strong>, which the king is Elessar, heir of Isildur.");
-markerMordor.bindPopup("<b><b>Dear user!</b><br>I am in the kingdom of <strong>Mordor</strong>, which the king is Sauron, discipule of Morgoth.");
-markerGreyports.bindPopup("<b><b>Dear user!</b><br>I am in the <strong>Grey Ports</strong>.");
-markerErebor.bindPopup("<b><b>Dear user!</b><br>I am in the <strong>Erebor</strong>.");
-polygon.bindPopup("<b><b>Dear user!</b><br>I am in the <strong>Arnor</strong>.");
-markerLindon.bindPopup("<b><b>Dear user!</b><br>I am in the <strong>Lindon</strong>.");
-
 // Tratamento dos eventos dos filtros
 // Tratamento do filtro
+/*
 document.getElementById('kingdomsFilter').addEventListener('change', function(event) {
     if (event.target.checked) {
       // Mostrar o marcador de Lothlórien
@@ -126,18 +171,7 @@ document.getElementById('regionsFilter').addEventListener('change', function(eve
       polygon.removeFrom(map);
     }
   }); 
-
-
-  
-// Tratamento do evento 'click' no marcador
-  map.on('popupopen', function() {
-    map.tap = true;
-  });
-  
-  map.on('popupclose', function() {
-    map.tap = false;
-  });
-
+*/
 
 
 
