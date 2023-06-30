@@ -11,6 +11,26 @@ var scale = windowHeight / imageHeight;
 // Calcular os limites da imagem
 var imageBounds = [[0, 0], [imageHeight, 7680]];
 
+
+
+
+var redIcon = L.icon({
+  iconUrl: './img/iconRed.png',
+  iconSize: [36,36], // size of the icon
+});
+var blueIcon = L.icon({
+  iconUrl: './img/iconBlue.png',
+  iconSize: [36,36], // size of the icon
+});
+var greenIcon = L.icon({
+  iconUrl: './img/iconGreen.png',
+  iconSize: [36,36], // size of the icon
+});
+
+
+
+
+
 // Criar o mapa com os parâmetros definidos
 var map = L.map('map', {
     crs: L.CRS.Simple,
@@ -38,8 +58,18 @@ function createMarkers(places) {
     const lat = parseFloat(coords[0].trim());
     const lng = parseFloat(coords[1].trim());
 
-    // Criação do marcador com as coordenadas
-    const marker = L.marker([lat, lng]);
+
+    // Criação do marcador com as coordenadas e o ícone personalizado a depender do type
+    let marker;
+    if(place.type == 'Structure'){
+    marker = L.marker([lat, lng], { icon: redIcon });
+    } else if(place.type == 'Mountain'){
+      marker = L.marker([lat, lng], { icon: blueIcon });
+    } else {
+      marker = L.marker([lat, lng], { icon: greenIcon });
+    }
+
+
 
     // Definir o tipo do marcador com base no valor do lugar
     marker.type = place.type;
