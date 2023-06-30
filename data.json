@@ -1,0 +1,181 @@
+{
+    "places": [
+        {
+            "id": 1,
+            "name": "Caras Galadhon",
+            "type": "City",
+            "description": "A majestosa cidade élfica localizada em Lothlórien, conhecida por sua bela arquitetura e atmosfera encantadora.",
+            "coords": "2750,4200",
+            "image": ""
+          },
+        {
+            "id": 2,
+            "name": "Minas Tirith",
+            "type": "City",
+            "description": "É a grande capital de Gondor na Terra-média, caracterizada por suas imponentes paredes brancas e a Cidadela no topo da cidade.",
+            "coords": "1700,4700",
+            "image": ""
+        },
+        {
+            "id": 3,
+            "name": "Barad-dûr",
+            "type": "Structure",
+            "description": "Barad-dûr é a imponente fortaleza e a Torre Negra em Mordor, servindo como reduto do Lorde das Trevas Sauron na Terra-média.",
+            "coords": "1900,5600",
+            "image": ""
+        },
+        {
+            "id": 4,
+            "name": "Portos Cinzentos",
+            "type": "Structure",
+            "description": "Os Portos Cinzentos são um refúgio para os Elfos na Terra-média, servindo como ponto de partida para aqueles que buscam passagem para as Terras Imortais.",
+            "coords": "3200,2300",
+            "image": ""
+        },
+        {
+            "id": 5,
+            "name": "Bosque das Trevas",
+            "type": "City",
+            "description": "O Reino da Floresta foi o lar dos Elfos da Floresta das Trevas durante a maior parte da Terceira Era e na Quarta Era.",
+            "coords": "3200,5000",
+            "image": ""
+        },
+        {
+            "id": 6,
+            "name": "Forlond",
+            "type": "City",
+            "description": "É um dos refúgios para os Elfos na Terra-média, conhecido por sua localização costeira e como ponto de partida para as Terras Imortais.",
+            "coords": "3050,2030",
+            "image": ""
+        },
+        {
+            "id": 7,
+            "name": "Emyn Muil",
+            "type": "Mountain",
+            "description": "Uma fortaleza em Rohan, conhecida pela Batalha de Helms Deep contra as forças de Saruman.",
+            "coords": "2350,4700",
+            "image": ""
+        },
+        {
+            "id": 8,
+            "name": "Erebor",
+            "type": "Mountain",
+            "description": "Erebor, a Montanha Solitária. Montanha dos anões, lar do dragão Smaug, recuperada por Thorin e Bilbo em 'O Hobbit'.",
+            "coords": "3400,5150",
+            "image": ""
+        },
+        {
+            "id": 9,
+            "name": "Esgaroth",
+            "type": "City",
+            "description": "Também conhecida como Cidade do Lago, é uma comunidade humana localizada próxima ao Lago Longo, próxima à Montanha Solitária. É famosa por seu comércio e por ser uma parada para viajantes e aventureiros.",
+            "coords": "3230,5130",
+            "image": ""
+        },
+        {
+            "id": 10,
+            "name": "Ered Mithrim",
+            "type": "Mountain",
+            "description": "Ered Mithrim, também conhecidas como Montanhas Cinzentas, são uma cadeia de montanhas localizada na Terra-média. Elas são conhecidas por sua beleza majestosa e pelos segredos antigos que guardam.",
+            "coords": "3800,4200",
+            "image": ""
+        },
+        {
+            "id": 11,
+            "name": "Monte Gundabad",
+            "type": "Mountain",
+            "description": "Uma imponente montanha localizada nas Montanhas Sombrias da Terra-média. É famosamente conhecida como a antiga fortaleza dos Orcs e servia como sua morada e fortaleza principal. A montanha possui uma presença sombria e ameaçadora, representando uma constante ameaça para as terras e civilizações vizinhas.",
+            "coords": "3900,3900",
+            "image": ""
+        },
+        {
+            "id": 12,
+            "name": "Ered Luin",
+            "type": "Mountain",
+            "description": "As Montanhas Azuis, também conhecidas como Ered Luin, eram a cordilheira no extremo oeste de Eriador.",
+            "coords": "3500,2200",
+            "image": ""
+        },
+        {
+            "id": 13,
+            "name": "Tower Hills",
+            "type": "Mountain",
+            "description": "Um conjunto de montanhas caracterizadas por suas colinas suaves e gramados verdejantes, onde estão situadas as torres dos Elfos. As Colinas das Torres servem como um ponto de observação e vigia dos Portos Cinzentos, oferecendo uma vista panorâmica do mar e das terras além.",
+            "coords": "3200,2400",
+            "image": ""
+        },
+        {
+            "id": 14,
+            "name": "Emyn Arnen",
+            "type": "Mountain",
+            "description": "Uma cadeia de colinas em Gondor, conhecida por sua beleza natural e cidade residencial de verão dos reis. Rodeada por florestas exuberantes, oferece vistas deslumbrantes e tem valor histórico em Gondor.",
+            "coords": "1550,4700",
+            "image": ""
+        },
+        {
+            "id": 15,
+            "name": "Ephel Duath",
+            "type": "Mountain",
+            "description": "Uma cadeia de montanhas assustadoras que separava Mordor de Gondor, local de passagens perigosas e guardada por Orques.",
+            "coords": "1350,5100",
+            "image": ""
+        },
+        {
+            "id": 16,
+            "name": "Orodruin",
+            "type": "Structure",
+            "description": "Um vulcão na Terra-média, também conhecido como Montanha da Perdição, onde o Um Anel foi forjado e destruído. Era reflexo do poderío de Sauron.",
+            "coords": "1850,5400",
+            "image": ""
+        },
+        {
+            "id": 17,
+            "name": "Colinas de Ferro",
+            "type": "Mountain",
+            "description": "Montanhas localizadas a leste da Montanha Solitária, conhecidas por suas ricas jazidas de minério de ferro e por serem habitadas pelos Anões.",
+            "coords": "3650,6100",
+            "image": ""
+        },
+        {
+            "id": 18,
+            "name": "Lond Daer",
+            "type": "City",
+            "description": "Uma cidade portuária localizada na costa ocidental da Terra-média, conhecida por seu comércio marítimo e importância estratégica como ponto de conexão entre as terras do norte e do sul.",
+            "coords": "2300,3000",
+            "image": ""
+        },
+        {
+            "id": 19,
+            "name": "Tharbad",
+            "type": "City",
+            "description": "Uma antiga cidade localizada nas margens do rio Gwathló, conhecida por sua importância como um cruzamento comercial e ponto de travessia de rios. No entanto, a cidade foi abandonada e tornou-se uma ruína desolada ao longo dos tempos.",
+            "coords": "2800,3350",
+            "image": ""
+        },
+        {
+            "id": 20,
+            "name": "Isengard",
+            "type": "Structure",
+            "description": " Uma fortaleza poderosa e assustadora, conhecida como a Torre de Orthanc. Caiu sob o controle de Saruman, que a corrompeu com sua busca pelo poder. Isengard tornou-se um símbolo de tirania e destruição, abrigando um exército de Uruk-hai e servindo como base para os planos malignos de Saruman durante a Guerra do Anel.",
+            "coords": "2350,3700",
+            "image": ""
+        },
+        {
+            "id": 21,
+            "name": "Dol Amroth",
+            "type": "City",
+            "description": "Cidade costeira majestosa em Gondor, conhecida por sua beleza e esplendor. Lar da Casa de Dol Amroth, famosa por seus cavaleiros valentes e descendência élfica.",
+            "coords": "1500,3650",
+            "image": ""
+        }
+        ,
+        {
+            "id": 22,
+            "name": "Edhellond",
+            "type": "Structure",
+            "description": "Um antigo porto élfico localizado nas costas de Gondor, famoso por sua beleza e conexão com os Elfos.",
+            "coords": "1580,3770",
+            "image": ""
+        }
+    ]
+}
