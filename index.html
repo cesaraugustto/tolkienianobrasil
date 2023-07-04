@@ -27,15 +27,49 @@
 
 </head>
 <body>
-    <!-- Ícone de engrenagem -->
+    <!-- Ícone de engrenagem 
     <div id="filter-icon">
+        
         <img src="./img/engrenagem.jpg" alt="Engrenagem" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        
+    </div>-->
+    
+    <div id="filter-icon">
+    <nav>
+        <ul class="menu">
+          <li>Filtros de pesquisa
+            <ul class="sub-menu">
+              <li>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="CityFilter" value="City" checked>
+                    <label class="form-check-label" for="CityFilter">Citys</label>
+                </div>
+              </li>
+              <li>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="StructureFilter" value="Structure" checked>
+                    <label class="form-check-label" for="StructureFilter">Structures</label>
+                </div>
+              </li>
+              <li>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="MountainFilter" value="Mountain" checked>
+                    <label class="form-check-label" for="MountainFilter">Mountains and Hills</label>
+                </div>
+              </li>
+              <li>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="RiverFilter" value="River" checked>
+                    <label class="form-check-label" for="RiverFilter">Rivers and Lakes</label>
+                </div>
+              </li>
+            </ul>
+          </li>
+      </nav>
     </div>
     <div id="map" class="full-screen-map"></div>
 
-
-
-<!-- Modal -->
+<!-- Modal 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -67,7 +101,7 @@
       </div>
     </div>
 </div>
-
+-->
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
