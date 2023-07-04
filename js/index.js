@@ -16,15 +16,15 @@ var imageBounds = [[0, 0], [imageHeight, 7680]];
 
 var redIcon = L.icon({
   iconUrl: './img/iconRed.png',
-  iconSize: [36,36], // size of the icon
+  iconSize: [24,24], // size of the icon
 });
 var blueIcon = L.icon({
   iconUrl: './img/iconBlue.png',
-  iconSize: [36,36], // size of the icon
+  iconSize: [24,24], // size of the icon
 });
 var greenIcon = L.icon({
   iconUrl: './img/iconGreen.png',
-  iconSize: [36,36], // size of the icon
+  iconSize: [24,24], // size of the icon
 });
 
 
@@ -47,45 +47,72 @@ var map = L.map('map', {
 L.imageOverlay(imageUrl, imageBounds).addTo(map);
 
 
-
-
-// Função para criar e exibir marcadores no mapa
 function createMarkers(places) {
   const markers = [];
 
   places.forEach(place => {
     const coords = place.coords.split(',');
-    const lat = parseFloat(coords[0].trim());
-    const lng = parseFloat(coords[1].trim());
 
+    // Verificar se o lugar é um marcador ou uma polilinha
+    if (place.type === 'Structure' || place.type === 'Mountain' || place.type === 'City') {
+      const lat = parseFloat(coords[0].trim());
+      const lng = parseFloat(coords[1].trim());
 
-    // Criação do marcador com as coordenadas e o ícone personalizado a depender do type
-    let marker;
-    if(place.type == 'Structure'){
-    marker = L.marker([lat, lng], { icon: redIcon });
-    } else if(place.type == 'Mountain'){
-      marker = L.marker([lat, lng], { icon: blueIcon });
-    } else {
-      marker = L.marker([lat, lng], { icon: greenIcon });
-    }
+      let marker;
 
+      // Criação do marcador com as coordenadas e o ícone personalizado com base no type
+      if (place.type === 'Structure') {
+        marker = L.marker([lat, lng], { icon: redIcon });
+      } else if (place.type === 'Mountain') {
+        marker = L.marker([lat, lng], { icon: blueIcon });
+      } else if (place.type === 'City') {
+        marker = L.marker([lat, lng], { icon: greenIcon });
+      }
 
+      // Definir o tipo do marcador com base no valor do lugar
+      marker.type = place.type;
 
-    // Definir o tipo do marcador com base no valor do lugar
-    marker.type = place.type;
+      // Adição de um pop-up com informações adicionais
+      marker.bindPopup(`
+        <h3>${place.name}</h3>
+        <p>${place.description}</p>
+      `);
 
-    // Adição de um pop-up com informações adicionais
-    marker.bindPopup(`
+      // Armazena o marcador na lista de marcadores
+      markers.push(marker);
+    } else if (place.type === 'River') {
+      const latlngs = [];
+
+      for (let i = 0; i < coords.length; i += 2) {
+        const lat = parseFloat(coords[i].trim());
+        const lng = parseFloat(coords[i + 1].trim());
+
+        latlngs.push([lat, lng]);
+      }
+
+      // Criação do polilinha com as coordenadas
+      const polyline = L.polyline(latlngs, { color: 'blue' }).addTo(map);
+      polyline.bindPopup(`
       <h3>${place.name}</h3>
       <p>${place.description}</p>
-    `);
+      `);
+      // Definir o tipo da polilinha
+      polyline.type = place.type;
 
-    // Armazena o marcador na lista de marcadores
-    markers.push(marker);
+      // Adição de um pop-up com informações adicionais
+      polyline.bindPopup(`
+        <h3>${place.name}</h3>
+        <p>${place.description}</p>
+      `);
+
+      // Armazena a polilinha na lista de marcadores
+      markers.push(polyline);
+    }
   });
 
   return markers;
 }
+
 
 // Função para mostrar os marcadores no mapa
 function showMarkers(markers) {
@@ -137,14 +164,23 @@ fetchJSON()
         hideMarkers(markers.filter(marker => marker.type === checkbox.value));
       }
     });
+    // Tratamento do evento de mudança no filtro
+    document.getElementById('RiverFilter').addEventListener('change', function(event) {
+      const checkbox = event.target;
+  
+      if (checkbox.checked) {
+        showMarkers(markers.filter(marker => marker.type === checkbox.value));
+      } else {
+        hideMarkers(markers.filter(marker => marker.type === checkbox.value));
+      }
+    });
+    
 
 
   })
   .catch(error => {
     console.error('Erro ao carregar o arquivo JSON:', error);
   });
-
-
 
 
 
@@ -238,4 +274,10 @@ map.invalidateSize();
 var mapContainer = document.getElementById('map');
 mapContainer.style.height = '100vh';
 mapContainer.style.width = '100%';
+
+
+
+
+
+
 
