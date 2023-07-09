@@ -134,16 +134,16 @@ fetchJSON()
     const markers = createMarkers(places);
     showMarkers(markers);
 
-    // Tratamento do evento de mudança no filtro
-    document.getElementById('CityFilter').addEventListener('change', function(event) {
-      const checkbox = event.target;
-  
-      if (checkbox.checked) {
-        showMarkers(markers.filter(marker => marker.type === checkbox.value));
-      } else {
-        hideMarkers(markers.filter(marker => marker.type === checkbox.value));
-      }
-    });
+      // Tratamento do evento de mudança no filtro
+      document.getElementById('CityFilter').addEventListener('change', function(event) {
+        const checkbox = event.target;
+    
+        if (checkbox.checked) {
+          showMarkers(markers.filter(marker => marker.type === checkbox.value));
+        } else {
+          hideMarkers(markers.filter(marker => marker.type === checkbox.value));
+        }
+      });
     // Tratamento do evento de mudança no filtro
     document.getElementById('StructureFilter').addEventListener('change', function(event) {
       const checkbox = event.target;

@@ -4,6 +4,8 @@
     padding: 0;
     list-style-type: none;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    
   }
 
   body {
@@ -36,30 +38,67 @@ html, body, #map {
 
 
 /*Icone engrenagem sobreposto ao mapa*/
-#filter-icon {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 1000;
+#myDropdown {
+  position: absolute;
+  top: 1%;
+  left: 1%;
+  transform: translate(100%, 0);
+  z-index: 1000;
+  transition: transform 0.5s ease;
 }
 
+.dropIcon {
+  position: fixed;
+  width: 58px;
+  height: 56px;
+}
 
+.dropdown-menu-custom {
+  background-image: url('../img/Elfos_de_Valinor-transformed.png');
+  background-size: cover;
+  transition: opacity 0.5s ease; /* Adicionado para animação suave */
+  border: 0.3px solid #FC9B05;
+}
+.dropdown-menu-custom.fade {
+  opacity: 0;
+}
 
+.dropdown-menu-custom.show {
+  opacity: 1;
+}
 
-
-
+.dropdown.show .dropdown-menu {
+  transform: translate(100%, calc(-100% - 10px));
+}
 
 
 .dropdown-menu-custom .dropdown-item.active,
 .dropdown-menu-custom .dropdown-item:active {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   color: black;
 }
 
 .dropdown-menu-custom .dropdown-item.active:focus,
 .dropdown-menu-custom .dropdown-item:active:focus {
-  background-color: white;
+  background-color: black;
   color: black;
   outline: none;
   box-shadow: none;
+}
+
+
+
+
+.custom-switch .form-check-input:checked {
+  background-color: #FC9B05;
+  border-color: #FC9B05;
+}
+
+.custom-switch .form-check-input:not(:checked) {
+  background-color: #031f34;
+  border-color: #031f34;
+}
+
+.custom-switch .form-check-label {
+  color: white;
 }

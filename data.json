@@ -214,7 +214,7 @@
             "name": "Rio Hoarwell",
             "type": "River",
             "description": "",
-            "coords": "3510,3875,3450,3750,3390,3730,3380,3690,3330,3705,3290,3700,3260,3690,3170,3670,3165,3640,3150,3640,3140,3610,3050,3620,3045,3605,3020,3615,3005,3600,2980,3600,2950,3565,2945,3540,2900,3500,2895,3460,2860,3400,2830,3405,2800,3360,2750,3360,2695,3310,2600,3335,2580,3270,2520,3285,2505,3240,2460,3200,2470,3150,2430,3130,2430,3090,2280,2990",
+            "coords": "3510,3875,3450,3750,3390,3730,3380,3690,3330,3705,3290,3700,3260,3690,3170,3670,3165,3640,3150,3640,3140,3610,3050,3620,3045,3605,3020,3615,3005,3600,2980,3600,2950,3565,2945,3540,2900,3500,2895,3460,2860,3400,2830,3405,2800,3360",
             "image": ""
         },
         {
@@ -294,8 +294,64 @@
             "name": "Rio Sirith",
             "type": "River",
             "description": "Um rio desaguava no Sirion, quando o grande rio se aproximava de sua foz. A cidade portuária de Pelargir fica na saída do rio Sirith.",
-            "coords": "1630,4470,1580,4450,1550,4470,1510,4440,1490,4453,1460,4445,1440,4480,1400,4474,1400,4490,1360,4490",
+            "coords": "1686,4506,1630,4470,1580,4450,1550,4470,1510,4440,1490,4453,1460,4445,1440,4480,1400,4474,1400,4490,1360,4490",
             "image": ""
-        }
+        },
+        {
+            "id": 34,
+            "name": "Rio Carnen",
+            "type": "River",
+            "description": "Um rio que nascia nas Colinas de Ferro. Desagua no Rio Corrente, que o leva até o Mar de Rhûn.",
+            "coords": "3470,6130,3380,6110,3370,6080,3330,6075,3327,5985,3310,5970,3313,5950,3300,5950,3280,5930,3295,5900,3260,5870,3190,5785,3140,5795,3090,5740,3040,5760,3030,5740,2930,5703",
+            "image": ""
+        },
+        {
+            "id": 34,
+            "name": "Rio Adorn",
+            "type": "River",
+            "description": "Nascia nos pés das Montanhas Brancas e desaguava no Isen. Definia a fronteira ocidental do país de Rohan.",
+            "coords": "2000,3680,1996,3630,1986,3628,1999,3602,1999,3570,2025,3565,2015,3547,2036,3550,2055,3450,2090,3403",
+            "image": ""
+        },
+        {
+            "id": 34,
+            "name": "Rio Gwathló",
+            "type": "River",
+            "description": "De Tharbad até o grande mar, em Lord Daer.",
+            "coords": "2800,3350,2750,3360,2695,3310,2600,3335,2580,3270,2520,3285,2505,3240,2460,3200,2470,3150,2430,3130,2430,3090,2280,2990",
+            "image": ""
+        },
+        {
+            "id": 35,
+            "name": "Rio Celos",
+            "type": "River",
+            "description": "Um rio ou córrego que era afluente do rio Sirith.",
+            "coords": "1680,4430,1630,4470",
+            "image": ""
+        },
+        {
+            "id": 36,
+            "name": "Rio Ringló",
+            "type": "River",
+            "description": "Nasceu nas Montanhas Brancas acima de Lamedon e fluiu para o sudoeste por cerca de 200 milhas antes de encontrar o mar.",
+            "coords": "1580,3770,1626,3823,1612,3875,1640,3879,1630,3920,1651,3950,1631,3970,1636,3980,1620,3993,1640,4020,1635,4050,1650,4066,1640,4095,1666,4101,1659,4140,1700,4180,1710,4260",
+            "image": ""
+        },
+        {
+            "id": 37,
+            "name": "Rio Entágua",
+            "type": "River",
+            "description": "nascia na Floresta Fangorn, corria através de Rohan até encontrar o Grande Rio Anduin.",
+            "coords": "2335,4080,2293,4100,2280,4210,2250,4170,2220,4180,2210,4140,2105,4125,2090,4110,2060,4140,2080,4210,2100,4220,2070,4260,2020,4230,2038,4290,2022,4315,2068,4381,2070,4440,2025,4496,2025,4515,2000,4540,1985,4580,2010,4600,1960,4672",
+            "image": ""
+        },
+        {
+            "id": 38,
+            "name": "Rio Erui",
+            "type": "River",
+            "description": "Próximo a capital Minas Tirith e desaguava no Anduin.",
+            "coords": "1700,4570,1670,4570,1660,4590,1605,4560,1595,4580,1570,4565,1560,4580,1545,4580,1550,4630",
+            "image": ""
+        }        
     ]
 }
