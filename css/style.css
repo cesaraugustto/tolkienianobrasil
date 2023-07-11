@@ -74,7 +74,7 @@ html, body, #map {
 
 .dropdown-menu-custom .dropdown-item.active,
 .dropdown-menu-custom .dropdown-item:active {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
   color: black;
 }
 
@@ -102,3 +102,5 @@ html, body, #map {
 .custom-switch .form-check-label {
   color: white;
 }
+
+

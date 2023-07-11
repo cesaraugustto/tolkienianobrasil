@@ -78,8 +78,26 @@ function createMarkers(places) {
         <p>${place.description}</p>
       `);
 
+      marker.on('click', function() {
+        const originalIconSize = marker.options.icon.options.iconSize;
+        const enlargedIconSize = [originalIconSize[0] * 1.2, originalIconSize[1] * 1.2];
+      
+        const currentIconSize = marker._icon.style;
+        currentIconSize.width = enlargedIconSize[0] + 'px';
+        currentIconSize.height = enlargedIconSize[1] + 'px';
+      
+        setTimeout(function() {
+          currentIconSize.width = originalIconSize[0] + 'px';
+          currentIconSize.height = originalIconSize[1] + 'px';
+        }, 300);
+      });
+      
+      
+
       // Armazena o marcador na lista de marcadores
       markers.push(marker);
+
+      
     } else if (place.type === 'River') {
       const latlngs = [];
 
@@ -111,7 +129,10 @@ function createMarkers(places) {
   });
 
   return markers;
+  
 }
+
+
 
 
 // Função para mostrar os marcadores no mapa
