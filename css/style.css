@@ -104,3 +104,28 @@ html, body, #map {
 }
 
 
+
+
+
+
+
+
+/* Exemplo de estilo personalizado para pop-up */
+.custom-popup {
+  background-image: url('../img/Elfos_de_Valinor-transformed.png');
+  border: none;
+  color: white;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+}
+
+.custom-popup h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.custom-popup p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}

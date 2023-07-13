@@ -72,26 +72,29 @@ function createMarkers(places) {
       // Definir o tipo do marcador com base no valor do lugar
       marker.type = place.type;
 
-      // Adição de um pop-up com informações adicionais
-      marker.bindPopup(`
-        <h3>${place.name}</h3>
-        <p>${place.description}</p>
-      `);
+    marker.on("click", function() {
+    var pos = map.latLngToLayerPoint(marker.getLatLng());
+    pos.y -= 15;
+    var fx = new L.PosAnimation();
 
-      marker.on('click', function() {
-        const originalIconSize = marker.options.icon.options.iconSize;
-        const enlargedIconSize = [originalIconSize[0] * 1.2, originalIconSize[1] * 1.2];
-      
-        const currentIconSize = marker._icon.style;
-        currentIconSize.width = enlargedIconSize[0] + 'px';
-        currentIconSize.height = enlargedIconSize[1] + 'px';
-      
-        setTimeout(function() {
-          currentIconSize.width = originalIconSize[0] + 'px';
-          currentIconSize.height = originalIconSize[1] + 'px';
-        }, 300);
-      });
-      
+    fx.once('end',function() {
+        pos.y += 15;
+        fx.run(marker._icon, pos, 0.8);
+    });
+
+    fx.run(marker._icon, pos, 0.3);
+})
+marker.on('click', function() {
+  const content = `
+  <div>
+    <h3>${place.name}</h3>
+    <p>${place.description}</p>
+  </div>
+`;
+
+showModal(content);
+
+});
       
 
       // Armazena o marcador na lista de marcadores
@@ -119,9 +122,12 @@ function createMarkers(places) {
 
       // Adição de um pop-up com informações adicionais
       polyline.bindPopup(`
-        <h3>${place.name}</h3>
-        <p>${place.description}</p>
+        <div class="custom-popup p-0">
+          <h3>${place.name}</h3>
+          <p>${place.description}</p>
+        </div>
       `);
+      
 
       // Armazena a polilinha na lista de marcadores
       markers.push(polyline);
@@ -130,6 +136,34 @@ function createMarkers(places) {
 
   return markers;
   
+}
+
+function showModal(content) {
+  const modalId = 'custom-modal';
+
+  // Criação do modal
+  const modal = document.createElement('div');
+  modal.setAttribute('id', modalId);
+  modal.innerHTML = content;
+  document.body.appendChild(modal);
+
+  // Configuração e abertura do modal usando a biblioteca IziModal
+  $(`#${modalId}`).iziModal({
+    headerColor: '#333',
+    background: 'rgba(0, 0, 0, 0.7)',
+    color: '#000000',
+    width: 600,
+    padding: 20,
+    closeOnEscape: true,
+    closeButton: true,
+    onClosed: function(modal) {
+      // Remover o modal do HTML ao fechar
+      modal.destroy();
+      $(`#${modalId}`).remove();
+    }
+  });
+
+  $(`#${modalId}`).iziModal('open');
 }
 
 
