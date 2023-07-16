@@ -7,7 +7,7 @@
             "description": "A majestosa cidade élfica localizada em Lothlórien, conhecida por sua bela arquitetura e atmosfera encantadora.",
             "coords": "2750,4200",
             "image": ""
-          },
+        },
         {
             "id": 2,
             "name": "Minas Tirith",
@@ -167,8 +167,7 @@
             "description": "Cidade costeira majestosa em Gondor, conhecida por sua beleza e esplendor. Lar da Casa de Dol Amroth, famosa por seus cavaleiros valentes e descendência élfica.",
             "coords": "1500,3650",
             "image": ""
-        }
-        ,
+        },
         {
             "id": 22,
             "name": "Edhellond",
@@ -306,7 +305,7 @@
             "image": ""
         },
         {
-            "id": 34,
+            "id": 35,
             "name": "Rio Adorn",
             "type": "River",
             "description": "Nascia nos pés das Montanhas Brancas e desaguava no Isen. Definia a fronteira ocidental do país de Rohan.",
@@ -314,7 +313,7 @@
             "image": ""
         },
         {
-            "id": 34,
+            "id": 36,
             "name": "Rio Gwathló",
             "type": "River",
             "description": "De Tharbad até o grande mar, em Lord Daer.",
@@ -322,7 +321,7 @@
             "image": ""
         },
         {
-            "id": 35,
+            "id": 37,
             "name": "Rio Celos",
             "type": "River",
             "description": "Um rio ou córrego que era afluente do rio Sirith.",
@@ -330,7 +329,7 @@
             "image": ""
         },
         {
-            "id": 36,
+            "id": 38,
             "name": "Rio Ringló",
             "type": "River",
             "description": "Nasceu nas Montanhas Brancas acima de Lamedon e fluiu para o sudoeste por cerca de 200 milhas antes de encontrar o mar.",
@@ -338,7 +337,7 @@
             "image": ""
         },
         {
-            "id": 37,
+            "id": 39,
             "name": "Rio Entágua",
             "type": "River",
             "description": "nascia na Floresta Fangorn, corria através de Rohan até encontrar o Grande Rio Anduin.",
@@ -346,12 +345,132 @@
             "image": ""
         },
         {
-            "id": 38,
+            "id": 40,
             "name": "Rio Erui",
             "type": "River",
             "description": "Próximo a capital Minas Tirith e desaguava no Anduin.",
             "coords": "1700,4570,1670,4570,1660,4590,1605,4560,1595,4580,1570,4565,1560,4580,1545,4580,1550,4630",
             "image": ""
-        }        
+        },
+        {
+            "id": 41,
+            "name": "Forodwaith",
+            "type": "Region",
+            "description": "Forodwaith é uma região gélida, localizada ao norte da Terra-média. Ela é caracterizada por vas-tas tundras, montanhas cobertas de neve e um clima extremamente rigoroso. Poucos povos habitam essa região hostil, tornando-a um território praticamente inexplorado e perigoso para os viajantes",
+            "coords": "4200,3250",
+            "image": ""
+        },
+        {
+            "id": 42,
+            "name": "Forochel",
+            "type": "Region",
+            "description": "Forochel é uma região gelada e costeira banhada pelo Mar de Belegaer. Habitada principalmente pelos Lossoth, os Homens das Neves descedentes das tribos de Forodwaith. Foi para Forochel ue o Rei Arvedui de Athedain fugiu depois que o Rei-bruxo de Angmar conseguiu vencer a guerra contra Arnor.",
+            "coords": "4030,2470",
+            "image": ""
+        },
+        {
+            "id": 43,
+            "name": "Angmar",
+            "type": "Region",
+            "description": "Angmar é uma região sinistra e sombria, situada ao norte das Montanhas Nevoentas. É conhecida como o Reino do Terror. É governada pelo Rei Bruxo de Angmar, o líder dos Nazgûl e um dos servos mais poderosos de Sauron. A região é caracterizada por paisagens desoladas, fortalezas macabras e criaturas malignas. Angmar repre-sentou um perigo constante para os reinos vizinhos, especialmente Arnor, sendo um reduto das forças do mal na luta contra a liberdade e a paz na Terra-média.",
+            "coords": "3900,3500",
+            "image": ""
+        },
+        {
+            "id": 44,
+            "name": "Carn Dûm",
+            "type": "City",
+            "description": "Carn Dûm é uma fortaleza sombria e a capital de Angmar, governada pelo Rei Bruxo. Carn Dûm é conhecida por sua arquitetura intimidante e sua atmosfera macabra. É um bastião das forças do mal e um centro estra-tégico para os planos de Sauron. Sua presença imponente simboliza o poder e a ameaça que Angmar no Norte da Terra-média.",
+            "coords": "4050,3300",
+            "image": ""
+        },
+        {
+            "id": 45,
+            "name": "Urzal Seco",
+            "type": "Mountain",
+            "description": "O Urzal Seco, também conhecida por a região dos dragões, é um longo vale que se estende de oeste a leste entre dois braços na extremidade leste das Montanhas Cinzentas, Na parte oriental de sua extensão, as Montanhas Cinzentas se bifurcavam em duas cordilheiras estreitas, com um vale estreito entre elas. No fundo deste longo vale leste-oeste entre as montanhas havia uma charneca, mas uma charneca queimada e enegrecida por seus habi-tantes. Esta charneca era famosa e temida no norte da Terra-média como o local de procriação dos dragões.",
+            "coords": "3800,4600",
+            "image": ""
+        },
+        {
+            "id": 46,
+            "name": "Forlindon",
+            "type": "Region",
+            "description": "Forlindon ficava na parte norte de Lindon , ao norte do Golfo de Lune e a oeste das Montanhas Azuis. A terra era atravessada por um rio que terminava na costa norte do Golfo; o refúgio de Forlond foi construído ali, em suas bocas. Na costa noroeste ficava a ilha de Himring , onde outrora ficava a fortaleza de Maedhros. O rei Gil-galad viveu em Forlindon, na Segunda Era.",
+            "coords": "3400,1900",
+            "image": ""
+        },
+        {
+            "id": 47,
+            "name": "Harlindon",
+            "type": "Region",
+            "description": "Harlindon era uma terra élfica verde e bela, localizado a oeste das Montanhas Azuis e ao sul do Golfo de Lune , que dividia Lindon no norte de Forlindon e no sul de Harlindon. Na cabeceira do Golfo ficava o porto de Portos Cinzentos. No início da Segunda Era , refugiados da Guerra da Ira chegaram a Lindon, com os Sin-dar sendo a maioria dos que se concentraram em Harlindon, junto com Celeborn e Galadriel . Celeborn governou os Elfos de Harlindon , até que o casal se mudou para Eregion no ano 750 ",
+            "coords": "2800,2200",
+            "image": ""
+        },
+        {
+            "id": 48,
+            "name": "Rhûn",
+            "type": "Region",
+            "description": "Rhûn , também conhecido como Oriente , refere-se às terras pouco conhecidas no leste da Terra-média. Lá viviam os Easterlings, ou, os Orientais, que eram os Homens que estavam sob o domínio de Sauron. Eram fortes aliados do senhor do escuro, possuiam enormes exércitos comos os Carroceiros e os Balchoth, que eram bem equipados e organizados para as guerras travadas contra o ocidente. Alguns pontos interessante que em Rhûn reinou i vice-líder dos Nazgûl, Khâmul, a Sombra do Leste, e também para lá foram enviados os Magos Azuis.",
+            "coords": "2900,6500",
+            "image": ""
+        },
+        {
+            "id": 49,
+            "name": "Mar de Rhûn",
+            "type": "Region",
+            "description": "era um grande lago ou mar no norte da Terra-média que ficava a leste de Rhovanion nas frontei-ras ocidentais de Rhûn, e o Rio Celduin fazia ligação com esse mar.Uma floresta ficava na costa nordeste do mar, e perto da costa sudoeste havia muitas colinas. A parte sudeste do mar parece ser ocupada por uma pequena ilha arbori-zada.",
+            "coords": "2660,6200",
+            "image": ""
+        },
+        {
+            "id": 50,
+            "name": "Montanhas do Leste",
+            "type": "Mountain",
+            "description": "As Montanhas do Leste são pouco mencionadas nas obras de Tolkien, mas é provável que quatro dos setes clãs do Anãos despertaram nessas regiões do leste, como também no Orocarni,",
+            "coords": "1700,7100",
+            "image": ""
+        },
+        {
+            "id": 51,
+            "name": "Mar de Núrn",
+            "type": "Region",
+            "description": "O Mar de Núrn, ou, Lago de Nûrn era u mar interior que ficava dentro das expansões de Mordor",
+            "coords": "1450,5800",
+            "image": ""
+        },
+        {
+            "id": 52,
+            "name": "Khând",
+            "type": "Region",
+            "description": "Khand era uma região que ficava a Sul de Mordor, e lá viviam os Variags, que exércitos de Ho-mens aliados de Sauron. Houve épocas que esse exército se aliou com os Easterlings de Rhûn e com os exércitos de Harad, como no ano 1944 da Terceira era em que atacaram Gondor",
+            "coords": "1000,6600",
+            "image": ""
+        },
+        {
+            "id": 53,
+            "name": "Haradwaith",
+            "type": "Region",
+            "description": "Harad era uma região que ficava no sul da Terra-média e lá viviam os Hoemens que também esta-vam sob o domínio e eram aliados de Sauron, e por diversas vezes travaram guerras com os povos ocidentais. Seus temíveis exércitos era compostos pelos os Mûmakil, que eram enormes feras semelhantes a elefantes quem erm usadas nas batalhas. Um ponto interessante é que os Magos Azuis também foram enviados para essa região",
+            "coords": "500,5200",
+            "image": ""
+        },
+        {
+            "id": 54,
+            "name": "Umbar",
+            "type": "Region",
+            "description": "Umbar ficava localizado a Sul de Belfalas e do rio Anduin. O povo de Umbar eram os mais pró-ximos dos povos de Gondor, dentro dos limites da região de Harad, pois desde a queda de Númenor vários refugiados foram para lá, como os Numenoreanos Negros, os Homens do Rei. Lá viviam os Corsários, outros povos que estvam sob o domínio e poder de Sauron",
+            "coords": "300,4300",
+            "image": ""
+        },
+        {
+            "id": 55,
+            "name": "Harondor",
+            "type": "Region",
+            "description": "Harondor era uma província que se localizava a sudoeste de Mordor, noroeste de Harad e a Sul de Ithilien. Também era conhecida como Gondor do Sul porque pertencia ao reino de Gondor. A população era pequena se comparada a outras províncias como Belfalas, Lebennin e Anórien. A População era composta por camponeses e possi-velmente pequenos grupos de defesas prestavam serviço fossem para os reis ou regentes. Harondor sempre foi palco de diversas disputas pelo controle da região. Sua posição geográfica estratégica para os avanços e a vigilância de Gondor no Sul, e para os povos de Harad e Khand quando tinham o controle da região.",
+            "coords": "1100,4500",
+            "image": ""
+        }
     ]
 }

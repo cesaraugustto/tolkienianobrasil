@@ -15,18 +15,21 @@ var imageBounds = [[0, 0], [imageHeight, 7680]];
 
 
 var redIcon = L.icon({
-  iconUrl: './img/iconRed.png',
-  iconSize: [24,24], // size of the icon
+  iconUrl: './img/iconBlue.png',
+  iconSize: [26,26], // size of the icon
 });
 var blueIcon = L.icon({
-  iconUrl: './img/iconBlue.png',
-  iconSize: [24,24], // size of the icon
+  iconUrl: './img/iconGreen.png',
+  iconSize: [26,26], // size of the icon
 });
 var greenIcon = L.icon({
-  iconUrl: './img/iconGreen.png',
-  iconSize: [24,24], // size of the icon
+  iconUrl: './img/iconRed.png',
+  iconSize: [26,26], // size of the icon
 });
-
+var yellowIcon = L.icon({
+  iconUrl: './img/iconYellow.png',
+  iconSize: [26,26], // size of the icon
+});
 
 
 
@@ -54,24 +57,26 @@ function createMarkers(places) {
     const coords = place.coords.split(',');
 
     // Verificar se o lugar é um marcador ou uma polilinha
-    if (place.type === 'Structure' || place.type === 'Mountain' || place.type === 'City') {
+    if (place.type !== "River") {
       const lat = parseFloat(coords[0].trim());
       const lng = parseFloat(coords[1].trim());
 
       let marker;
-
       // Criação do marcador com as coordenadas e o ícone personalizado com base no type
       if (place.type === 'Structure') {
-        marker = L.marker([lat, lng], { icon: redIcon });
+        marker = L.marker([lat, lng], { icon: redIcon});       
       } else if (place.type === 'Mountain') {
         marker = L.marker([lat, lng], { icon: blueIcon });
       } else if (place.type === 'City') {
         marker = L.marker([lat, lng], { icon: greenIcon });
+      } else if (place.type === 'Region') {
+        marker = L.marker([lat, lng], { icon: yellowIcon });
       }
 
       // Definir o tipo do marcador com base no valor do lugar
       marker.type = place.type;
 
+      
     marker.on("click", function() {
     var pos = map.latLngToLayerPoint(marker.getLatLng());
     pos.y -= 15;
@@ -87,7 +92,7 @@ function createMarkers(places) {
 marker.on('click', function() {
   const content = `
   <div>
-    <h3>${place.name}</h3>
+    <h2>${place.name}</h2>
     <p>${place.description}</p>
   </div>
 `;
@@ -150,8 +155,7 @@ function showModal(content) {
   // Configuração e abertura do modal usando a biblioteca IziModal
   $(`#${modalId}`).iziModal({
     headerColor: '#333',
-    background: 'rgba(0, 0, 0, 0.7)',
-    color: '#000000',
+    background: 'rgba(0, 1, 11, 0.7)',
     width: 600,
     padding: 20,
     closeOnEscape: true,
@@ -162,6 +166,13 @@ function showModal(content) {
       $(`#${modalId}`).remove();
     }
   });
+
+  // Aplicar estilos personalizados ao modal
+$(`#${modalId}`).css({
+  color: '#fff',    // Definir a cor do texto como branca
+  'box-shadow': '0 0 2px rgba(255, 155, 5, 0.7)',   // Simular borda de 0.5px com sombra
+  'border-radius': '10px'   // Definir o raio dos cantos arredondados
+});
 
   $(`#${modalId}`).iziModal('open');
 }
@@ -229,98 +240,22 @@ fetchJSON()
         hideMarkers(markers.filter(marker => marker.type === checkbox.value));
       }
     });
-    
+    // Tratamento do evento de mudança no filtro
+    document.getElementById('RegionFilter').addEventListener('change', function(event) {
+      const checkbox = event.target;
+  
+      if (checkbox.checked) {
+        showMarkers(markers.filter(marker => marker.type === checkbox.value));
+      } else {
+        hideMarkers(markers.filter(marker => marker.type === checkbox.value));
+      }
+    });
 
 
   })
   .catch(error => {
     console.error('Erro ao carregar o arquivo JSON:', error);
   });
-
-
-
-
-
-
-/*
-// Crie um polígono com base nas coordenadas dos vértices (vertical/horizontal)
-var coordenadas = "3800,3700,3000,4100,2000,3500,1900,3000,2300,3000,2700,2100,3800,2400";
-var paresCoordenadas = coordenadas.split(","); // Separar as coordenadas em pares
-var arrayCoordenadas = [];
-for (var i = 0; i < paresCoordenadas.length; i += 2) {
-    var x = parseInt(paresCoordenadas[i]);
-    var y = parseInt(paresCoordenadas[i + 1]);
-    arrayCoordenadas.push([x, y]); // Adicionar o par de coordenadas ao array
-}
-
-
-// Crie um polígono com base nas coordenadas dos vértices
-var polygonPoints = arrayCoordenadas;
-// Defina a cor de preenchimento do polígono
-var polygon = L.polygon(polygonPoints, { fillColor: 'red' }).addTo(map);
-/*
-// Tratamento dos eventos dos filtros
-// Tratamento do filtro
-document.getElementById('kingdomsFilter').addEventListener('change', function(event) {
-    if (event.target.checked) {
-      // Mostrar o marcador de Lothlórien
-      markerLorien.addTo(map);
-      markerGondor.addTo(map);
-      markerMordor.addTo(map);
-      markerErebor.addTo(map);
-      markerLindon.addTo(map);
-    } else {
-      // Ocultar o marcador de Lothlórien
-      markerLorien.removeFrom(map);
-      markerGondor.removeFrom(map);
-      markerMordor.removeFrom(map);
-      markerErebor.removeFrom(map);
-      markerLindon.removeFrom(map);
-    }
-  });
-
-// Tratamento dos eventos dos filtros
-// Tratamento do filtro
-document.getElementById('portsFilter').addEventListener('change', function(event) {
-    if (event.target.checked) {
-      // Mostrar o marcador de Lothlórien
-      markerGreyports.addTo(map);
-    } else {
-      // Ocultar o marcador de Lothlórien
-      markerGreyports.removeFrom(map);
-    }
-  });
-  
-  // Repita o mesmo tratamento para os outros filtros (vilas, montanhas, etc.)
-document.getElementById('regionsFilter').addEventListener('change', function(event) {
-    if (event.target.checked) {
-      // Mostrar o marcador de Lothlórien
-      polygon.addTo(map);
-    } else {
-      // Ocultar o marcador de Lothlórien
-      polygon.removeFrom(map);
-    }
-  }); 
-
-
-  
-// Tratamento do evento 'click' no marcador
-  map.on('popupopen', function() {
-    map.tap = true;
-  });
-  
-  map.on('popupclose', function() {
-    map.tap = false;
-  });
-
-*/
-
-
-
-
-
-
-
 
 // Ajustar o mapa para que a imagem ocupe a altura desejada
 map.setView([imageHeight / 2, 7680 / 2], minZoom);
