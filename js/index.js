@@ -19,7 +19,7 @@ var redIcon = L.icon({
   iconSize: [26, 26], // tamanho do ícone
   iconAnchor: [13, 26], // ponto de ancoragem do ícone (relativo ao tamanho)
   shadowUrl: './img/shadow.png', // caminho para a imagem de sombra personalizada com fundo transparente
-  shadowSize: [6, 36], // tamanho da sombra (largura x altura) para corresponder ao tamanho do ícone
+  shadowSize: [36, 36], // tamanho da sombra (largura x altura) para corresponder ao tamanho do ícone
   shadowAnchor: [13, 26], // ponto de ancoragem da sombra (relativo ao tamanho da sombra)
 });
 
