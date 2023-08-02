@@ -471,6 +471,96 @@
             "description": "Harondor era uma província que se localizava a sudoeste de Mordor, noroeste de Harad e a Sul de Ithilien. Também era conhecida como Gondor do Sul porque pertencia ao reino de Gondor. A população era pequena se comparada a outras províncias como Belfalas, Lebennin e Anórien. A População era composta por camponeses e possi-velmente pequenos grupos de defesas prestavam serviço fossem para os reis ou regentes. Harondor sempre foi palco de diversas disputas pelo controle da região. Sua posição geográfica estratégica para os avanços e a vigilância de Gondor no Sul, e para os povos de Harad e Khand quando tinham o controle da região.",
             "coords": "1100,4500",
             "image": ""
+        },
+        {
+            "id": 56,
+            "name": "Dagorlad",
+            "type": "Region",
+            "description": "Dagorlad era a planície poeirenta que ficava a noroeste de Mordor. Este foi o local de várias batalhas importantes na história de Gondor, mais notavelmente a derrota das forças de Sauron na famosa Batalha de Dagorlad em 3434 da Segunda Era",
+            "coords":  "2200,5100",
+            "image":  ""
         }
+        ,
+        {
+            "id": 57,
+            "name": "Morannon, Portões Negros",
+            "type": "Structure",
+            "description": " Construído por Sauron, os portões Negros era a principal entrada para Mordor, eram duas grandes portas de ferro sob um arco franzido, em uma muralha de pedra com uma ameia que se estendia entre os altos penhascos de cada lado da boca da passagem. Esses imponentes portões faziam ligação com as montanhas que protegiam Mordor, Ephel Dúath e Ered Lithui.",
+            "coords": "2130,5150",
+            "image": ""
+        },
+        {
+            "id": 58,
+            "name": "Udûn",
+            "type": "Region",
+            "description": "Udûn era o vale profundo no noroeste de Mordor, formado no encontro das Ered Lithui e das Ephel Dúath. Sua entrada norte era guardada pelo Morannon e sua entrada sul era guardada pelo Carach Angren.",
+            "coords": "2050,5200",
+            "image": ""
+        },
+        {
+            "id": 59 ,
+            "name": "Carach Angren",
+            "type": "Structure",
+            "description": "Era mais uma passagem que fazia ligação do Vale de Udûn às planícies de Gorgoroth. Era extremamente fortificada, com contrafortes rochosos que a dominavam carregavam fortes e torres, uma parede de terra havia sido construída e uma grande vala havia sido cavada na abertura, atravessada por uma única ponte. ", 
+            "coords": "2000,5250",
+            "image": ""
+        },        
+        {
+            "id": 60,
+            "name": "Morgai",
+            "type": "Mountain",
+            "description": "O Morgai era uma cordilheira montanhosa nas Ephel Dúath (Montanhas da Sombra) que formava uma parede defensiva interna em Mordor . Entre ela e o Ephel Dúath havia uma estrada que corria entre Durthang e a passagem de Morgul.",
+            "coords": "2000,5100",
+            "image": ""
+        },
+        {
+            "id": 61,
+            "name": "Cirith Ungol",
+            "type": "Structure",
+            "description": "A Torre de Cirith Ungol era uma passagem através do Ephel Dúath que levava a Mordor. A passagem estava localizada em uma fenda na encosta da montanha no lado esquerdo do Vale Morgul acima da Passagem Morgul.",
+            "coords": "1850,5100",
+            "image":"" 
+        },
+        {
+            "id": 62,
+            "name": "Minas Morgul",
+            "type": "City",
+            "description": "Minas Morgul, também conhecida como Minas Ithil, era a cidade gêmea de Minas Tirith até ser conquistada pelas forças de Sauron e do Rei-bruxo na Terceira Era. Antes da sua queda, Minas Ithil era uma cidade linda, mas quando caiu nas mãos do mal, sua beleza foi transformada em terror.",
+            "coords": "1850,5000",
+            "image":"" 
+        },
+        {
+            "id": 63,
+            "name": "Nurn",
+            "type": "Region",
+            "description": "Nurn ficava no lado sul de Mordor e, diferente do Vale Gorgoroth, era muito mais fértil e ainda ficava ao lado do grande Lago Núrnen no centro da região. Na época da Guerra do Anel, os escravos nessa região trabalhavam no Lago Núrnen para alimentar os exércitos de Sauron.",
+            "coords": "1400,5500",
+            "image": ""
+        },
+        {
+            "id": 64,
+            "name": "Montanhas da Sombra",
+            "type": "Mountain",
+            "description": "As Montanhas da Sombra eram o lado sul da Ephel Dúath, fechando e protegendo a região de Mordor, tornando-a quase impossível de adentrar com um exército no lado ocidental. A entrada mais fácil era no lado noroeste através do Morannon.",
+            "coords": "1150,5800",
+            "image": ""
+        },
+        {
+            "id": 65,
+            "name": "Lithlad",
+            "type": "Region",
+            "description": "Lithlad era uma planície em Mordor. A cordilheira de Ephel Duath e a cordilheira de Ered Lithui formavam uma grande muralha ao redor das tristes planícies de Lithlad e Gorgoroth, com o mar interior de Nurnen no meio.",
+            "coords": "1600,6100",
+            "image": ""
+        },
+        {
+            "id": 66,
+            "name": "Ered Lithui",
+            "type": "Mountain",
+            "description": "As Ered Lithui, ou as Montanhas Ash, eram uma cordilheira norte de Mordor que a separava de Rhovanion. As Ered Lithui eram acidentadas e proibitivas, descritas como sendo compostas de \"picos quebrados e cumes estéreis\". Suas rochas eram de cor cinza como cinzas.",
+            "coords": "2000,5800",
+            "image": ""
+        }
+        
     ]
 }

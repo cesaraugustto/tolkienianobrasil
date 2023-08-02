@@ -15,20 +15,39 @@ var imageBounds = [[0, 0], [imageHeight, 7680]];
 
 
 var redIcon = L.icon({
-  iconUrl: './img/iconBlue.png',
-  iconSize: [26,26], // size of the icon
-});
-var blueIcon = L.icon({
-  iconUrl: './img/iconGreen.png',
-  iconSize: [26,26], // size of the icon
-});
-var greenIcon = L.icon({
   iconUrl: './img/iconRed.png',
-  iconSize: [26,26], // size of the icon
+  iconSize: [26, 26], // tamanho do ícone
+  iconAnchor: [13, 26], // ponto de ancoragem do ícone (relativo ao tamanho)
+  shadowUrl: './img/shadow.png', // caminho para a imagem de sombra personalizada com fundo transparente
+  shadowSize: [6, 36], // tamanho da sombra (largura x altura) para corresponder ao tamanho do ícone
+  shadowAnchor: [13, 26], // ponto de ancoragem da sombra (relativo ao tamanho da sombra)
 });
+
+var blueIcon = L.icon({
+  iconUrl: './img/iconBlue.png',
+  iconSize: [26, 26], // tamanho do ícone
+  iconAnchor: [13, 26], // ponto de ancoragem do ícone (relativo ao tamanho)
+  shadowUrl: './img/shadow.png', // caminho para a imagem de sombra personalizada com fundo transparente
+  shadowSize: [36, 36], // tamanho da sombra (largura x altura) para corresponder ao tamanho do ícone
+  shadowAnchor: [13, 26], // ponto de ancoragem da sombra (relativo ao tamanho da sombra)
+});
+
+var greenIcon = L.icon({
+  iconUrl: './img/iconGreen.png',
+  iconSize: [26, 26], // tamanho do ícone
+  iconAnchor: [13, 26], // ponto de ancoragem do ícone (relativo ao tamanho)
+  shadowUrl: './img/shadow.png', // caminho para a imagem de sombra personalizada com fundo transparente
+  shadowSize: [36, 36], // tamanho da sombra (largura x altura) para corresponder ao tamanho do ícone
+  shadowAnchor: [13, 26], // ponto de ancoragem da sombra (relativo ao tamanho da sombra)
+});
+
 var yellowIcon = L.icon({
   iconUrl: './img/iconYellow.png',
-  iconSize: [26,26], // size of the icon
+  iconSize: [26, 26], // tamanho do ícone
+  iconAnchor: [13, 26], // ponto de ancoragem do ícone (relativo ao tamanho)
+  shadowUrl: './img/shadow.png', // caminho para a imagem de sombra personalizada com fundo transparente
+  shadowSize: [36,36], // tamanho da sombra (largura x altura) para corresponder ao tamanho do ícone
+  shadowAnchor: [13, 26], // ponto de ancoragem da sombra (relativo ao tamanho da sombra)
 });
 
 
