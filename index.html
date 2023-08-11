@@ -150,6 +150,54 @@ document.addEventListener('DOMContentLoaded', function() {
         event.stopPropagation();
       }
     </script>
+    <script>
+
+      // Verifica se o modal deve ser exibido com base no armazenamento local
+function shouldShowModal() {
+  return !localStorage.getItem("hideFirstModal");
+}
+
+// Exibe o modal
+function showFirstModal() {
+  if (shouldShowModal()) {
+    Swal.fire({
+      title: "Instruções de Uso do Mapa",
+      html: `
+    <div class="custom-alert-container">
+      <img src="img/logo-withoutbg.png" class="img-fluid px-5">
+      <p class='pt-2 text-start'>Instruções</p>
+    </div>`,
+      padding: '0',
+      color: '#ffffff',
+      background: '#020C16',
+      showCancelButton: true,
+      confirmButtonText: "Entendi",
+      cancelButtonText: "Não me mostre novamente",
+      backdrop: `
+    rgba(0,0,123,0.4)
+    url("img/arrowRed.gif")
+    left top
+    no-repeat
+  `
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // O usuário clicou em "Entendi"
+        // Coloque aqui o código para continuar após o modal
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        // O usuário clicou em "Não me mostre novamente"
+        localStorage.setItem("hideFirstModal", "true");
+      }
+    });
+  }
+}
+
+// Chame a função showFirstModal() para exibir o modal quando necessário
+showFirstModal();
+    </script>
+
+
+
+
   <script>
     // Obtenha a referência ao elemento do link "Informações"
 const infoAlert = document.getElementById('infoAlert');
