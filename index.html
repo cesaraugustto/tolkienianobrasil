@@ -1,226 +1,277 @@
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Mapa Interativo - Terra Média</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Mapa Interativo - Terra Média</title>
 
-    <!-- CSS File for leaflet-->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-    crossorigin=""/>
-    
-    <!-- JS leaflet (DEVE ESTAR APÓS O CSS) -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-     crossorigin=""></script>
-     <script src="./js/leaflet.curve.js"></script>
+  <!-- CSS File for leaflet-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 
-    <!--Modal Alert library-->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css" rel="stylesheet">
+  <!-- JS leaflet (DEVE ESTAR APÓS O CSS) -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="./js/leaflet.curve.js"></script>
 
-    <!--Bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!--Modal Alert library-->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="./css/style.css" defer>
+  <!--Bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css" defer>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.6.0/css/iziModal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.6.0/css/iziModal.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.6.0/js/iziModal.min.js"></script>
 </head>
 <style>
-  
-/* CSS para criar a sombra do marcador */
-.custom-icon {
-  position: relative;
-}
+  /* CSS para criar a sombra do marcador */
+  .custom-icon {
+    position: relative;
+  }
 
-.custom-icon::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 24px; /* Largura da sombra */
-  height: 6px; /* Altura da sombra */
-  border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.3); /* Cor e opacidade da sombra */
-  transform: translateX(-50%);
-  z-index: -1;
-}
-
+  .custom-icon::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 24px;
+    /* Largura da sombra */
+    height: 6px;
+    /* Altura da sombra */
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.3);
+    /* Cor e opacidade da sombra */
+    transform: translateX(-50%);
+    z-index: -1;
+  }
 </style>
+
 <body>
 
-  
-<div class="dropdown" id="myDropdown">
-  <img src="./img/engrenagem.png" class="dropdown-toggle dropIcon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 
-  <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-custom fade" onclick="stopDropdownClose(event)">
-    <li>
-      <a class="dropdown-item" href="#">
-        <div class="form-check form-switch custom-switch">
-          <input class="form-check-input" type="checkbox" role="switch" id="CityFilter" value="City" checked>
-          <label class="form-check-label" for="CityFilter">Cidades</label>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a class="dropdown-item" href="#">
-        <div class="form-check form-switch custom-switch">
-          <input class="form-check-input custom-checkbox" type="checkbox" role="switch" id="StructureFilter" value="Structure" checked>
-          <label class="form-check-label" for="StructureFilter">Estruturas</label>
-      </div>
-      </a>
-    </li>
-    <li>
-      <a class="dropdown-item" href="#">
-        <div class="form-check form-switch custom-switch">
-          <input class="form-check-input" type="checkbox" role="switch" id="MountainFilter" value="Mountain" checked>
-          <label class="form-check-label" for="MountainFilter">Montanhas e Colinas</label>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a class="dropdown-item" href="#">
-        <div class="form-check form-switch custom-switch">
-          <input class="form-check-input" type="checkbox" role="switch" id="RiverFilter" value="River" checked>
-          <label class="form-check-label" for="RiverFilter">Rios e Lagos</label>
-      </div>
-      </a>
-    </li>
-    <li>
-      <a class="dropdown-item" href="#">
-        <div class="form-check form-switch custom-switch">
-          <input class="form-check-input" type="checkbox" role="switch" id="RegionFilter" value="Region" checked>
-          <label class="form-check-label" for="RegionFilter">Regiões</label>
-      </div>
-      </a>
-    </li>
-    <li><hr class="dropdown-divider"></li>
-    <li>
-      <a class="dropdown-item" href="#" id="infoAlert">
-        <i class="bi bi-info-circle" style="color: #FC9B05;"></i>
-        <span class="ps-3" style="color: #FFFFFF;">Informações</span>
-      </a>
-    </li>
-  </ul>
-</div>
+  <div class="dropdown" id="myDropdown">
+    <img src="./img/engrenagem.png" class="dropdown-toggle dropIcon" type="button" data-bs-toggle="dropdown"
+      aria-expanded="false">
+
+    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-custom fade" onclick="stopDropdownClose(event)">
+      <li>
+        <a class="dropdown-item" href="#">
+          <div class="form-check form-switch custom-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="CityFilter" value="City" checked>
+            <label class="form-check-label" for="CityFilter">Cidades</label>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="dropdown-item" href="#">
+          <div class="form-check form-switch custom-switch">
+            <input class="form-check-input custom-checkbox" type="checkbox" role="switch" id="StructureFilter"
+              value="Structure" checked>
+            <label class="form-check-label" for="StructureFilter">Estruturas</label>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="dropdown-item" href="#">
+          <div class="form-check form-switch custom-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="MountainFilter" value="Mountain" checked>
+            <label class="form-check-label" for="MountainFilter">Montanhas e Colinas</label>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="dropdown-item" href="#">
+          <div class="form-check form-switch custom-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="RiverFilter" value="River" checked>
+            <label class="form-check-label" for="RiverFilter">Rios e Lagos</label>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="dropdown-item" href="#">
+          <div class="form-check form-switch custom-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="RegionFilter" value="Region" checked>
+            <label class="form-check-label" for="RegionFilter">Regiões</label>
+          </div>
+        </a>
+      </li>
+      <li>
+        <hr class="dropdown-divider">
+      </li>
+      <li>
+        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalInfo">
+          <i class="bi bi-info-circle" style="color: #FC9B05;"></i>
+          <span class="ps-3" style="color: #FFFFFF;">Informações</span>
+        </a>
+      </li>
+    </ul>
+  </div>
 
 
-    <div id="map" class="full-screen-map"></div>
+  <div id="map" class="full-screen-map"></div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
 
-    <script type="module" src="./js/index.js"></script>
-    <script src="./js/connection.js"></script>
-    <script>
-document.addEventListener('DOMContentLoaded', function() {
-  var dropdown = document.querySelector('.dropdown');
-  var dropdownMenu = dropdown.querySelector('.dropdown-menu');
-  
-  dropdown.addEventListener('show.bs.dropdown', function() {
-    dropdownMenu.style.opacity = '0';
-    dropdownMenu.style.visibility = 'visible';
-    setTimeout(function() {
-      dropdownMenu.style.opacity = '1';
-    }, 10);
-  });
-  
-  dropdown.addEventListener('hide.bs.dropdown', function() {
-    dropdownMenu.style.opacity = '1';
-    dropdownMenu.style.visibility = 'hidden';
-    setTimeout(function() {
-      dropdownMenu.style.opacity = '0';
-    }, 100);
-  });
-});
+  <script type="module" src="./js/index.js"></script>
+  <script src="./js/connection.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var dropdown = document.querySelector('.dropdown');
+      var dropdownMenu = dropdown.querySelector('.dropdown-menu');
 
-    </script>
+      dropdown.addEventListener('show.bs.dropdown', function () {
+        dropdownMenu.style.opacity = '0';
+        dropdownMenu.style.visibility = 'visible';
+        setTimeout(function () {
+          dropdownMenu.style.opacity = '1';
+        }, 10);
+      });
 
-    <script>
-      //Não fechar o dropdown ao clicar, somente quando clicar fora
-      function stopDropdownClose(event) {
-        event.stopPropagation();
-      }
-    </script>
-    <script>
-
-      // Verifica se o modal deve ser exibido com base no armazenamento local
-function shouldShowModal() {
-  return !localStorage.getItem("hideFirstModal");
-}
-
-// Exibe o modal
-function showFirstModal() {
-  if (shouldShowModal()) {
-    Swal.fire({
-      title: "Instruções de Uso do Mapa",
-      html: `
-    <div class="custom-alert-container">
-      <img src="img/logo-withoutbg.png" class="img-fluid px-5">
-      <p class='pt-2 text-start'>Instruções</p>
-    </div>`,
-      padding: '0',
-      color: '#ffffff',
-      background: '#020C16',
-      showCancelButton: true,
-      confirmButtonText: "Entendi",
-      cancelButtonText: "Não me mostre novamente",
-      backdrop: `
-    rgba(0,0,123,0.4)
-    url("img/arrowRed.gif")
-    left top
-    no-repeat
-  `
-    }).then((result) => {
-      if (result.isConfirmed) {
-        // O usuário clicou em "Entendi"
-        // Coloque aqui o código para continuar após o modal
-      } else if (result.dismiss === Swal.DismissReason.cancel) {
-        // O usuário clicou em "Não me mostre novamente"
-        localStorage.setItem("hideFirstModal", "true");
-      }
+      dropdown.addEventListener('hide.bs.dropdown', function () {
+        dropdownMenu.style.opacity = '1';
+        dropdownMenu.style.visibility = 'hidden';
+        setTimeout(function () {
+          dropdownMenu.style.opacity = '0';
+        }, 100);
+      });
     });
-  }
-}
 
-// Chame a função showFirstModal() para exibir o modal quando necessário
-showFirstModal();
-    </script>
-
-
-
+  </script>
 
   <script>
-    // Obtenha a referência ao elemento do link "Informações"
-const infoAlert = document.getElementById('infoAlert');
-// Adicione um evento de clique ao link
-infoAlert.addEventListener('click', function(event) {
-  event.preventDefault(); // Evita o comportamento padrão de redirecionamento
-  
-Swal.fire({
-  html: `
-    <div class="custom-alert-container">
-      <img src="img/logo-withoutbg.png" class="img-fluid px-5">
-      <p class='pt-2 text-start'>Este é um mapa interativo da Terra-média, feito para auxiliar na leitura dos livros.<br> Aqui você pode facilmente filtrar locais relevantes, e ao clicar nos marcadores obtém-se informações adicionais. Essa iniciativa é fruto do esforço coletivo da equipe do Instagram <a href='https://www.instagram.com/tolkienianobrasil' target="_blank" style='color: #FC9B05'>TolkienianoBrasil</a>, composta por fãs apaixonados que dedicaram-se a compartilhar essa ferramenta <strong style='text-decoration: underline;'>sem nenhum objetivo financeiro</storng>.</p>
+    //Não fechar o dropdown ao clicar, somente quando clicar fora
+    function stopDropdownClose(event) {
+      event.stopPropagation();
+    }
+  </script>
+  <script>
+
+    // Verifica se o modal deve ser exibido com base no armazenamento local
+    function shouldShowModal() {
+      return !localStorage.getItem("mostrarInstrucoes");
+    }
+
+    // Exibe o modal
+    function showFirstModal() {
+      if (shouldShowModal()) {
+        Swal.fire({
+          title: "<img src='img/logo-withoutbg.png' class='img-fluid px-5'>",
+          html: `
+            <div class="custom-container">
+            <p class='text-start labelFirstModal'>
+              Bem-vindo ao nosso Mapa Interativo! Este projeto permite que você explore os principais locais da Terra Média.
+              <br>Clique no ícone no canto superior esquerdo para aplicar os filtros.
+            </p>
+            <br>
+
+
+            <div class="text-start">
+              <input class="form-check-input" type="checkbox" value="" id="checkNaoMostrar">
+                <label class="h6 form-check-label" for="checkNaoMostrar"> Não mostrar novamente</label>            
+            </div>
+
+        
+<br>
+<div class="text-end">
+  <button id="custom-confirm-button" class="btn btn-primary">Entendi</button>
+</div>
+                
+              </div>
+
+          `,
+          padding: '0',
+          color: '#ffffff',
+          background: '#020C16',
+          showCancelButton: false,
+          showConfirmButton: false, // Oculta o botão Confirm padrão
+          backdrop: `
+      rgba(0,0,57,0.7)
+      url("img/arrowBlue.gif")
+      top 10px left 80px
+      no-repeat
+    `
+        }).then((result) => {
+          if (checkNaoMostrar.checked == true) {
+            // O usuário clicou em "Não me mostre novamente"
+            localStorage.setItem("mostrarInstrucoes", "true");
+          }
+        });
+
+        // Captura o clique no botão customizado e fecha o modal
+        document.getElementById('custom-confirm-button').addEventListener('click', () => {
+          Swal.close();
+          // Coloque aqui o código para continuar após o modal
+        });
+      }
+
+    }
+
+    // Chame a função showFirstModal() para exibir o modal quando necessário
+    showFirstModal();
+  </script>
+
+
+
+  <!--Modal Info-->
+  <!-- Modal -->
+  <div class="modal fade" id="modalInfo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-top">
+        <div class="modal-body p-0">
+
+
+          <div class="tabs">
+            <div class="tab">
+              <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
+              <label for="tab-1" class="tab-label">O mapa</label>
+              <div class="tab-content">
+                Bem-vindo ao nosso Mapa Interativo! Este projeto permite que você explore os principais locais da Terra
+                Média.
+                Ao utilizar o ícone localizado no canto superior esquerdo, você terá acesso a informações detalhadas e
+                filtros para descobrir os lugares mais relevantes.
+              </div>
+            </div>
+            <div class="tab">
+              <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
+              <label for="tab-2" class="tab-label">Comunidade</label>
+              <div class="tab-content">
+                My father now and then sending me small sums of money, I laid them out in learning navigation, and other
+                parts of the mathematics, useful to those who intend to travel, as I always believed it would be, some
+                time or other, my fortune to do.
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+        </div>
+      </div>
     </div>
-  `,
-  padding: '0',
-  color: '#ffffff',
-  background: '#020C16 url(/img/Elfos_de_Valinor-transformed.png)',
-  border: '1px solid #FC9B05'})
-})
-</script>
+  </div>
 
 
 
-    
 </body>
+
 </html>

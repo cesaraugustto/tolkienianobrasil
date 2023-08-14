@@ -40,6 +40,17 @@ html, body, #map {
 }
 
 
+.custom-container .labelFirstModal{
+  color: #F8F8FF;
+}
+
+.form-check-input:checked{
+  background-color: #01111d;
+  color: #FC9B05;
+  content: "\2713";
+}
+
+
 /*Icone engrenagem sobreposto ao mapa*/
 #myDropdown {
   position: absolute;
@@ -51,10 +62,155 @@ html, body, #map {
 }
 
 .dropIcon {
-  position: fixed;
+  position: absolute;
   width: 58px;
   height: 56px;
+  z-index: 999;
 }
+
+
+
+.dropIcon {
+  z-index: 1000; 
+}
+/*Sobreposição sweetAlert*/
+.swal2-container.swal2-center.swal2-backdrop-show {
+  z-index: 999;
+}
+
+
+.modal-content {
+  border: #FC9B05;
+ /* background-color: #031f34;*/
+  background-image: url('../img/Elfos_de_Valinor-transformed.png');
+}
+
+
+.btn-primary{
+  background-color: #01111d;
+  color:#FC9B05;
+  border: 0.5px solid #FC9B05;
+}
+
+.btn-primary:hover{
+  background-color: #FC9B05;
+  color:#01111d;
+  border: 0.5px solid #FC9B05;
+}
+
+
+
+
+
+
+
+
+
+
+.tabs {
+  position: relative;
+  background: #01111d;
+  height: 14.75rem;
+}
+.tabs::before,
+.tabs::after {
+  content: "";
+  display: table;
+}
+.tabs::after {
+  clear: both;
+}
+.tab {
+  float: left;
+}
+.tab-switch {
+  display: none;
+}
+.tab-label {
+  position: relative;
+  display: block;
+  line-height: 2.75em;
+  height: 3em;
+  padding: 0 1.618em;
+  background: #01111d;
+  border-right: 0.125rem solid #01111d;
+  color: #fff;
+  cursor: pointer;
+  top: 0;
+  transition: all 0.25s;
+  border-radius: 5px;
+}
+.tab-label:hover {
+  top: -0.25rem;
+  transition: top 0.25s;
+}
+.tab-content {
+  position: absolute;
+  z-index: 1;
+  top: 2.75em;
+  left: 0;
+  padding: 1.618rem;
+  background: #01111d;
+  color: #fff;
+  opacity: 0;
+  transition: all 0.35s;
+}
+
+.tab-switch:checked + .tab-label {
+  background: #FC9B05;
+  color: #2c3e50;
+  border-bottom: 0;
+  border-right: 0.125rem solid #FC9B05;
+  transition: all 0.35s;
+  z-index: 1;
+  top: -0.0625rem;
+}
+.tab-switch:checked + label + .tab-content {
+  z-index: 2;
+  opacity: 1;
+  transition: all 0.35s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .dropdown-menu-custom {
   background-image: url('../img/Elfos_de_Valinor-transformed.png');
