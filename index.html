@@ -1,1 +1,296 @@
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Mapa Interativo - Terra Média</title>
+
+  <!-- CSS File for leaflet-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+  <!-- JS leaflet (DEVE ESTAR APÓS O CSS) -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="./js/leaflet.curve.js"></script>
+
+  <!--Modal Alert library-->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css" rel="stylesheet">
+
+  <!--Bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <link rel="stylesheet" href="./css/style.css" defer>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Poppins&family=Roboto&display=swap" rel="stylesheet">
+
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.6.0/css/iziModal.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.6.0/js/iziModal.min.js"></script>
+</head>
+<style>
+  /* CSS para criar a sombra do marcador */
+  .custom-icon {
+    position: relative;
+  }
+
+  .custom-icon::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 24px;
+    /* Largura da sombra */
+    height: 6px;
+    /* Altura da sombra */
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.3);
+    /* Cor e opacidade da sombra */
+    transform: translateX(-50%);
+    z-index: -1;
+  }
+</style>
+
+<body>
+
+
+  <div class="dropdown" id="myDropdown">
+    <img src="./img/engrenagem.png" class="dropdown-toggle dropIcon" type="button" data-bs-toggle="dropdown"
+      aria-expanded="false">
+
+    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-custom fade" onclick="stopDropdownClose(event)">
+      <li>
+        <a class="dropdown-item" href="#">
+          <div class="form-check form-switch custom-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="CityFilter" value="City" checked>
+            <label class="form-check-label lblMenu" for="CityFilter">Cidades</label>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="dropdown-item" href="#">
+          <div class="form-check form-switch custom-switch">
+            <input class="form-check-input custom-checkbox" type="checkbox" role="switch" id="StructureFilter"
+              value="Structure" checked>
+            <label class="form-check-label lblMenu" for="StructureFilter">Estruturas</label>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="dropdown-item" href="#">
+          <div class="form-check form-switch custom-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="MountainFilter" value="Mountain" checked>
+            <label class="form-check-label lblMenu" for="MountainFilter">Montanhas e Colinas</label>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="dropdown-item" href="#">
+          <div class="form-check form-switch custom-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="RegionFilter" value="Region" checked>
+            <label class="form-check-label lblMenu" for="RegionFilter">Regiões</label>
+          </div>
+        </a>
+      </li>
+      <li>
+        <hr class="dropdown-divider">
+      </li>
+      <li>
+        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalInfo">
+          <i class="bi bi-info-circle" style="color: #FC9B05;"></i>
+          <span class="ps-3 lblMenu">Informações</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+  <div id="map" class="full-screen-map"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
+  <script type="module" src="./js/index.js"></script>
+  <script src="./js/connection.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var dropdown = document.querySelector('.dropdown');
+      var dropdownMenu = dropdown.querySelector('.dropdown-menu');
+
+      dropdown.addEventListener('show.bs.dropdown', function () {
+        dropdownMenu.style.opacity = '0';
+        dropdownMenu.style.visibility = 'visible';
+        setTimeout(function () {
+          dropdownMenu.style.opacity = '1';
+        }, 10);
+      });
+
+      dropdown.addEventListener('hide.bs.dropdown', function () {
+        dropdownMenu.style.opacity = '1';
+        dropdownMenu.style.visibility = 'hidden';
+        setTimeout(function () {
+          dropdownMenu.style.opacity = '0';
+        }, 100);
+      });
+    });
+
+  </script>
+
+  <script>
+    //Não fechar o dropdown ao clicar, somente quando clicar fora
+    function stopDropdownClose(event) {
+      event.stopPropagation();
+    }
+  </script>
+  <script>
+
+    // Verifica se o modal deve ser exibido com base no armazenamento local
+    function shouldShowModal() {
+      return !localStorage.getItem("mostrarInstrucoes");
+    }
+
+    // Exibe o modal
+    function showFirstModal() {
+      if (shouldShowModal()) {
+        Swal.fire({
+          title: "<img src='img/logo-withoutbg.png' class='img-fluid px-5'>",
+          html: `
+            <div class="custom-container">
+              <label class='text-start labelFirstModal'>
+                Bem-vindo ao nosso Mapa Interativo! Este projeto permite que você explore os principais locais da Terra Média.
+                <br><br>Clique no ícone no canto superior esquerdo para aplicar os filtros.
+              </label>
+              <br><br>
+              <div class="text-start">
+                <input class="form-check-input" type="checkbox" value="" id="checkNaoMostrar">
+                  <label class="h6 form-check-label" for="checkNaoMostrar"> Não mostrar novamente</label>            
+              </div>
+              <div class="text-end">
+                <button id="custom-confirm-button" class="btn btn-primary">Entendi</button>
+              </div>
+            </div>
+
+          `,
+          padding: '0',
+          color: '#ffffff',
+          background: '#020C16',
+          showCancelButton: false,
+          showConfirmButton: false, // Oculta o botão Confirm padrão
+          backdrop: `
+      rgba(0,0,57,0.7)
+      url("img/arrowBlue.gif")
+      top 10px left 80px
+      no-repeat
+    `
+        }).then((result) => {
+          if (checkNaoMostrar.checked == true) {
+            // O usuário clicou em "Não me mostre novamente"
+            localStorage.setItem("mostrarInstrucoes", "true");
+          }
+        });
+
+        // Captura o clique no botão customizado e fecha o modal
+        document.getElementById('custom-confirm-button').addEventListener('click', () => {
+          Swal.close();
+          // Coloque aqui o código para continuar após o modal
+        });
+      }
+
+    }
+
+    // Chame a função showFirstModal() para exibir o modal quando necessário
+    showFirstModal();
+  </script>
+
+
+
+  <!--Modal Info-->
+  <!-- Modal -->
+  <div class="modal fade" id="modalInfo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content rounded-top">
+        <div class="modal-body p-0">
+
+
+          <div class="tabs">
+            <div class="tab">
+              <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
+              <label for="tab-1" class="tab-label">O Mapa</label>
+              <div class="tab-content">
+                <p class="text-center">Bem-vindo ao Mapa Interativo da Terra Média! </p>
+                <i>Clique na engrenagem no canto superior esquerdo para aplicar filtros aos locais.</i><br><br>
+                
+                Este projeto é uma iniciativa da Comunidade Tolkieniano Brasil, dedicado a todos os amantes da obra de J.R.R. Tolkien.
+                <br>Esta ferramenta foi concebida para complementar o nosso outro projeto, o Clube Literário Parf Ardhom, criando uma experiência rica para todos os membros participantes.
+
+                Desvende os segredos da Terra Média, trace as trilhas dos heróis e embarque em uma jornada repleta de maravilhas e descobertas.
+                
+                <br><br>
+                Desfrute da exploração, <br>Comunidade Tolkieniano Brasil
+              </div>
+            </div>
+            <div class="tab">
+              <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
+              <label for="tab-2" class="tab-label">A Comunidade</label>
+              <div class="tab-content">
+
+                <div class="row">
+                  <div class="col">
+                      
+                        Somos uma comunidade literária que tem como foco estudar e divulgar a vida e obra do professor J.R.R. Tolkien.
+                      
+                  </div>
+                </div>
+                <div class="row my-1">
+                  <div class="col">
+                    Estamos presentes no Instagram, compartilhando tudo relacionado a Tolkien, em grupos de WhatsApp em que os membros seguidores da página
+                     se reúnem e em nosso Clube Literário para ler e estudar de forma coletiva as obras de Tolkien. 
+                     Além disso, também nos reunimos a cada quinzena para via chamadas no servidor do Discord.
+                  </div>
+                </div>
+                <div class="row mt-3">
+
+                  <div class="col d-flex justify-content-end">
+                    <a target="_blank" href="https://www.instagram.com/tolkienianobrasil/">
+                    <img src="./img/iconInsta.png" class="iconContact">
+                    </a>
+                    <a target="_blank" href="https://l.instagram.com/?u=https%3A%2F%2Fchat.whatsapp.com%2FK6VMio5s9yxIyjQsmOZ6rO&e=AT15d16vXzef7TAijQ5K6LFnIL77OSyzqTdUSUqOf9dFGDWZNJxFrmdvTTnM26pCBgjMu6xzVqfvZQZgj976HL0DiPQox5urFtjCnsm7jlRVKNoa9yWdFJg">
+                    <img src="./img/iconWhats.png" class="iconContact mx-3">
+                    </a>
+                    <a target="_blank" href="https://l.instagram.com/?u=https%3A%2F%2Fdiscord.gg%2F97pa5HgrNb&e=AT1Sm6RVnSZld3LoqbGd7tDuYwfoyttmexjH2bl_mfz1Eki4HQKauKH0Q9nsDwTk6gOJ5sd5qx3oQ49-e39W0LUswTZzzZnDXD0x2ly5FERcAp0gYpoi8SA">
+                      <img src="./img/iconDiscord.png" class="iconContact">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+
+</html>
