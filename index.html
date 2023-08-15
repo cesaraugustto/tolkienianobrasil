@@ -28,8 +28,9 @@
   <link rel="stylesheet" href="./css/style.css" defer>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Poppins&family=Roboto&display=swap" rel="stylesheet">
+
 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.6.0/css/iziModal.min.css">
@@ -70,7 +71,7 @@
         <a class="dropdown-item" href="#">
           <div class="form-check form-switch custom-switch">
             <input class="form-check-input" type="checkbox" role="switch" id="CityFilter" value="City" checked>
-            <label class="form-check-label" for="CityFilter">Cidades</label>
+            <label class="form-check-label lblMenu" for="CityFilter">Cidades</label>
           </div>
         </a>
       </li>
@@ -79,7 +80,7 @@
           <div class="form-check form-switch custom-switch">
             <input class="form-check-input custom-checkbox" type="checkbox" role="switch" id="StructureFilter"
               value="Structure" checked>
-            <label class="form-check-label" for="StructureFilter">Estruturas</label>
+            <label class="form-check-label lblMenu" for="StructureFilter">Estruturas</label>
           </div>
         </a>
       </li>
@@ -87,15 +88,7 @@
         <a class="dropdown-item" href="#">
           <div class="form-check form-switch custom-switch">
             <input class="form-check-input" type="checkbox" role="switch" id="MountainFilter" value="Mountain" checked>
-            <label class="form-check-label" for="MountainFilter">Montanhas e Colinas</label>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a class="dropdown-item" href="#">
-          <div class="form-check form-switch custom-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="RiverFilter" value="River" checked>
-            <label class="form-check-label" for="RiverFilter">Rios e Lagos</label>
+            <label class="form-check-label lblMenu" for="MountainFilter">Montanhas e Colinas</label>
           </div>
         </a>
       </li>
@@ -103,7 +96,7 @@
         <a class="dropdown-item" href="#">
           <div class="form-check form-switch custom-switch">
             <input class="form-check-input" type="checkbox" role="switch" id="RegionFilter" value="Region" checked>
-            <label class="form-check-label" for="RegionFilter">Regiões</label>
+            <label class="form-check-label lblMenu" for="RegionFilter">Regiões</label>
           </div>
         </a>
       </li>
@@ -113,7 +106,7 @@
       <li>
         <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalInfo">
           <i class="bi bi-info-circle" style="color: #FC9B05;"></i>
-          <span class="ps-3" style="color: #FFFFFF;">Informações</span>
+          <span class="ps-3 lblMenu">Informações</span>
         </a>
       </li>
     </ul>
@@ -172,25 +165,19 @@
           title: "<img src='img/logo-withoutbg.png' class='img-fluid px-5'>",
           html: `
             <div class="custom-container">
-            <p class='text-start labelFirstModal'>
-              Bem-vindo ao nosso Mapa Interativo! Este projeto permite que você explore os principais locais da Terra Média.
-              <br>Clique no ícone no canto superior esquerdo para aplicar os filtros.
-            </p>
-            <br>
-
-
-            <div class="text-start">
-              <input class="form-check-input" type="checkbox" value="" id="checkNaoMostrar">
-                <label class="h6 form-check-label" for="checkNaoMostrar"> Não mostrar novamente</label>            
-            </div>
-
-        
-<br>
-<div class="text-end">
-  <button id="custom-confirm-button" class="btn btn-primary">Entendi</button>
-</div>
-                
+              <label class='text-start labelFirstModal'>
+                Bem-vindo ao nosso Mapa Interativo! Este projeto permite que você explore os principais locais da Terra Média.
+                <br><br>Clique no ícone no canto superior esquerdo para aplicar os filtros.
+              </label>
+              <br><br>
+              <div class="text-start">
+                <input class="form-check-input" type="checkbox" value="" id="checkNaoMostrar">
+                  <label class="h6 form-check-label" for="checkNaoMostrar"> Não mostrar novamente</label>            
               </div>
+              <div class="text-end">
+                <button id="custom-confirm-button" class="btn btn-primary">Entendi</button>
+              </div>
+            </div>
 
           `,
           padding: '0',
@@ -229,7 +216,7 @@
   <!--Modal Info-->
   <!-- Modal -->
   <div class="modal fade" id="modalInfo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog">
       <div class="modal-content rounded-top">
         <div class="modal-body p-0">
 
@@ -237,21 +224,53 @@
           <div class="tabs">
             <div class="tab">
               <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
-              <label for="tab-1" class="tab-label">O mapa</label>
+              <label for="tab-1" class="tab-label">O Mapa</label>
               <div class="tab-content">
-                Bem-vindo ao nosso Mapa Interativo! Este projeto permite que você explore os principais locais da Terra
-                Média.
-                Ao utilizar o ícone localizado no canto superior esquerdo, você terá acesso a informações detalhadas e
-                filtros para descobrir os lugares mais relevantes.
+                <p class="text-center">Bem-vindo ao Mapa Interativo da Terra Média! </p>
+                <i>Clique na engrenagem no canto superior esquerdo para aplicar filtros aos locais.</i><br><br>
+                
+                Este projeto é uma iniciativa da Comunidade Tolkieniano Brasil, dedicado a todos os amantes da obra de J.R.R. Tolkien.
+                <br>Esta ferramenta foi concebida para complementar o nosso outro projeto, o Clube Literário Parf Ardhom, criando uma experiência rica para todos os membros participantes.
+
+                Desvende os segredos da Terra Média, trace as trilhas dos heróis e embarque em uma jornada repleta de maravilhas e descobertas.
+                
+                <br><br>
+                Desfrute da exploração, <br>Comunidade Tolkieniano Brasil
               </div>
             </div>
             <div class="tab">
               <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
-              <label for="tab-2" class="tab-label">Comunidade</label>
+              <label for="tab-2" class="tab-label">A Comunidade</label>
               <div class="tab-content">
-                My father now and then sending me small sums of money, I laid them out in learning navigation, and other
-                parts of the mathematics, useful to those who intend to travel, as I always believed it would be, some
-                time or other, my fortune to do.
+
+                <div class="row">
+                  <div class="col">
+                      
+                        Somos uma comunidade literária que tem como foco estudar e divulgar a vida e obra do professor J.R.R. Tolkien.
+                      
+                  </div>
+                </div>
+                <div class="row my-1">
+                  <div class="col">
+                    Estamos presentes no Instagram, compartilhando tudo relacionado a Tolkien, em grupos de WhatsApp em que os membros seguidores da página
+                     se reúnem e em nosso Clube Literário para ler e estudar de forma coletiva as obras de Tolkien. 
+                     Além disso, também nos reunimos a cada quinzena para via chamadas no servidor do Discord.
+                  </div>
+                </div>
+                <div class="row mt-3">
+
+                  <div class="col d-flex justify-content-end">
+                    <a target="_blank" href="https://www.instagram.com/tolkienianobrasil/">
+                    <img src="./img/iconInsta.png" class="iconContact">
+                    </a>
+                    <a target="_blank" href="https://l.instagram.com/?u=https%3A%2F%2Fchat.whatsapp.com%2FK6VMio5s9yxIyjQsmOZ6rO&e=AT15d16vXzef7TAijQ5K6LFnIL77OSyzqTdUSUqOf9dFGDWZNJxFrmdvTTnM26pCBgjMu6xzVqfvZQZgj976HL0DiPQox5urFtjCnsm7jlRVKNoa9yWdFJg">
+                    <img src="./img/iconWhats.png" class="iconContact mx-3">
+                    </a>
+                    <a target="_blank" href="https://l.instagram.com/?u=https%3A%2F%2Fdiscord.gg%2F97pa5HgrNb&e=AT1Sm6RVnSZld3LoqbGd7tDuYwfoyttmexjH2bl_mfz1Eki4HQKauKH0Q9nsDwTk6gOJ5sd5qx3oQ49-e39W0LUswTZzzZnDXD0x2ly5FERcAp0gYpoi8SA">
+                      <img src="./img/iconDiscord.png" class="iconContact">
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

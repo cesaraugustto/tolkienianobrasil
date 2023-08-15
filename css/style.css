@@ -40,10 +40,14 @@ html, body, #map {
 }
 
 
-.custom-container .labelFirstModal{
+.custom-container {
   color: #F8F8FF;
 }
 
+.labelFirstModal{
+  color: #F8F8FF;
+  font-size: 16px;
+}
 .form-check-input:checked{
   background-color: #01111d;
   color: #FC9B05;
@@ -82,7 +86,7 @@ html, body, #map {
 .modal-content {
   border: #FC9B05;
  /* background-color: #031f34;*/
-  background-image: url('../img/Elfos_de_Valinor-transformed.png');
+  background-image: url('../img/background-blue.png');
 }
 
 
@@ -102,9 +106,14 @@ html, body, #map {
 
 
 
+.lblMenu{
+  color: #F3F3F3;
+}
 
-
-
+.iconContact{
+  width: 32px;
+  height: auto;
+}
 
 
 .tabs {
@@ -127,6 +136,7 @@ html, body, #map {
   display: none;
 }
 .tab-label {
+  font-family: 'Bree Serif', cursive;
   position: relative;
   display: block;
   line-height: 2.75em;
@@ -213,7 +223,7 @@ html, body, #map {
 
 
 .dropdown-menu-custom {
-  background-image: url('../img/Elfos_de_Valinor-transformed.png');
+  background-image: url('../img/background-blue.png');
   background-size: cover;
   transition: opacity 0.5s ease; /* Adicionado para animação suave */
   border: 0.3px solid #FC9B05;
@@ -279,7 +289,7 @@ html, body, #map {
 
 /* Exemplo de estilo personalizado para pop-up */
 .custom-popup {
-  background-image: url('../img/Elfos_de_Valinor-transformed.png');
+  background-image: url('../img/background-blue.png');
   border: none;
   color: white;
   border-radius: 5px;

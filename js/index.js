@@ -125,37 +125,7 @@ showModal(content);
       markers.push(marker);
 
       
-    } else if (place.type === 'River') {
-      const latlngs = [];
-
-      for (let i = 0; i < coords.length; i += 2) {
-        const lat = parseFloat(coords[i].trim());
-        const lng = parseFloat(coords[i + 1].trim());
-
-        latlngs.push([lat, lng]);
-      }
-
-      // Criação do polilinha com as coordenadas
-      const polyline = L.polyline(latlngs, { color: 'blue' }).addTo(map);
-      polyline.bindPopup(`
-      <h3>${place.name}</h3>
-      <p>${place.description}</p>
-      `);
-      // Definir o tipo da polilinha
-      polyline.type = place.type;
-
-      // Adição de um pop-up com informações adicionais
-      polyline.bindPopup(`
-        <div class="custom-popup p-0">
-          <h3>${place.name}</h3>
-          <p>${place.description}</p>
-        </div>
-      `);
-      
-
-      // Armazena a polilinha na lista de marcadores
-      markers.push(polyline);
-    }
+    } 
   });
 
   return markers;
@@ -241,16 +211,6 @@ fetchJSON()
     });
     // Tratamento do evento de mudança no filtro
     document.getElementById('MountainFilter').addEventListener('change', function(event) {
-      const checkbox = event.target;
-  
-      if (checkbox.checked) {
-        showMarkers(markers.filter(marker => marker.type === checkbox.value));
-      } else {
-        hideMarkers(markers.filter(marker => marker.type === checkbox.value));
-      }
-    });
-    // Tratamento do evento de mudança no filtro
-    document.getElementById('RiverFilter').addEventListener('change', function(event) {
       const checkbox = event.target;
   
       if (checkbox.checked) {
