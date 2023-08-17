@@ -203,7 +203,9 @@ html, body, #map {
   transition: all 0.35s;
 }
 
-
+.smallText{
+  font-size: 12px;
+}
 
 
 
