@@ -1,73 +1,56 @@
-// Inicializar o mapa
 var imageUrl = './img/map.jpg';
-var imageHeight = 4384; // Altura da imagem em pixels
-var windowHeight = window.innerHeight; // Altura da janela do navegador
+var imageHeight = 4384;
+var windowHeight = window.innerHeight; // Height Window Chrome
 
-// Calcular o zoom mínimo necessário para que a altura da imagem seja igual a 100vh
+// Calculate the minimum zoom required the height of the image is equal to 100vh
 var minZoom = Math.log2(windowHeight / imageHeight);
-// Calcular o fator de escala para ajustar a altura do mapa para 100vh
+// Calculate scale factor to adjust map height to 100vh
 var scale = windowHeight / imageHeight;
-
-// Calcular os limites da imagem
+// Calculate image limit
 var imageBounds = [[0, 0], [imageHeight, 7680]];
 
 
 
-
-var redIcon = L.icon({
-  iconUrl: './img/iconRed.png',
-  iconSize: [26, 26], // tamanho do ícone
-  iconAnchor: [13, 26], // ponto de ancoragem do ícone (relativo ao tamanho)
-  shadowUrl: './img/shadow.png', // caminho para a imagem de sombra personalizada com fundo transparente
-  shadowSize: [36, 36], // tamanho da sombra (largura x altura) para corresponder ao tamanho do ícone
-  shadowAnchor: [13, 26], // ponto de ancoragem da sombra (relativo ao tamanho da sombra)
-});
-
-var blueIcon = L.icon({
-  iconUrl: './img/iconBlue.png',
-  iconSize: [26, 26], // tamanho do ícone
-  iconAnchor: [13, 26], // ponto de ancoragem do ícone (relativo ao tamanho)
-  shadowUrl: './img/shadow.png', // caminho para a imagem de sombra personalizada com fundo transparente
-  shadowSize: [36, 36], // tamanho da sombra (largura x altura) para corresponder ao tamanho do ícone
-  shadowAnchor: [13, 26], // ponto de ancoragem da sombra (relativo ao tamanho da sombra)
-});
-
-var greenIcon = L.icon({
-  iconUrl: './img/iconGreen.png',
-  iconSize: [26, 26], // tamanho do ícone
-  iconAnchor: [13, 26], // ponto de ancoragem do ícone (relativo ao tamanho)
-  shadowUrl: './img/shadow.png', // caminho para a imagem de sombra personalizada com fundo transparente
-  shadowSize: [36, 36], // tamanho da sombra (largura x altura) para corresponder ao tamanho do ícone
-  shadowAnchor: [13, 26], // ponto de ancoragem da sombra (relativo ao tamanho da sombra)
-});
-
-var yellowIcon = L.icon({
-  iconUrl: './img/iconYellow.png',
-  iconSize: [26, 26], // tamanho do ícone
-  iconAnchor: [13, 26], // ponto de ancoragem do ícone (relativo ao tamanho)
-  shadowUrl: './img/shadow.png', // caminho para a imagem de sombra personalizada com fundo transparente
-  shadowSize: [36,36], // tamanho da sombra (largura x altura) para corresponder ao tamanho do ícone
-  shadowAnchor: [13, 26], // ponto de ancoragem da sombra (relativo ao tamanho da sombra)
-});
+function createCustomIcon(iconUrl) {
+  return L.icon({
+    iconUrl: iconUrl,
+    iconSize: [26, 26],
+    iconAnchor: [13, 26],
+    shadowUrl: './img/shadow.png',
+    shadowSize: [36, 36],
+    shadowAnchor: [13, 26],
+  });
+}
+var redIcon = createCustomIcon('./img/iconRed.png');
+var blueIcon = createCustomIcon('./img/iconBlue.png');
+var greenIcon = createCustomIcon('./img/iconGreen.png');
+var yellowIcon = createCustomIcon('./img/iconYellow.png');
 
 
 
-
-// Criar o mapa com os parâmetros definidos
+// Create map
 var map = L.map('map', {
-    crs: L.CRS.Simple,
-    minZoom: minZoom,
-    maxZoom: 2,
-    zoomSnap: 0.5,
-    zoomDelta: 0.5,
-    zoomControl: false,
-    maxBounds: imageBounds, // Impede arrastar além dos limites da imagem
-    maxBoundsViscosity: 1.0 // Mantém o fundo cinza sempre invisível
+  crs: L.CRS.Simple,
+  minZoom: minZoom,
+  maxZoom: 2,
+  zoomSnap: 0.5,
+  zoomDelta: 0.5,
+  zoomControl: false,
+  maxBounds: imageBounds, // Prevents dragging beyond image boundaries
+  maxBoundsViscosity: 1.0 // Keeps the gray background always invisible
 });
 
-// Adicionar a camada de imagem ao mapa
+// Add an image layer to the map
 L.imageOverlay(imageUrl, imageBounds).addTo(map);
 
+
+
+const iconMap = {
+  Structure: redIcon,
+  Mountain: blueIcon,
+  City: greenIcon,
+  Region: yellowIcon
+};
 
 function createMarkers(places) {
   const markers = [];
@@ -75,63 +58,42 @@ function createMarkers(places) {
   places.forEach(place => {
     const coords = place.coords.split(',');
 
-    // Verificar se o lugar é um marcador ou uma polilinha
     if (place.type !== "River") {
       const lat = parseFloat(coords[0].trim());
       const lng = parseFloat(coords[1].trim());
 
-      let marker;
-      // Criação do marcador com as coordenadas e o ícone personalizado com base no type
-      if (place.type === 'Structure') {
-        marker = L.marker([lat, lng], { icon: redIcon});       
-      } else if (place.type === 'Mountain') {
-        marker = L.marker([lat, lng], { icon: blueIcon });
-      } else if (place.type === 'City') {
-        marker = L.marker([lat, lng], { icon: greenIcon });
-      } else if (place.type === 'Region') {
-        marker = L.marker([lat, lng], { icon: yellowIcon });
-      }
-
-      // Definir o tipo do marcador com base no valor do lugar
+      const marker = L.marker([lat, lng], { icon: iconMap[place.type] });
       marker.type = place.type;
 
-      
-    marker.on("click", function() {
-    var pos = map.latLngToLayerPoint(marker.getLatLng());
-    pos.y -= 15;
-    var fx = new L.PosAnimation();
+      marker.on("click", function() {
+        var pos = map.latLngToLayerPoint(marker.getLatLng());
+        pos.y -= 15;
+        var fx = new L.PosAnimation();
 
-    fx.once('end',function() {
-        pos.y += 15;
-        fx.run(marker._icon, pos, 0.8);
-    });
+        fx.once('end',function() {
+            pos.y += 15;
+            fx.run(marker._icon, pos, 0.8);
+        });
 
-    fx.run(marker._icon, pos, 0.3);
-})
-marker.on('click', function() {
-  const content = `
-  <div>
-    <h2>${place.name}</h2>
-    <p>${place.description}</p>
-  </div>
-`;
+        fx.run(marker._icon, pos, 0.3);
+      });
 
-showModal(content);
-
-});
-      
-
-      // Armazena o marcador na lista de marcadores
+      marker.on('click', function() {
+        const content = `
+          <div>
+            <h2>${place.name}</h2>
+            <p>${place.description}</p>
+          </div>
+        `;
+        showModal(content);
+      });
       markers.push(marker);
-
-      
     } 
   });
-
-  return markers;
-  
+return markers;
 }
 
+//I stopped here on the improvements
 function showModal(content) {
   const modalId = 'custom-modal';
 
@@ -149,20 +111,18 @@ function showModal(content) {
     padding: 20,
     closeOnEscape: true,
     closeButton: true,
-    onClosed: function(modal) {
+    onClosed: function (modal) {
       // Remover o modal do HTML ao fechar
       modal.destroy();
       $(`#${modalId}`).remove();
     }
   });
-
   // Aplicar estilos personalizados ao modal
-$(`#${modalId}`).css({
-  color: '#fff',    // Definir a cor do texto como branca
-  'box-shadow': '0 0 2px rgba(255, 155, 5, 0.7)',   // Simular borda de 0.5px com sombra
-  'border-radius': '10px'   // Definir o raio dos cantos arredondados
-});
-
+  $(`#${modalId}`).css({
+    color: '#fff',    // Definir a cor do texto como branca
+    'box-shadow': '0 0 2px rgba(255, 155, 5, 0.7)',   // Simular borda de 0.5px com sombra
+    'border-radius': '10px'   // Definir o raio dos cantos arredondados
+  });
   $(`#${modalId}`).iziModal('open');
 }
 
@@ -189,20 +149,10 @@ fetchJSON()
     const markers = createMarkers(places);
     showMarkers(markers);
 
-      // Tratamento do evento de mudança no filtro
-      document.getElementById('CityFilter').addEventListener('change', function(event) {
-        const checkbox = event.target;
-    
-        if (checkbox.checked) {
-          showMarkers(markers.filter(marker => marker.type === checkbox.value));
-        } else {
-          hideMarkers(markers.filter(marker => marker.type === checkbox.value));
-        }
-      });
     // Tratamento do evento de mudança no filtro
-    document.getElementById('StructureFilter').addEventListener('change', function(event) {
+    document.getElementById('CityFilter').addEventListener('change', function (event) {
       const checkbox = event.target;
-  
+
       if (checkbox.checked) {
         showMarkers(markers.filter(marker => marker.type === checkbox.value));
       } else {
@@ -210,9 +160,9 @@ fetchJSON()
       }
     });
     // Tratamento do evento de mudança no filtro
-    document.getElementById('MountainFilter').addEventListener('change', function(event) {
+    document.getElementById('StructureFilter').addEventListener('change', function (event) {
       const checkbox = event.target;
-  
+
       if (checkbox.checked) {
         showMarkers(markers.filter(marker => marker.type === checkbox.value));
       } else {
@@ -220,9 +170,19 @@ fetchJSON()
       }
     });
     // Tratamento do evento de mudança no filtro
-    document.getElementById('RegionFilter').addEventListener('change', function(event) {
+    document.getElementById('MountainFilter').addEventListener('change', function (event) {
       const checkbox = event.target;
-  
+
+      if (checkbox.checked) {
+        showMarkers(markers.filter(marker => marker.type === checkbox.value));
+      } else {
+        hideMarkers(markers.filter(marker => marker.type === checkbox.value));
+      }
+    });
+    // Tratamento do evento de mudança no filtro
+    document.getElementById('RegionFilter').addEventListener('change', function (event) {
+      const checkbox = event.target;
+
       if (checkbox.checked) {
         showMarkers(markers.filter(marker => marker.type === checkbox.value));
       } else {
