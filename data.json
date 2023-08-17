@@ -1,0 +1,566 @@
+{
+    "places": [
+        {
+            "id": 1,
+            "name": "Caras Galadhon",
+            "type": "City",
+            "description": "A majestosa cidade élfica localizada em Lothlórien, conhecida por sua bela arquitetura e atmosfera encantadora.",
+            "coords": "2750,4200",
+            "image": ""
+        },
+        {
+            "id": 2,
+            "name": "Minas Tirith",
+            "type": "City",
+            "description": "É a grande capital de Gondor na Terra-média, caracterizada por suas imponentes paredes brancas e a Cidadela no topo da cidade.",
+            "coords": "1700,4700",
+            "image": ""
+        },
+        {
+            "id": 3,
+            "name": "Barad-dûr",
+            "type": "Structure",
+            "description": "Barad-dûr é a imponente fortaleza e a Torre Negra em Mordor, servindo como reduto do Lorde das Trevas Sauron na Terra-média.",
+            "coords": "1900,5600",
+            "image": ""
+        },
+        {
+            "id": 4,
+            "name": "Portos Cinzentos",
+            "type": "Structure",
+            "description": "Os Portos Cinzentos são um refúgio para os Elfos na Terra-média, servindo como ponto de partida para aqueles que buscam passagem para as Terras Imortais.",
+            "coords": "3200,2300",
+            "image": ""
+        },
+        {
+            "id": 5,
+            "name": "Salões de Thranduil",
+            "type": "City",
+            "description": "O Reino da Floresta foi o lar dos Elfos da Floresta das Trevas durante a maior parte da Terceira Era e na Quarta Era.",
+            "coords": "3200,5000",
+            "image": ""
+        },
+        {
+            "id": 6,
+            "name": "Forlond",
+            "type": "City",
+            "description": "É um dos refúgios para os Elfos na Terra-média, conhecido por sua localização costeira e como ponto de partida para as Terras Imortais.",
+            "coords": "3050,2030",
+            "image": ""
+        },
+        {
+            "id": 7,
+            "name": "Emyn Muil",
+            "type": "Mountain",
+            "description": "Uma fortaleza em Rohan, conhecida pela Batalha de Helms Deep contra as forças de Saruman.",
+            "coords": "2350,4700",
+            "image": ""
+        },
+        {
+            "id": 8,
+            "name": "Erebor",
+            "type": "Mountain",
+            "description": "Erebor, a Montanha Solitária. Montanha dos anões, lar do dragão Smaug, recuperada por Thorin e Bilbo em 'O Hobbit'.",
+            "coords": "3400,5150",
+            "image": ""
+        },
+        {
+            "id": 9,
+            "name": "Esgaroth",
+            "type": "City",
+            "description": "Também conhecida como Cidade do Lago, é uma comunidade humana localizada próxima ao Lago Longo, próxima à Montanha Solitária. É famosa por seu comércio e por ser uma parada para viajantes e aventureiros.",
+            "coords": "3230,5130",
+            "image": ""
+        },
+        {
+            "id": 10,
+            "name": "Ered Mithrim",
+            "type": "Mountain",
+            "description": "Ered Mithrim, também conhecidas como Montanhas Cinzentas, são uma cadeia de montanhas localizada na Terra-média. Elas são conhecidas por sua beleza majestosa e pelos segredos antigos que guardam.",
+            "coords": "3800,4200",
+            "image": ""
+        },
+        {
+            "id": 11,
+            "name": "Monte Gundabad",
+            "type": "Mountain",
+            "description": "Uma imponente montanha localizada nas Montanhas Sombrias da Terra-média. É famosamente conhecida como a antiga fortaleza dos Orcs e servia como sua morada e fortaleza principal. A montanha possui uma presença sombria e ameaçadora, representando uma constante ameaça para as terras e civilizações vizinhas.",
+            "coords": "3900,3900",
+            "image": ""
+        },
+        {
+            "id": 12,
+            "name": "Ered Luin",
+            "type": "Mountain",
+            "description": "As Montanhas Azuis, também conhecidas como Ered Luin, eram a cordilheira no extremo oeste de Eriador.",
+            "coords": "3500,2200",
+            "image": ""
+        },
+        {
+            "id": 13,
+            "name": "Tower Hills",
+            "type": "Mountain",
+            "description": "Um conjunto de montanhas caracterizadas por suas colinas suaves e gramados verdejantes, onde estão situadas as torres dos Elfos. As Colinas das Torres servem como um ponto de observação e vigia dos Portos Cinzentos, oferecendo uma vista panorâmica do mar e das terras além.",
+            "coords": "3200,2400",
+            "image": ""
+        },
+        {
+            "id": 14,
+            "name": "Emyn Arnen",
+            "type": "Mountain",
+            "description": "Uma cadeia de colinas em Gondor, conhecida por sua beleza natural e cidade residencial de verão dos reis. Rodeada por florestas exuberantes, oferece vistas deslumbrantes e tem valor histórico em Gondor.",
+            "coords": "1550,4700",
+            "image": ""
+        },
+        {
+            "id": 15,
+            "name": "Ephel Duath",
+            "type": "Mountain",
+            "description": "Uma cadeia de montanhas assustadoras que separava Mordor de Gondor, local de passagens perigosas e guardada por Orques.",
+            "coords": "1350,5100",
+            "image": ""
+        },
+        {
+            "id": 16,
+            "name": "Orodruin",
+            "type": "Structure",
+            "description": "Um vulcão na Terra-média, também conhecido como Montanha da Perdição, onde o Um Anel foi forjado e destruído. Era reflexo do poderío de Sauron.",
+            "coords": "1850,5400",
+            "image": ""
+        },
+        {
+            "id": 17,
+            "name": "Colinas de Ferro",
+            "type": "Mountain",
+            "description": "Montanhas localizadas a leste da Montanha Solitária, conhecidas por suas ricas jazidas de minério de ferro e por serem habitadas pelos Anões.",
+            "coords": "3650,6100",
+            "image": ""
+        },
+        {
+            "id": 18,
+            "name": "Lond Daer",
+            "type": "City",
+            "description": "Uma cidade portuária localizada na costa ocidental da Terra-média, conhecida por seu comércio marítimo e importância estratégica como ponto de conexão entre as terras do norte e do sul.",
+            "coords": "2300,3000",
+            "image": ""
+        },
+        {
+            "id": 19,
+            "name": "Tharbad",
+            "type": "City",
+            "description": "Uma antiga cidade localizada nas margens do rio Gwathló, conhecida por sua importância como um cruzamento comercial e ponto de travessia de rios. No entanto, a cidade foi abandonada e tornou-se uma ruína desolada ao longo dos tempos.",
+            "coords": "2800,3350",
+            "image": ""
+        },
+        {
+            "id": 20,
+            "name": "Isengard",
+            "type": "Structure",
+            "description": " Uma fortaleza poderosa e assustadora, conhecida como a Torre de Orthanc. Caiu sob o controle de Saruman, que a corrompeu com sua busca pelo poder. Isengard tornou-se um símbolo de tirania e destruição, abrigando um exército de Uruk-hai e servindo como base para os planos malignos de Saruman durante a Guerra do Anel.",
+            "coords": "2350,3700",
+            "image": ""
+        },
+        {
+            "id": 21,
+            "name": "Dol Amroth",
+            "type": "City",
+            "description": "Cidade costeira majestosa em Gondor, conhecida por sua beleza e esplendor. Lar da Casa de Dol Amroth, famosa por seus cavaleiros valentes e descendência élfica.",
+            "coords": "1500,3650",
+            "image": ""
+        },
+        {
+            "id": 22,
+            "name": "Edhellond",
+            "type": "Structure",
+            "description": "Um antigo porto élfico localizado nas costas de Gondor, famoso por sua beleza e conexão com os Elfos.",
+            "coords": "1580,3770",
+            "image": ""
+        },
+        {
+            "id": 23,
+            "name": "Rio Anduin",
+            "type": "River",
+            "description": "O Rio Anduin, imponente e sinuoso, é um importante curso d'água na Terra Média, famoso por fluir através de paisagens majestosas e desempenhar um papel vital nas aventuras e conflitos.",
+            "coords": "3670,4190,3650,4190,3635,4200,3615,4195,3608,4230,3590,4230,3590,4250,3530,4253,3510,4300,3490,4300,3390,4320,3360,4345,3340,4340,3280,4353,3230,4410,3200,4416,3180,4400,3155,4395,3140,4422,3115,4440,2960,4415,2950,4405,2925,4395,2910,4407,2830,4375,2790,4305,2760,4290,2700,4320,2670,4370,2640,4360,2630,4480,2550,4450,2560,4550,2500,4570,2440,4540,2420,4580,2360,4560,2280,4510,2200,4500,2160,4520,2140,4505,2100,4530,2070,4605,2070,4620,2040,4620,1950,4680,1930,4715,1730,4830,1680,4815,1600,4620,1540,4630,1520,4660,1420,4620,1370,4530,1330,4400,1280,4250",
+            "image": ""
+        },
+        {
+            "id": 24,
+            "name": "Rio Morthond",
+            "type": "River",
+            "description": "Era um rio longo e de águas geladas que corria aos pés das Montanhas Brancas. O rio surgia da entrada sul das Sendas dos Mortos e descia em uma série de quedas d'água até o Vale de Morthond. Uma estrada seguia ao lado do rio ao passar pelo vale.",
+            "coords": "1577,3765,1610,3800,1630,3780,1645,3783,1655,3770,1685,3765,1700,3750,1765,3800,1780,3840,1790,3825,1802,3839,1825,3835,1865,3859",
+            "image": ""
+        },
+        {
+            "id": 25,
+            "name": "Rio Poros",
+            "type": "River",
+            "description": "Um rio que nascia em Ephel Dúath nas fronteiras de Mordor e corria para o oeste para encontrar o Anduin . Este era o mais ao sul dos muitos afluentes do Anduin. Poros marcava a fronteira de Gondor com a antiga terra de South Gondor.",
+            "coords": "1330,4430,1300,4560,1255,4565,1263,4610,1230,4640,1232,4670,1230,4695,1245,4690,1270,4755,1260,4800,1290,4825,1310,4895,1330,4897,1325,4935,1350,4940,1340,4970,1350,5030",
+            "image": ""
+        },
+        {
+            "id": 26,
+            "name": "Rio Bruinen",
+            "type": "River",
+            "description": "Bruinen ou Loudwater era um rio no leste de Eriador . Começou com dois afluentes que fluíam das encostas ocidentais das Montanhas Nebulosas , um dos quais vinha da Passagem Alta onde existia a Cidade dos Goblins . O Bruinen terminou quando se juntou ao rio Mitheithel.",
+            "coords": "3320,3900,3300,3870,3280,3870,3265,3850,3225,3840,3200,3840,3180,3820,3140,3830,3110,3830,3100,3810,3080,3805,3065,3775,3050,3775,3040,3745,3010,3730,2980,3600",
+            "image": ""
+        },
+        {
+            "id": 26,
+            "name": "Rio Hoarwell",
+            "type": "River",
+            "description": "",
+            "coords": "3510,3875,3450,3750,3390,3730,3380,3690,3330,3705,3290,3700,3260,3690,3170,3670,3165,3640,3150,3640,3140,3610,3050,3620,3045,3605,3020,3615,3005,3600,2980,3600,2950,3565,2945,3540,2900,3500,2895,3460,2860,3400,2830,3405,2800,3360",
+            "image": ""
+        },
+        {
+            "id": 27,
+            "name": "Bree",
+            "type": "City",
+            "description": "Bree era uma vila a leste do Condado. Era habitada por Homens e Hobbits.",
+            "coords": "3280,3250",
+            "image": ""
+        },
+        {
+            "id": 27,
+            "name": "Dol Guldur",
+            "type": "Structure",
+            "description": "Dol Guldur era uma fortaleza de Sauron no sul da Floresta das Trevas. Originalmente o local se chamava Amon Lanc, capital dos elfos de Oropher, avô de Legolas.",
+            "coords": "2800,4680",
+            "image": ""
+        },
+        {
+            "id": 27,
+            "name": "Osgiliath",
+            "type": "City",
+            "description": "Era a antiga capítal de Gondor, foi abandonada devido a ascenção do poderio de Sauron no leste.",
+            "coords": "1830,4850",
+            "image": ""
+        },
+        {
+            "id": 28,
+            "name": "Valfenda",
+            "type": "Structure",
+            "description": "Uma fortaleza dos Elfos liderada por Elrond, filho de Earendill, o grande herói de Elfos e Homens.",
+            "coords": "3285,3920",
+            "image": ""
+        },
+        {
+            "id": 29,
+            "name": "Rio Lune",
+            "type": "River",
+            "description": "O nome dado pelos homens e hobbits ao rio que os elfos chamavam de Lhûn. Os Portos Cinzentos ficavam em sua foz.",
+            "coords": "3200,2300,3230,2330,3295,2365,3300,2399,3335,2398,3350,2414,3375,2400,3400,2405,3432,2450,3500,2450,3533,2479,3560,2490,3580,2475,3620,2480,3650,2450,3680,2470,3710,2460,3730,2425",
+            "image": ""
+        },
+        {
+            "id": 30,
+            "name": "Rio Isen",
+            "type": "River",
+            "description": "O rio que nascia no sopé sul das Montanhas Sombrias , e corria para o oeste por cerca de trezentas milhas para alcançar o Grande Mar nas regiões ao sul de Enedwaith.",
+            "coords": "2060,3100,2083,3175,2115,3200,2068,3280,2095,3320,2068,3380,2100,3415,2140,3425,2145,3475,2165,3510,2170,3590,2190,3620,2225,3640,2240,3700,2268,3712,2275,3700,2300,3725",
+            "image": ""
+        },
+        {
+            "id": 31,
+            "name": "Rio Brandywine",
+            "type": "River",
+            "description": "O nome dado pelos Hobbits ao rio que os Elfos chamavam de Baranduin. Em parte de seu comprimento, formava a fronteira oriental do Condado.",
+            "coords": "3500,2850,3480,2900,3500,2937,3490,2952,3510,2970,3455,3015,3330,2965,3160,3000,3130,2980,3100,3000,3085,2980,3000,3070,2965,3065,2905,3010,2880,3010,2832,2935,2770,2985,2710,2905,2630,2915,2600,2890,2610,2835,2630,2810,2668,2780,2580,2740",
+            "image": ""
+        },
+        {
+            "id": 32,
+            "name": "Rio Celduin",
+            "type": "River",
+            "description": "O nome élfico para o rio conhecido pelos homens como o Rio Corrente. Nasceu nos portões de Erebor e fluiu por longos quilômetros para o sul e para o leste até sua saída para o Mar de Rhûn.",
+            "coords": "3230,5120,3150,5180,3100,5185,3080,5215,2980,5175,2955,5250,2970,5290,2940,5340,2940,5420,2975,5410,2970,5460,2985,5480,2940,5520,2960,5550,2970,5570,2990,5620,2966,5660,2935,5700,2900,5710,2850,5690,2810,5736,2890,5930,2850,5930,2865,5990,2800,6050",
+            "image": ""
+        },
+        {
+            "id": 32,
+            "name": "Rio Celebrant",
+            "type": "River",
+            "description": "Um rio que surgiu nos pés das montanhas e fluiu para o leste através de Lórien para encontrar o rio Anduin .",
+            "coords": "2840,4046,2745,4120,2715,4310",
+            "image": ""
+        },
+        {
+            "id": 33,
+            "name": "Rio Sirith",
+            "type": "River",
+            "description": "Um rio desaguava no Sirion, quando o grande rio se aproximava de sua foz. A cidade portuária de Pelargir fica na saída do rio Sirith.",
+            "coords": "1686,4506,1630,4470,1580,4450,1550,4470,1510,4440,1490,4453,1460,4445,1440,4480,1400,4474,1400,4490,1360,4490",
+            "image": ""
+        },
+        {
+            "id": 34,
+            "name": "Rio Carnen",
+            "type": "River",
+            "description": "Um rio que nascia nas Colinas de Ferro. Desagua no Rio Corrente, que o leva até o Mar de Rhûn.",
+            "coords": "3470,6130,3380,6110,3370,6080,3330,6075,3327,5985,3310,5970,3313,5950,3300,5950,3280,5930,3295,5900,3260,5870,3190,5785,3140,5795,3090,5740,3040,5760,3030,5740,2930,5703",
+            "image": ""
+        },
+        {
+            "id": 35,
+            "name": "Rio Adorn",
+            "type": "River",
+            "description": "Nascia nos pés das Montanhas Brancas e desaguava no Isen. Definia a fronteira ocidental do país de Rohan.",
+            "coords": "2000,3680,1996,3630,1986,3628,1999,3602,1999,3570,2025,3565,2015,3547,2036,3550,2055,3450,2090,3403",
+            "image": ""
+        },
+        {
+            "id": 36,
+            "name": "Rio Gwathló",
+            "type": "River",
+            "description": "De Tharbad até o grande mar, em Lord Daer.",
+            "coords": "2800,3350,2750,3360,2695,3310,2600,3335,2580,3270,2520,3285,2505,3240,2460,3200,2470,3150,2430,3130,2430,3090,2280,2990",
+            "image": ""
+        },
+        {
+            "id": 37,
+            "name": "Rio Celos",
+            "type": "River",
+            "description": "Um rio ou córrego que era afluente do rio Sirith.",
+            "coords": "1680,4430,1630,4470",
+            "image": ""
+        },
+        {
+            "id": 38,
+            "name": "Rio Ringló",
+            "type": "River",
+            "description": "Nasceu nas Montanhas Brancas acima de Lamedon e fluiu para o sudoeste por cerca de 200 milhas antes de encontrar o mar.",
+            "coords": "1580,3770,1626,3823,1612,3875,1640,3879,1630,3920,1651,3950,1631,3970,1636,3980,1620,3993,1640,4020,1635,4050,1650,4066,1640,4095,1666,4101,1659,4140,1700,4180,1710,4260",
+            "image": ""
+        },
+        {
+            "id": 39,
+            "name": "Rio Entágua",
+            "type": "River",
+            "description": "nascia na Floresta Fangorn, corria através de Rohan até encontrar o Grande Rio Anduin.",
+            "coords": "2335,4080,2293,4100,2280,4210,2250,4170,2220,4180,2210,4140,2105,4125,2090,4110,2060,4140,2080,4210,2100,4220,2070,4260,2020,4230,2038,4290,2022,4315,2068,4381,2070,4440,2025,4496,2025,4515,2000,4540,1985,4580,2010,4600,1960,4672",
+            "image": ""
+        },
+        {
+            "id": 40,
+            "name": "Rio Erui",
+            "type": "River",
+            "description": "Próximo a capital Minas Tirith e desaguava no Anduin.",
+            "coords": "1700,4570,1670,4570,1660,4590,1605,4560,1595,4580,1570,4565,1560,4580,1545,4580,1550,4630",
+            "image": ""
+        },
+        {
+            "id": 41,
+            "name": "Forodwaith",
+            "type": "Region",
+            "description": "Forodwaith é uma região gélida, localizada ao norte da Terra-média. Ela é caracterizada por vas-tas tundras, montanhas cobertas de neve e um clima extremamente rigoroso. Poucos povos habitam essa região hostil, tornando-a um território praticamente inexplorado e perigoso para os viajantes",
+            "coords": "4200,3250",
+            "image": ""
+        },
+        {
+            "id": 42,
+            "name": "Forochel",
+            "type": "Region",
+            "description": "Forochel é uma região gelada e costeira banhada pelo Mar de Belegaer. Habitada principalmente pelos Lossoth, os Homens das Neves descedentes das tribos de Forodwaith. Foi para Forochel ue o Rei Arvedui de Athedain fugiu depois que o Rei-bruxo de Angmar conseguiu vencer a guerra contra Arnor.",
+            "coords": "4030,2470",
+            "image": ""
+        },
+        {
+            "id": 43,
+            "name": "Angmar",
+            "type": "Region",
+            "description": "Angmar é uma região sinistra e sombria, situada ao norte das Montanhas Nevoentas. É conhecida como o Reino do Terror. É governada pelo Rei Bruxo de Angmar, o líder dos Nazgûl e um dos servos mais poderosos de Sauron. A região é caracterizada por paisagens desoladas, fortalezas macabras e criaturas malignas. Angmar repre-sentou um perigo constante para os reinos vizinhos, especialmente Arnor, sendo um reduto das forças do mal na luta contra a liberdade e a paz na Terra-média.",
+            "coords": "3900,3500",
+            "image": ""
+        },
+        {
+            "id": 44,
+            "name": "Carn Dûm",
+            "type": "City",
+            "description": "Carn Dûm é uma fortaleza sombria e a capital de Angmar, governada pelo Rei Bruxo. Carn Dûm é conhecida por sua arquitetura intimidante e sua atmosfera macabra. É um bastião das forças do mal e um centro estra-tégico para os planos de Sauron. Sua presença imponente simboliza o poder e a ameaça que Angmar no Norte da Terra-média.",
+            "coords": "4050,3300",
+            "image": ""
+        },
+        {
+            "id": 45,
+            "name": "Urzal Seco",
+            "type": "Mountain",
+            "description": "O Urzal Seco, também conhecida por a região dos dragões, é um longo vale que se estende de oeste a leste entre dois braços na extremidade leste das Montanhas Cinzentas, Na parte oriental de sua extensão, as Montanhas Cinzentas se bifurcavam em duas cordilheiras estreitas, com um vale estreito entre elas. No fundo deste longo vale leste-oeste entre as montanhas havia uma charneca, mas uma charneca queimada e enegrecida por seus habi-tantes. Esta charneca era famosa e temida no norte da Terra-média como o local de procriação dos dragões.",
+            "coords": "3800,4600",
+            "image": ""
+        },
+        {
+            "id": 46,
+            "name": "Forlindon",
+            "type": "Region",
+            "description": "Forlindon ficava na parte norte de Lindon , ao norte do Golfo de Lune e a oeste das Montanhas Azuis. A terra era atravessada por um rio que terminava na costa norte do Golfo; o refúgio de Forlond foi construído ali, em suas bocas. Na costa noroeste ficava a ilha de Himring , onde outrora ficava a fortaleza de Maedhros. O rei Gil-galad viveu em Forlindon, na Segunda Era.",
+            "coords": "3400,1900",
+            "image": ""
+        },
+        {
+            "id": 47,
+            "name": "Harlindon",
+            "type": "Region",
+            "description": "Harlindon era uma terra élfica verde e bela, localizado a oeste das Montanhas Azuis e ao sul do Golfo de Lune , que dividia Lindon no norte de Forlindon e no sul de Harlindon. Na cabeceira do Golfo ficava o porto de Portos Cinzentos. No início da Segunda Era , refugiados da Guerra da Ira chegaram a Lindon, com os Sin-dar sendo a maioria dos que se concentraram em Harlindon, junto com Celeborn e Galadriel . Celeborn governou os Elfos de Harlindon , até que o casal se mudou para Eregion no ano 750 ",
+            "coords": "2800,2200",
+            "image": ""
+        },
+        {
+            "id": 48,
+            "name": "Rhûn",
+            "type": "Region",
+            "description": "Rhûn , também conhecido como Oriente , refere-se às terras pouco conhecidas no leste da Terra-média. Lá viviam os Easterlings, ou, os Orientais, que eram os Homens que estavam sob o domínio de Sauron. Eram fortes aliados do senhor do escuro, possuiam enormes exércitos comos os Carroceiros e os Balchoth, que eram bem equipados e organizados para as guerras travadas contra o ocidente. Alguns pontos interessante que em Rhûn reinou i vice-líder dos Nazgûl, Khâmul, a Sombra do Leste, e também para lá foram enviados os Magos Azuis.",
+            "coords": "2900,6500",
+            "image": ""
+        },
+        {
+            "id": 49,
+            "name": "Mar de Rhûn",
+            "type": "Region",
+            "description": "era um grande lago ou mar no norte da Terra-média que ficava a leste de Rhovanion nas frontei-ras ocidentais de Rhûn, e o Rio Celduin fazia ligação com esse mar.Uma floresta ficava na costa nordeste do mar, e perto da costa sudoeste havia muitas colinas. A parte sudeste do mar parece ser ocupada por uma pequena ilha arbori-zada.",
+            "coords": "2660,6200",
+            "image": ""
+        },
+        {
+            "id": 50,
+            "name": "Montanhas do Leste",
+            "type": "Mountain",
+            "description": "As Montanhas do Leste são pouco mencionadas nas obras de Tolkien, mas é provável que quatro dos setes clãs do Anãos despertaram nessas regiões do leste, como também no Orocarni,",
+            "coords": "1700,7100",
+            "image": ""
+        },
+        {
+            "id": 51,
+            "name": "Mar de Núrn",
+            "type": "Region",
+            "description": "O Mar de Núrn, ou, Lago de Nûrn era u mar interior que ficava dentro das expansões de Mordor",
+            "coords": "1450,5800",
+            "image": ""
+        },
+        {
+            "id": 52,
+            "name": "Khând",
+            "type": "Region",
+            "description": "Khand era uma região que ficava a Sul de Mordor, e lá viviam os Variags, que exércitos de Ho-mens aliados de Sauron. Houve épocas que esse exército se aliou com os Easterlings de Rhûn e com os exércitos de Harad, como no ano 1944 da Terceira era em que atacaram Gondor",
+            "coords": "1000,6600",
+            "image": ""
+        },
+        {
+            "id": 53,
+            "name": "Haradwaith",
+            "type": "Region",
+            "description": "Harad era uma região que ficava no sul da Terra-média e lá viviam os Hoemens que também esta-vam sob o domínio e eram aliados de Sauron, e por diversas vezes travaram guerras com os povos ocidentais. Seus temíveis exércitos era compostos pelos os Mûmakil, que eram enormes feras semelhantes a elefantes quem erm usadas nas batalhas. Um ponto interessante é que os Magos Azuis também foram enviados para essa região",
+            "coords": "500,5200",
+            "image": ""
+        },
+        {
+            "id": 54,
+            "name": "Umbar",
+            "type": "Region",
+            "description": "Umbar ficava localizado a Sul de Belfalas e do rio Anduin. O povo de Umbar eram os mais pró-ximos dos povos de Gondor, dentro dos limites da região de Harad, pois desde a queda de Númenor vários refugiados foram para lá, como os Numenoreanos Negros, os Homens do Rei. Lá viviam os Corsários, outros povos que estvam sob o domínio e poder de Sauron",
+            "coords": "300,4300",
+            "image": ""
+        },
+        {
+            "id": 55,
+            "name": "Harondor",
+            "type": "Region",
+            "description": "Harondor era uma província que se localizava a sudoeste de Mordor, noroeste de Harad e a Sul de Ithilien. Também era conhecida como Gondor do Sul porque pertencia ao reino de Gondor. A população era pequena se comparada a outras províncias como Belfalas, Lebennin e Anórien. A População era composta por camponeses e possi-velmente pequenos grupos de defesas prestavam serviço fossem para os reis ou regentes. Harondor sempre foi palco de diversas disputas pelo controle da região. Sua posição geográfica estratégica para os avanços e a vigilância de Gondor no Sul, e para os povos de Harad e Khand quando tinham o controle da região.",
+            "coords": "1100,4500",
+            "image": ""
+        },
+        {
+            "id": 56,
+            "name": "Dagorlad",
+            "type": "Region",
+            "description": "Dagorlad era a planície poeirenta que ficava a noroeste de Mordor. Este foi o local de várias batalhas importantes na história de Gondor, mais notavelmente a derrota das forças de Sauron na famosa Batalha de Dagorlad em 3434 da Segunda Era",
+            "coords":  "2200,5100",
+            "image":  ""
+        }
+        ,
+        {
+            "id": 57,
+            "name": "Morannon, Portões Negros",
+            "type": "Structure",
+            "description": " Construído por Sauron, os portões Negros era a principal entrada para Mordor, eram duas grandes portas de ferro sob um arco franzido, em uma muralha de pedra com uma ameia que se estendia entre os altos penhascos de cada lado da boca da passagem. Esses imponentes portões faziam ligação com as montanhas que protegiam Mordor, Ephel Dúath e Ered Lithui.",
+            "coords": "2130,5150",
+            "image": ""
+        },
+        {
+            "id": 58,
+            "name": "Udûn",
+            "type": "Region",
+            "description": "Udûn era o vale profundo no noroeste de Mordor, formado no encontro das Ered Lithui e das Ephel Dúath. Sua entrada norte era guardada pelo Morannon e sua entrada sul era guardada pelo Carach Angren.",
+            "coords": "2050,5200",
+            "image": ""
+        },
+        {
+            "id": 59 ,
+            "name": "Carach Angren",
+            "type": "Structure",
+            "description": "Era mais uma passagem que fazia ligação do Vale de Udûn às planícies de Gorgoroth. Era extremamente fortificada, com contrafortes rochosos que a dominavam carregavam fortes e torres, uma parede de terra havia sido construída e uma grande vala havia sido cavada na abertura, atravessada por uma única ponte. ", 
+            "coords": "2000,5250",
+            "image": ""
+        },        
+        {
+            "id": 60,
+            "name": "Morgai",
+            "type": "Mountain",
+            "description": "O Morgai era uma cordilheira montanhosa nas Ephel Dúath (Montanhas da Sombra) que formava uma parede defensiva interna em Mordor . Entre ela e o Ephel Dúath havia uma estrada que corria entre Durthang e a passagem de Morgul.",
+            "coords": "2000,5100",
+            "image": ""
+        },
+        {
+            "id": 61,
+            "name": "Cirith Ungol",
+            "type": "Structure",
+            "description": "A Torre de Cirith Ungol era uma passagem através do Ephel Dúath que levava a Mordor. A passagem estava localizada em uma fenda na encosta da montanha no lado esquerdo do Vale Morgul acima da Passagem Morgul.",
+            "coords": "1850,5100",
+            "image":"" 
+        },
+        {
+            "id": 62,
+            "name": "Minas Morgul",
+            "type": "City",
+            "description": "Minas Morgul, também conhecida como Minas Ithil, era a cidade gêmea de Minas Tirith até ser conquistada pelas forças de Sauron e do Rei-bruxo na Terceira Era. Antes da sua queda, Minas Ithil era uma cidade linda, mas quando caiu nas mãos do mal, sua beleza foi transformada em terror.",
+            "coords": "1850,5000",
+            "image":"" 
+        },
+        {
+            "id": 63,
+            "name": "Nurn",
+            "type": "Region",
+            "description": "Nurn ficava no lado sul de Mordor e, diferente do Vale Gorgoroth, era muito mais fértil e ainda ficava ao lado do grande Lago Núrnen no centro da região. Na época da Guerra do Anel, os escravos nessa região trabalhavam no Lago Núrnen para alimentar os exércitos de Sauron.",
+            "coords": "1400,5500",
+            "image": ""
+        },
+        {
+            "id": 64,
+            "name": "Montanhas da Sombra",
+            "type": "Mountain",
+            "description": "As Montanhas da Sombra eram o lado sul da Ephel Dúath, fechando e protegendo a região de Mordor, tornando-a quase impossível de adentrar com um exército no lado ocidental. A entrada mais fácil era no lado noroeste através do Morannon.",
+            "coords": "1150,5800",
+            "image": ""
+        },
+        {
+            "id": 65,
+            "name": "Lithlad",
+            "type": "Region",
+            "description": "Lithlad era uma planície em Mordor. A cordilheira de Ephel Duath e a cordilheira de Ered Lithui formavam uma grande muralha ao redor das tristes planícies de Lithlad e Gorgoroth, com o mar interior de Nurnen no meio.",
+            "coords": "1600,6100",
+            "image": ""
+        },
+        {
+            "id": 66,
+            "name": "Ered Lithui",
+            "type": "Mountain",
+            "description": "As Ered Lithui, ou as Montanhas Ash, eram uma cordilheira norte de Mordor que a separava de Rhovanion. As Ered Lithui eram acidentadas e proibitivas, descritas como sendo compostas de \"picos quebrados e cumes estéreis\". Suas rochas eram de cor cinza como cinzas.",
+            "coords": "2000,5800",
+            "image": ""
+        }
+        
+    ]
+}
