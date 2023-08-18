@@ -560,7 +560,201 @@
             "description": "As Ered Lithui, ou as Montanhas Ash, eram uma cordilheira norte de Mordor que a separava de Rhovanion. As Ered Lithui eram acidentadas e proibitivas, descritas como sendo compostas de \"picos quebrados e cumes estéreis\". Suas rochas eram de cor cinza como cinzas.",
             "coords": "2000,5800",
             "image": ""
+        },
+        {
+            "id": 67,
+            "name": "Condado",
+            "type": "City",
+            "description": "O Condado, o lar dos hobbits. Fica localizado a leste das Montanhas Sombrias e é dividido em quatro partes: o Oeste, o Sul, o Leste e o Norte.",
+            "coords": "3130,2900",
+            "image": ""
+        },
+        {
+            "id": 68,
+            "name": "Fornost",
+            "type": "City",
+            "description": "Fornost é uma cidade antiga e em ruínas na Terra-média, foi uma vez a capital do reino de Arnor. Acabou sendo abandonada e caiu em ruínas, tornando-se popularmente conhecido como Dique dos Homens Mortos.",
+            "coords": "3500,3100",
+            "image": ""
+        },
+        {
+            "id": 69,
+            "name": "Colinas de Evendin",
+            "type": "Mountain",
+            "description": "As Colinas de Evendim ficam a noroeste do Condado, cerca de 160 quilômetros  são uma área montanhosa e coberta de colinas. Evendim é conhecida por abrigar o Lago Nenuial, também conhecido como Lago Evendim.",
+            "coords": "3700,2800",
+            "image": ""
+        },
+        {
+            "id": 70,
+            "name": "Ettenmoors",
+            "type": "Region",
+            "description": "As Colinas de Evendim ficam a noroeste do Condado, cerca de 160 quilômetros  são uma área montanhosa e coberta de colinas. Evendim é conhecida por abrigar o Lago Nenuial, também conhecido como Lago Evendim.",
+            "coords": "3550,3600",
+            "image": ""
+        },
+        {
+            "id": 71,
+            "name": "Floresta Velha",
+            "type": "Region",
+            "description": "A antiga Floresta Velha, ao norte e leste do Condado na Terra-média, é densa e repleta de árvores antigas. Notória por sua atmosfera assustadora e perigos, foi lar do enigmático Tom Bombadil.",
+            "coords": "3170,3100",
+            "image": ""
+        },
+        {
+            "id": 72,
+            "name": "Eregion",
+            "type": "Region",
+            "description": "Eregion a oeste de Khazad-dûm, Moria. Durante a Segunda Era, Eregion foi habitada pelos Elfos e foi um reino próspero e habilidoso em trabalhos com metais e joalheria. No entanto, Eregion foi devastada quando Sauron forjou o Um Anel e iniciou sua guerra contra os Elfos e Anãos. Eventualmente, Eregion foi abandonada e se tornou uma terra desolada. Durante a Terceira Era, a região é tido como um lugar de ruínas antigas e memórias do passado glorioso dos Elfos.",
+            "coords": "2900,3800",
+            "image": ""
+        },
+        {
+            "id": 73,
+            "name": "Moria",
+            "type": "City",
+            "description": "Moria, também conhecida como Khazad-dûm, foi  uma lendária cidade subterrânea dos Anãos na Terra-média. Localizada nas profundezas das Montanhas Sombrias, Moria foi outrora uma próspera e magnífica cidade, famosa por suas habilidades em mineração e construção.  Os anos se passaram e Moria se tornou um lugar sombrio e assombrado, repleto de mistérios e perigos mortais.",
+            "coords": "2700,3850",
+            "image": ""
+        },
+        {
+            "id": 74,
+            "name": "Dunland",
+            "type": "Region",
+            "description": "Dunland é uma região montanhosa na Terra-média, localizada a sudeste das Montanhas Sombrias e a noroeste de Rohan. É o lar do povo Dulending, que são considerados selvagens pelos Rohirrim.",
+            "coords": "2500,3600",
+            "image": ""
+        },
+        {
+            "id": 75,
+            "name": "Abismo de Helm",
+            "type": "Structure",
+            "description": "O Abismo de Helm era uma fortaleza imponente do reino Rohan, que foi construída para servir como refúgio em tempos de guerra. Durante a Guerra do Anel, a fortaleza foi sitiada pelas forças do Saruman, mas foi defendida pelos Rohirrim, liderados por Théoden e Aragorn. A batalha épica que se seguiu é conhecida como a Batalha do Abismo de Helm.",
+            "coords": "2100,3800",
+            "image": ""
+        },
+        {
+            "id": 76,
+            "name": "Edoras",
+            "type": "City",
+            "description": "Edoras é a capital do reino de Rohan, o reino de cavaleiro. É uma cidade localizada no topo de uma colina, abrigando o Salão Dourado, onde o Rei de Rohan reside.",
+            "coords": "2030,3970",
+            "image": ""
+        },
+        {
+            "id": 77,
+            "name": "Anfalas",
+            "type": "Region",
+            "description": "Anfalas, ou Lagstrand, era uma região costeira de Gondor, localizada entre as montanhas Brancas e o Grande Mar de Belegaer.",
+            "coords": "1580,3500",
+            "image": ""
+        },
+        {
+            "id": 78,
+            "name": "Ithilien",
+            "type": "Region",
+            "description": "Ithilien é uma região na Terra-média, localizada a leste de Gondor e ao sul de Mordor. É conhecida por sua beleza natural exuberante, com florestas, rios e colinas verdejantes. Durante a maior parte da história, Ithilien foi habitada pelos Homens de Gondor.",
+            "coords": "1500,4800",
+            "image": ""
+        },
+        {
+            "id": 79,
+            "name": "Belfalas",
+            "type": "Region",
+            "description": "Belfalas é uma região costeira na Terra-média, localizada no sul de Gondor. É conhecida por suas praias, baías e penhascos escarpados. A cidade portuária de Dol Amroth, lar dos Príncipes de Dol Amroth, está situada em Belfalas.",
+            "coords": "1390,3900",
+            "image": ""
+        },
+        {
+            "id": 80,
+            "name": "Lamedon",
+            "type": "Region",
+            "description": "Lamedon é uma região na Terra-média, localizada no sudoeste de Gondor. É uma área de colinas e vales férteis, conhecida por suas terras agrícolas e pastagens. Durante a Guerra do Anel, Lamedon foi um importante aliado de Gondor na luta contra as forças de Sauron. O exército de Lamedon, liderado por seu Senhor Angbor, juntou-se às tropas de Gondor na Batalha dos Campos do Pelennor.",
+            "coords": "1560,4140",
+            "image": ""
+        },
+        {
+            "id": 81,
+            "name": "Pelargir",
+            "type": "Structure",
+            "description": "Pelargir, fundada pelos Numenoreanos no rio Anduin, e se tornou um próspero e principal porto de Gondor. Era conhecida por sua grande frota naval, que desempenhou um papel crucial na defesa de Gondor contra os inimigos.",
+            "coords": "1375,4500",
+            "image": ""
+        },
+        {
+            "id": 82,
+            "name": "Montanhas Brancas",
+            "type": "Mountain",
+            "description": "As Montanhas Brancas, também chamadas de Ered Nimrais em élfico, são uma cordilheira na Terra-média, a leste de Gondor e ao sul de Rohan. Sua beleza majestosa é caracterizada por picos cobertos de neve, abrigando antigas fortalezas humanas notáveis, incluindo Minas Tirith, a capital de Gondor.",
+            "coords": "1780,4200",
+            "image": ""
+        },
+        {
+            "id": 83,
+            "name": "Erech",
+            "type": "Mountain",
+            "description": "É uma colina que abrigava uma antiga cidade dos homens, conhecida como a Cidade dos Mortos. Segundo a história, os homens de Erech quebraram um juramento feito a Isildur, e como punição, foram amaldiçoados a permanecer como espíritos até cumprirem sua promessa. É lá que Aragorn busca a ajuda dos exércitos dos mortos para lutar contra Sauron na Guerra do Anel.",
+            "coords": "1870,3880",
+            "image": ""
+        },
+        {
+            "id": 84,
+            "name": "Folde Ocidental",
+            "type": "Region",
+            "description": "O Folde Ocidental é uma região localizada em Rohan, a terra dos cavalos, a oeste do rio Isen. O Folde é um local estratégico para a defesa de Rohan. É uma ampla planície verdejante, conhecida por suas pastagens vastas e férteis.",
+            "coords": "1950,4080",
+            "image": ""
+        },
+        {
+            "id": 85,
+            "name": "Anórien",
+            "type": "Region",
+            "description": "Anórien é uma região localizada a leste do rio Anduin e ao norte da cidade de Minas Tirith. É conhecida por suas vastas planícies e colinas verdejantes. Na época da Guerra do Anel, Anórien era um dos poucos feudos dominados pelos Dúnedain de Gondor.",
+            "coords": "1980,4450",
+            "image": ""
+        },
+        {
+            "id": 86,
+            "name": "Desfiladeiro de Rohan",
+            "type": "Region",
+            "description": "O Desfiladeiro de Rohan é uma passagem estreita e sinuosa localizada nas Montanhas Brancas, dividindo Rohan e Gondor. Serve como uma importante rota de acesso entre as terras orientais e ocidentais de Rohan, e também uma rota importante para o comércio e para as tropas que viajam entre os reinos de Rohan e Gondor.",
+            "coords": "2200,3700",
+            "image": ""
+        },
+        {
+            "id": 87,
+            "name": "Lago de Evendin",
+            "type": "Region",
+            "description": "O Lago de Evendin, ou Lago Nenunial “Lago do Crepúsculo”, fica localizado ao norte do Condado. Dois pontos interessantes é que após a Guerra da Ira, tanto Galadriel quanto Celeborn cruzaram para Eriador de Lindon com muitos Noldor,  junto com Sindar e elfos verdes e moraram ao redor desse lago. O Rei Elessar (Aragorn), em seu reinado cavalgou de Minas Tirith para passar um tempo morando no Lago.",
+            "coords": "3500,2800",
+            "image": ""
+        },
+        {
+            "id": 88,
+            "name": "Colina dos Túmulos",
+            "type": "Mountain",
+            "description": "Um cemitério antigo e abandonado, onde os mortos ancestrais dos Edain da Primeira Era foram enterrados e mais tarde o lugar foi anexado pelo reino de Arnor em memória a esses ancestrais. Acolina foi amaldiçoada pelo Rei-bruxo de Angmar que levou espíritos de Angmar e rudhaur para aterrorizar a Colina. Muitos a evitam por medo dos espíritos malignos que se vagavam por lá. Durante a Guerra do Anel, Frodo e seus companheiros viajaram pela Colina dos Túmulos, onde foram atacadospor essas terríveis Criaturas Tumulares.",
+            "coords": "3170,3200",
+            "image": ""
+        },
+        {
+            "id": 89,
+            "name": "Amon Sûl",
+            "type": "Mountain",
+            "description": "Amon Sûl, também conhecido como o Topo do Vento, era uma colina localizada na região de Eriador. Foi uma das torres de vigia construídas pelos Dúnedain para proteger as fronteiras de Arnor. Foi construído no topo de uma colina e tinha uma vista panorâmica da região de Eriador. Amon Sûl foi o lugar onde Frodo e seus companheiros foram emboscados pelos Nazgûl.",
+            "coords": "3230,3500",
+            "image": ""
+        },
+        {
+            "id": 90,
+            "name": "Oracarni",
+            "type": "Mountain",
+            "description": "As Montanhas Vermelhas ou Orocarni eram uma cadeia de montanhas no noroeste da Terra-média. Construídas pelos Valar, eram onde o sol nascia e estavam relacionadas ao despertar dos Elfos e possivelmente a origem de algumas Casas dos Anões. Sua distância entre moradas a leste e as Montanhas Sombrias refletia a relação semelhante entre Gundabad e as Montanhas Azuis a oeste.",
+            "coords": "2950,7400",
+            "image": ""
         }
+        
+        
         
     ]
 }
