@@ -52,7 +52,7 @@
             "id": 7,
             "name": "Emyn Muil",
             "type": "Mountain",
-            "description": "Os Emyn Muil estavam localizados ao sul das Terras Marrons e ao norte de Nindalf. O rio Anduin corria pelas colinas e depois se acumulava em Nen Hithoel. A Sociedade do Anel viajou de barco por Emyn Muil antes de o grupo se separar perto do limite sul das colinas. Depois disso, Frodo e Sam caminharam pelo terreno difícil a leste do rio e encontraram Gollum logo abaixo da borda leste do Emyn Muil",
+            "description": "Uma fortaleza em Rohan, conhecida pela Batalha de Helms Deep contra as forças de Saruman.",
             "coords": "2350,4700",
             "image": ""
         },
@@ -751,6 +751,94 @@
             "type": "Mountain",
             "description": "As Montanhas Vermelhas ou Orocarni eram uma cadeia de montanhas no noroeste da Terra-média. Construídas pelos Valar, eram onde o sol nascia e estavam relacionadas ao despertar dos Elfos e possivelmente a origem de algumas Casas dos Anões. Sua distância entre moradas a leste e as Montanhas Sombrias refletia a relação semelhante entre Gundabad e as Montanhas Azuis a oeste.",
             "coords": "2950,7400",
+            "image": ""
+        },
+        {
+            "id": 91,
+            "name": "Rudhaur",
+            "type": "Region",
+            "description": "Rhudaur foi um dos três reinos que se dividiu do reino de Arnor, e era o menor deles em comparação com Arthedain e Cardolan. Os habitantes era composto pelos Dúnedain em menor número, e a grande era composta por homens da colina nativos.",
+            "coords": "3100,3700",
+            "image": ""
+        },
+        {
+            "id": 92,
+            "name": "Caradhras",
+            "type": "Mountain",
+            "description": "Era a maior das três grandes montanhas localizadas nas Montanhas Sombrias, que ficavam acima das minas de Moria. Era uma imponente montanha que era coberta por neve em seu pico, conhecida por sua natureza imprevisível e perigosa. Dois pontos interessantes é que em Caradhras que ficavam os veios de Mithril, o minério dos Anãos que não era encontrado em nenhum outro lugar, e, em Caradhras a Sociedade do Anel enfrentou uma tempestade feroz, que os obrigaram a retornar e buscar a rota das minas de Moria.",
+            "coords": "2910,3910",
+            "image": ""
+        },
+        {
+            "id": 93,
+            "name": "Celebdil",
+            "type": "Mountain",
+            "description": "Era uma e a maior das três grandes montanhas localizadas nas Montanhas Sombrias, que ficavam acima das minas de Moria. Era uma imponente montanha que era coberta por neve em seu pico, conhecida por sua natureza imprevisível e perigosa. Dois pontos interessantes é que em Caradhras que ficavam os veios de Mithril, o minério dos Anãos que não era encontrado em nenhum outro lugar, e, em Caradhras a Sociedade do Anel enfrentou uma tempestade feroz, que os obrigaram a retornar e buscar a rota das minas de Moria.",
+            "coords": "2940,3970",
+            "image": ""
+        },
+        {
+            "id": 94,
+            "name": "Fenuidhol",
+            "type": "Mountain",
+            "description": "Fenuidhol, a Cabeça-de- nuvem, uma é uma das três montanhas localizadas nas Montanhas Sombrias da Terra-média, e era uma das montanhas que formam os picos de Moria.",
+            "coords": "2970,4022",
+            "image": ""
+        },
+        {
+            "id": 95,
+            "name": "Floresta de Fangorn",
+            "type": "Region",
+            "description": "A Floresta de Fangorn é uma antiga e misteriosa floresta localizada a leste das Montanhas Sombrias. É habitada pelos Ents, árvores vivas e sábias, como o pastor das árvores, Barbárvore. A floresta é conhecida por ser densa, difícil de ser adentrada e repleta de segredos e mistérios.",
+            "coords": "2450,4030",
+            "image": ""
+        },
+        {
+            "id": 96,
+            "name": "Rhosgobel",
+            "type": "Region",
+            "description": "Rhosgobel é uma pequena casa situada na borda de Trevamata, em Rhovanion, no leste da Terra-média. Rhosgobel é conhecida por ser a casa do mago Radagast, o Castanho, e ele é conhecido por sua relação próxima com a natureza e os animais. A casa de Rhosgobel também é famosa por suas belas flores e jardins encantados.",
+            "coords": "3100,4700",
+            "image": ""
+        },
+        {
+            "id": 97,
+            "name": "Cirith Gorgor",
+            "type": "Region",
+            "description": "Era uma ravina entre as cordilheiras das Ered Lithui e Ephel Dúath no noroeste do vale de Udûn em Mordor. Era a entrada principal de Mordor e era selada pelo Portão Negro e guardada pelas duas Torres dos Dentes.",
+            "coords": "2090,5135",
+            "image": ""
+        },
+        {
+            "id": 98,
+            "name": "Narchost, o dente-de-fogo",
+            "type": "Structure",
+            "description": "Era uma das torre dos dentes, construída por Gondor após a Guerra da Última para vigiar a passagem para Mordor. Narchost ficava ao lado oeste.",
+            "coords": "2090,5090",
+            "image": ""
+        },
+        {
+            "id": 99,
+            "name": "Carchost, o Forte Presa",
+            "type": "Structure",
+            "description": "Carchost ficava no lado leste. Junto com Narchost, Eram fortes altos, de rosto impassível e janelas escuras voltadas para o norte, leste e oeste. se projetavam para a frente de cada lado da foz da passagem de  Cirith Gorgor  no extremo noroeste de  Mordor.",
+            "coords": "2095,5175",
+            "image": ""
+        },
+        {
+            "id": 100,
+            "name": "Durthang",
+            "type": "Structure",
+            "description": "Durthang era um antigo castelo no norte de Mordor. Erguida no alto do Ephel Dúath do norte, acima do vale de Udûn, algumas milhas ao norte de Carach Angren. Assim como as Torres dos Dentes, Durthang possivelmente foi construída pelos Homes de Gondor para vigiar Mordor",
+            "coords": "1880,5130",
+            "image": ""
+        },
+        {
+            "id": 101,
+            "name": "Gorgoroth",
+            "type": "Region",
+            "description": "Gorgoroth era uma alta planície desolada no noroeste de Mordor cercada por Morgai e Ephel Dúath  no oeste, Ephel Dúath e Ered Lithui no norte. Neste deserto sombrio, a fumaça saía de fissuras no solo e a fumaça se enrolava e se acomodava em cavidades. Centrado na desolação, cerca de sessenta quilômetros a leste de Ephel Duath, erguia-se o Monte da Perdição. Ele e  Barad-dûr , situados em um esporão montanhoso das Ered Lithui, dominavam a paisagem do planalto.",
+            "coords": "1700,5400",
             "image": ""
         }
         
