@@ -1,16 +1,6 @@
 <html lang="en">
 
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6KZ0N7Y65R"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-6KZ0N7Y65R');
-</script>
-  
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -53,7 +43,7 @@
       <li>
         <a class="dropdown-item" href="#">
           <div class="form-check form-switch custom-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="CityFilter" value="City" checked>
+            <input class="filter-checkbox form-check-input" type="checkbox" role="switch" id="CityFilter" value="City" checked>
             <label class="form-check-label lblMenu" for="CityFilter">Cidades</label>
           </div>
         </a>
@@ -61,7 +51,7 @@
       <li>
         <a class="dropdown-item" href="#">
           <div class="form-check form-switch custom-switch">
-            <input class="form-check-input custom-checkbox" type="checkbox" role="switch" id="StructureFilter"
+            <input class="filter-checkbox form-check-input custom-checkbox" type="checkbox" role="switch" id="StructureFilter"
               value="Structure" checked>
             <label class="form-check-label lblMenu" for="StructureFilter">Estruturas</label>
           </div>
@@ -70,7 +60,7 @@
       <li>
         <a class="dropdown-item" href="#">
           <div class="form-check form-switch custom-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="MountainFilter" value="Mountain" checked>
+            <input class="form-check-input filter-checkbox" type="checkbox" role="switch" id="MountainFilter" value="Mountain" checked>
             <label class="form-check-label lblMenu" for="MountainFilter">Montanhas e Colinas</label>
           </div>
         </a>
@@ -78,13 +68,19 @@
       <li>
         <a class="dropdown-item" href="#">
           <div class="form-check form-switch custom-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="RegionFilter" value="Region" checked>
+            <input class="form-check-input filter-checkbox" type="checkbox" role="switch" id="RegionFilter" value="Region" checked>
             <label class="form-check-label lblMenu" for="RegionFilter">Regiões</label>
           </div>
         </a>
       </li>
       <li>
         <hr class="dropdown-divider">
+      </li>
+      <li>
+        <a class="dropdown-item" href="#">
+          <i class="bi bi-search" style="color: #FC9B05;"></i>
+          <input type="text" class="ms-1" id="search-input" placeholder="Pesquise aqui...">
+        </a>
       </li>
       <li>
         <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalInfo">
