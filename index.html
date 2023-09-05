@@ -13,7 +13,8 @@
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 
   <!-- JS leaflet (after css) -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="./js/leaflet.curve.js"></script>
 
   <!--Modal Alert library-->
@@ -21,7 +22,8 @@
   <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css" rel="stylesheet">
 
   <!--Bootstrap-->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -29,18 +31,27 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Poppins&family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Poppins&family=Roboto&display=swap"
+    rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.6.0/css/iziModal.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.6.0/js/iziModal.min.js"></script>
 </head>
-<body>
-  <div class="dropdown" id="myDropdown">
-    <img src="./img/engrenagem.png" class="dropdown-toggle dropIcon" type="button" data-bs-toggle="dropdown"
-      aria-expanded="false">
 
-    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-custom fade" onclick="stopDropdownClose(event)">
-      <li>
+<body>
+
+
+
+
+  <div class="menu-container" id="menu-container">
+    <div class="menu-toggle" id="menu-toggle">
+      <i class="bi bi-text-left" style="color: #FC9B05;"></i>
+      <label>Menu</label>
+    </div>
+    <input type="text" id="search-input" class="form-control py-0" placeholder="Pesquisar aqui...">
+    <i class="bi bi-search ps-2" style="color: #FC9B05;"></i>
+    <ul class="menu-list" id="menu-list">
+      <li class="ms-2 my-1">
         <a class="dropdown-item" href="#">
           <div class="form-check form-switch custom-switch">
             <input class="filter-checkbox form-check-input" type="checkbox" role="switch" id="CityFilter" value="City" checked>
@@ -48,41 +59,35 @@
           </div>
         </a>
       </li>
-      <li>
+      <li class="ms-2 my-1">
         <a class="dropdown-item" href="#">
           <div class="form-check form-switch custom-switch">
-            <input class="filter-checkbox form-check-input custom-checkbox" type="checkbox" role="switch" id="StructureFilter"
-              value="Structure" checked>
+            <input class="filter-checkbox form-check-input custom-checkbox" type="checkbox" role="switch"
+              id="StructureFilter" value="Structure" checked>
             <label class="form-check-label lblMenu" for="StructureFilter">Estruturas</label>
           </div>
         </a>
       </li>
-      <li>
+      <li class="ms-2 my-1">
         <a class="dropdown-item" href="#">
           <div class="form-check form-switch custom-switch">
-            <input class="form-check-input filter-checkbox" type="checkbox" role="switch" id="MountainFilter" value="Mountain" checked>
+            <input class="form-check-input filter-checkbox" type="checkbox" role="switch" id="MountainFilter"
+              value="Mountain" checked>
             <label class="form-check-label lblMenu" for="MountainFilter">Montanhas e Colinas</label>
           </div>
         </a>
       </li>
-      <li>
+      <li class="ms-2 my-1">
         <a class="dropdown-item" href="#">
           <div class="form-check form-switch custom-switch">
-            <input class="form-check-input filter-checkbox" type="checkbox" role="switch" id="RegionFilter" value="Region" checked>
+            <input class="form-check-input filter-checkbox" type="checkbox" role="switch" id="RegionFilter"
+              value="Region" checked>
             <label class="form-check-label lblMenu" for="RegionFilter">Regiões</label>
           </div>
         </a>
       </li>
-      <li>
-        <hr class="dropdown-divider">
-      </li>
-      <li>
-        <a class="dropdown-item" href="#">
-          <i class="bi bi-search" style="color: #FC9B05;"></i>
-          <input type="text" class="ms-1" id="search-input" placeholder="Pesquise aqui...">
-        </a>
-      </li>
-      <li>
+      <hr class="dropdown-divider">
+      <li class="ms-2 my-1" id="menuInfo">
         <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalInfo">
           <i class="bi bi-info-circle" style="color: #FC9B05;"></i>
           <span class="ps-3 lblMenu">Informações</span>
@@ -91,31 +96,48 @@
     </ul>
   </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
   <div id="map" class="full-screen-map"></div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
 
   <script type="module" src="./js/index.js"></script>
   <script src="./js/connection.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var dropdown = document.querySelector('.dropdown');
-      var dropdownMenu = dropdown.querySelector('.dropdown-menu');
-      dropdown.addEventListener('show.bs.dropdown', function () {
-        dropdownMenu.style.opacity = '0';
-        dropdownMenu.style.visibility = 'visible';
-        setTimeout(function () {
-          dropdownMenu.style.opacity = '1';
-        }, 10);
+    $(document).ready(function () {
+      $("#menu-toggle").click(function (e) {
+        e.stopPropagation();
+        $("#menu-list").toggle();
       });
-      dropdown.addEventListener('hide.bs.dropdown', function () {
-        dropdownMenu.style.opacity = '1';
-        dropdownMenu.style.visibility = 'hidden';
-        setTimeout(function () {
-          dropdownMenu.style.opacity = '0';
-        }, 100);
+
+      $(document).click(function () {
+        $("#menu-list").hide();
+      });
+      $("#menuInfo").click(function (){
+        $("#menu-list").hide();
+      });
+
+      $("#menu-list").click(function (e) {
+        e.stopPropagation();
       });
     });
   </script>
+
+
+
 
   <script>
     //Dont close dropdown when click
@@ -154,8 +176,8 @@
           color: '#ffffff',
           background: '#020C16',
           showCancelButton: false,
-          showConfirmButton: false, 
-          backdrop: `rgba(0,0,57,0.7) url("img/arrowBlue.gif") top 10px left 80px no-repeat `
+          showConfirmButton: false,
+          backdrop: `rgba(0,0,57,0.7) url("img/arrowBlue.gif") top 50px left 10px no-repeat`,
         }).then((result) => {
           if (checkNaoMostrar.checked == true) {
             localStorage.setItem("mostrarInstrucoes", "true");
@@ -172,7 +194,7 @@
 
 
   <!--Modal Info-->
-  <div class="modal fade" id="modalInfo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade mt-5" id="modalInfo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content rounded-top">
         <div class="modal-body p-0">
@@ -182,7 +204,12 @@
               <label for="tab-1" class="tab-label">O Mapa</label>
               <div class="tab-content">
                 <p class="text-center">Bem-vindos ao Mapa Interativo da Terra Média! </p>
-                <i>Clique na engrenagem no canto superior esquerdo para aplicar filtros aos locais.Clique sobre os marcadores para exibir as informações.</i><br><br>Este projeto é uma iniciativa da Comunidade Tolkieniano Brasil, dedicado a todos os amantes da obra de J.R.R. Tolkien. <br>Esta ferramenta foi concebida para complementar o nosso outro projeto, o Clube Literário Parf Ardhom, criando uma experiência rica para todos os membros participantes. Desvende os segredos da Terra Média, trace as trilhas dos heróis e embarque em uma jornada repleta de maravilhas e descobertas.
+                <i>Clique na engrenagem no canto superior esquerdo para aplicar filtros aos locais.Clique sobre os
+                  marcadores para exibir as informações.</i><br><br>Este projeto é uma iniciativa da Comunidade
+                Tolkieniano Brasil, dedicado a todos os amantes da obra de J.R.R. Tolkien. <br>Esta ferramenta foi
+                concebida para complementar o nosso outro projeto, o Clube Literário Parf Ardhom, criando uma
+                experiência rica para todos os membros participantes. Desvende os segredos da Terra Média, trace as
+                trilhas dos heróis e embarque em uma jornada repleta de maravilhas e descobertas.
                 <br><br>
                 Desfrute da exploração, <br>Comunidade Tolkieniano Brasil
               </div>
@@ -198,23 +225,27 @@
                 </div>
                 <div class="row">
                   <div class="col">
-                    O foco de nosso trabalho é estudar a vida e obra do autor e professor J.R.R. Tolkien.<br> Nosso lar principal é o Instagram, onde compartilhamos diversos assuntos relevantes relacionado ao professor. Também estamos presente em grupos de WhatsApp, onde frequentemente discutimos questões acerca do Legendario. Outro projeto que possuímos é o Clube Literário Parf Ardhom, uma iniciativa que reúne leitores de todo o Brasil para leituras coletivas e estudos a cada quinzena.<br><br>Atenciosamente, <br>Equipe Tolkieniano Brasil.
+                    O foco de nosso trabalho é estudar a vida e obra do autor e professor J.R.R. Tolkien.<br> Nosso lar
+                    principal é o Instagram, onde compartilhamos diversos assuntos relevantes relacionado ao professor.
+                    Também estamos presente em grupos de WhatsApp, onde frequentemente discutimos questões acerca do
+                    Legendario. Outro projeto que possuímos é o Clube Literário Parf Ardhom, uma iniciativa que reúne
+                    leitores de todo o Brasil para leituras coletivas e estudos a cada quinzena.<br><br>Atenciosamente,
+                    <br>Equipe Tolkieniano Brasil.
                   </div>
                 </div>
                 <div class="row mt-3">
                   <div class="col">
-                    <label class="smallText justify-content-end"><i>Todos os nossos projetos são sem fins lucrativos.</i></label>
+                    <label class="smallText justify-content-end"><i>Todos os nossos projetos são sem fins
+                        lucrativos.</i></label>
                   </div>
                   <div class="col-12 col-xl-4 d-flex justify-content-end">
                     <a target="_blank" href="https://www.instagram.com/tolkienianobrasil/">
                       <img src="./img/iconInsta.png" class="iconContact">
                     </a>
-                    <a target="_blank"
-                      href="https://chat.whatsapp.com/K6VMio5s9yxIyjQsmOZ6rO">
+                    <a target="_blank" href="https://chat.whatsapp.com/K6VMio5s9yxIyjQsmOZ6rO">
                       <img src="./img/iconWhats.png" class="iconContact mx-2">
                     </a>
-                    <a target="_blank"
-                      href="https://discord.gg/97pa5HgrNb">
+                    <a target="_blank" href="https://discord.gg/97pa5HgrNb">
                       <img src="./img/iconDiscord.png" class="iconContact">
                     </a>
                   </div>
@@ -227,4 +258,5 @@
     </div>
   </div>
 </body>
+
 </html>
