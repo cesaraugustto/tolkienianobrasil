@@ -221,7 +221,7 @@
             "name": "Bree",
             "type": "City",
             "description": "Bree era uma vila a leste do Condado. Era habitada por Homens e Hobbits.",
-            "coords": "3280,3250",
+            "coords": "3230,3250",
             "image": ""
         },
         {
@@ -614,7 +614,7 @@
             "name": "Moria",
             "type": "City",
             "description": "Moria, também conhecida como Khazad-dûm, foi  uma lendária cidade subterrânea dos Anãos na Terra-média. Localizada nas profundezas das Montanhas Sombrias, Moria foi outrora uma próspera e magnífica cidade, famosa por suas habilidades em mineração e construção.  Os anos se passaram e Moria se tornou um lugar sombrio e assombrado, repleto de mistérios e perigos mortais.",
-            "coords": "2700,3850",
+            "coords": "2850,3960",
             "image": ""
         },
         {
@@ -702,7 +702,7 @@
             "name": "Folde Ocidental",
             "type": "Region",
             "description": "O Folde Ocidental é uma região localizada em Rohan, a terra dos cavalos, a oeste do rio Isen. O Folde é um local estratégico para a defesa de Rohan. É uma ampla planície verdejante, conhecida por suas pastagens vastas e férteis.",
-            "coords": "1950,4080",
+            "coords": "1930,4300",
             "image": ""
         },
         {
@@ -773,7 +773,7 @@
             "id": 93,
             "name": "Celebdil",
             "type": "Mountain",
-            "description": "Era uma e a maior das três grandes montanhas localizadas nas Montanhas Sombrias, que ficavam acima das minas de Moria. Era uma imponente montanha que era coberta por neve em seu pico, conhecida por sua natureza imprevisível e perigosa. Dois pontos interessantes é que em Caradhras que ficavam os veios de Mithril, o minério dos Anãos que não era encontrado em nenhum outro lugar, e, em Caradhras a Sociedade do Anel enfrentou uma tempestade feroz, que os obrigaram a retornar e buscar a rota das minas de Moria.",
+            "description": "Também conhecida como o Pico-de-Prata, é uma das três montanhas localizadas nas Montanhas Sombrias da Terra-média. É uma montanha alta e afiada. Nesta montanha estava localizada a Escada Interminável, que conduzia à Torre de Dúrin.",
             "coords": "2940,3970",
             "image": ""
         },
@@ -840,9 +840,22 @@
             "description": "Gorgoroth era uma alta planície desolada no noroeste de Mordor cercada por Morgai e Ephel Dúath  no oeste, Ephel Dúath e Ered Lithui no norte. Neste deserto sombrio, a fumaça saía de fissuras no solo e a fumaça se enrolava e se acomodava em cavidades. Centrado na desolação, cerca de sessenta quilômetros a leste de Ephel Duath, erguia-se o Monte da Perdição. Ele e  Barad-dûr , situados em um esporão montanhoso das Ered Lithui, dominavam a paisagem do planalto.",
             "coords": "1700,5400",
             "image": ""
+        },
+        {
+            "id": 102,
+            "name": "Aldburg",
+            "type": "City",
+            "description": "Aldburg, um antigo assentamento de Rohan, situava-se em uma colina verde na região Folde, ao sudeste de Edoras. Durante a era de Eorl, foi o principal município rohirrim.",
+            "coords": "1950,4130",
+            "image": ""
+        },
+        {
+            "id": 103,
+            "name": "Annúminas",
+            "type": "City",
+            "description": "A cidade dos Reis de Arnor, às margens do Nenuial, foi fundada por Elendil próximo às nascentes do Baranduin. Durante muitos séculos, serviu como a principal cidade dos Reis de Arnor e abrigou um dos três palantíri do Reino do Norte. Nos primórdios de Arnor, foi uma das maiores glórias da Terra-média.",
+            "coords": "3485,2820",
+            "image": ""
         }
-        
-        
-        
     ]
 }

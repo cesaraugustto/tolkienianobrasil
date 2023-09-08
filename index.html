@@ -1,15 +1,6 @@
 <html lang="en">
 
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6KZ0N7Y65R"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-6KZ0N7Y65R');
-</script>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -48,14 +39,10 @@
 </head>
 
 <body>
-
-
-
-
   <div class="menu-container" id="menu-container">
     <div class="menu-toggle" id="menu-toggle">
       <i class="bi bi-text-left" style="color: #FC9B05;"></i>
-      <label>Menu</label>
+      <label style="cursor: pointer;">Menu</label>
     </div>
     <input type="text" id="search-input" class="form-control py-0" placeholder="Pesquisar aqui...">
     <i class="bi bi-search ps-2" style="color: #FC9B05;"></i>
@@ -104,20 +91,6 @@
       </li>
     </ul>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <div id="map" class="full-screen-map"></div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
@@ -144,17 +117,12 @@
       });
     });
   </script>
-
-
-
-
   <script>
     //Dont close dropdown when click
     function stopDropdownClose(event) {
       event.stopPropagation();
     }
   </script>
-
   <script>
     // Checks if  modal should be displayed based on localStorage
     function shouldShowModal() {
@@ -199,9 +167,6 @@
     }
     showFirstModal();
   </script>
-
-
-
   <!--Modal Info-->
   <div class="modal fade mt-5" id="modalInfo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -267,5 +232,4 @@
     </div>
   </div>
 </body>
-
 </html>
