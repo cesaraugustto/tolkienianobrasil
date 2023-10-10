@@ -1,0 +1,262 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <title>Mapa Interativo - Terra Média</title>
+  <link rel="shortcut icon" href="./img/favicon.png" />
+
+  <!-- CSS File for leaflet-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+  <!-- JS leaflet (after css) -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="./js/leaflet.curve.js"></script>
+
+  <!--Modal Alert library-->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css" rel="stylesheet">
+
+  <!--Bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <link rel="stylesheet" href="./css/style.css" defer>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Poppins&family=Roboto&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.6.0/css/iziModal.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.6.0/js/iziModal.min.js"></script>
+</head>
+
+<body>
+  <div class="menu-container" id="menu-container">
+    <div class="menu-toggle" id="menu-toggle">
+      <i class="bi bi-text-left" style="color: #FC9B05;"></i>
+      <label style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modalInfo">Menu</label>
+    </div>
+    <input type="text" id="search-input" class="form-control py-0" placeholder="Pesquisar aqui...">
+    <i class="bi bi-search ps-2" style="color: #FC9B05;"></i>
+    <ul class="menu-list" id="menu-list">
+      <li class="ms-2 my-1">
+        <a class="dropdown-item" href="#">
+          <div class="form-check form-switch custom-switch">
+            <input class="filter-checkbox form-check-input" type="checkbox" role="switch" id="CityFilter" value="City"
+              checked>
+            <label class="form-check-label lblMenu" for="CityFilter">Cidades</label>
+          </div>
+        </a>
+      </li>
+      <li class="ms-2 my-1">
+        <a class="dropdown-item" href="#">
+          <div class="form-check form-switch custom-switch">
+            <input class="filter-checkbox form-check-input custom-checkbox" type="checkbox" role="switch"
+              id="StructureFilter" value="Structure" checked>
+            <label class="form-check-label lblMenu" for="StructureFilter">Estruturas</label>
+          </div>
+        </a>
+      </li>
+      <li class="ms-2 my-1">
+        <a class="dropdown-item" href="#">
+          <div class="form-check form-switch custom-switch">
+            <input class="form-check-input filter-checkbox" type="checkbox" role="switch" id="MountainFilter"
+              value="Mountain" checked>
+            <label class="form-check-label lblMenu" for="MountainFilter">Montanhas e Colinas</label>
+          </div>
+        </a>
+      </li>
+      <li class="ms-2 my-1">
+        <a class="dropdown-item" href="#">
+          <div class="form-check form-switch custom-switch">
+            <input class="form-check-input filter-checkbox" type="checkbox" role="switch" id="RegionFilter"
+              value="Region" checked>
+            <label class="form-check-label lblMenu" for="RegionFilter">Regiões</label>
+          </div>
+        </a>
+      </li>
+      <hr class="dropdown-divider">
+      <li class="ms-2 my-1" id="menuInfo">
+        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalInfo">
+          <i class="bi bi-info-circle" style="color: #FC9B05;"></i>
+          <span class="ps-3 lblMenu">Informações</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div id="map" class="full-screen-map"></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
+  <script type="module" src="./js/index.js"></script>
+  <script src="./js/connection.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#menu-toggle2").click(function (e) {
+        e.stopPropagation();
+        $("#menu-list").toggle();
+      });
+
+      $(document).click(function () {
+        $("#menu-list").hide();
+      });
+      $("#menuInfo").click(function () {
+        $("#menu-list").hide();
+      });
+
+      $("#menu-list").click(function (e) {
+        e.stopPropagation();
+      });
+    });
+  </script>
+  <script>
+    //Dont close dropdown when click
+    function stopDropdownClose(event) {
+      event.stopPropagation();
+    }
+  </script>
+  <script>
+    // Checks if  modal should be displayed based on localStorage
+    function shouldShowModal() {
+      return !localStorage.getItem("mostrarInstrucoes");
+    }
+    function showFirstModal() {
+      if (shouldShowModal()) {
+        Swal.fire({
+          title: "<img src='img/logo-withoutbg.png' class='img-fluid px-5'>",
+          html: `
+            <div class="custom-container">
+              <label class='text-start labelFirstModal'>
+                <center><h5 class="px-4">Bem-vindo ao nosso Mapa Interativo!</h5></center><br> Este projeto permite que você explore os principais locais da Terra Média.
+                <br><br><i>Clique no ícone no canto superior esquerdo para aplicar os filtros.
+                Clique nos marcadores para visualizar as informações.</i>
+              </label>
+              <br><br>
+              <div class="text-start">
+                <input class="form-check-input" type="checkbox" value="" id="checkNaoMostrar">
+                  <label class="h6 form-check-label" for=""> Não mostrar novamente</label>            
+              </div>
+              <div class="text-end">
+                <button id="custom-confirm-button" class="btn btn-primary">Entendi</button>
+              </div>
+            </div>
+          `,
+          padding: '0',
+          color: '#ffffff',
+          background: '#020C16',
+          showCancelButton: false,
+          showConfirmButton: false,
+          backdrop: `rgba(0,0,57,0.7) url("img/arrowBlue.gif") top 50px left 10px no-repeat`,
+        }).then((result) => {
+          if (checkNaoMostrar.checked == true) {
+            localStorage.setItem("mostrarInstrucoes", "true");
+          }
+        });
+        document.getElementById('custom-confirm-button').addEventListener('click', () => {
+          Swal.close();
+        });
+      }
+    }
+    showFirstModal();
+  </script>
+  <!--Modal Info-->
+  <div class="modal fade mt-5" id="modalInfo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content rounded-top">
+        <div class="modal-body">
+
+          <div class="row">
+            <div class="col">
+              <img src='img/att.png' class='img-fluid p-3 ms-3'>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p class="h4 me-5" style="color: #FC9B05;" id="primeiroConteudo"></p>
+              <p style="font-size: 15px; color: #D9D9D9;" id="segundoConteudo"></p> 
+            </div>
+          </div>
+          <div class="row my-1">
+            <div class="col">
+              <p class="h4 me-5" style="color: #FC9B05;" id="terceiroConteudo"></p>
+              <p style="font-size: 15px; color: #D9D9D9;" id="quartoConteudo"></p> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+const primeiroConteudo = document.getElementById("primeiroConteudo");
+const segundoConteudo = document.getElementById("segundoConteudo");
+const terceiroConteudo = document.getElementById("terceiroConteudo");
+const quartoConteudo = document.getElementById("quartoConteudo");
+
+const textoPrimeiro = "Pesquisa por Nome:";
+const textoSegundo =
+  "Agora é possível encontrar locais pesquisando por nome. Basta digitar na caixa de texto no canto superior direito.";
+const textoTerceiro = "Locais Adicionados:";
+const textoQuarto =
+  "Annúminas, Aldburg, Gorgoroth, Durthang, Carchost, Narchost, Rhosgobel, Cirith Gorgor";
+
+const velocidadeDigitacao = 42;
+
+function efeitoMaquinaEscrever(elemento, texto, velocidade, callback) {
+  let i = 0;
+  function escrever() {
+    if (i < texto.length) {
+      elemento.textContent += texto.charAt(i);
+      i++;
+      setTimeout(escrever, velocidade);
+    } else {
+      if (typeof callback === "function") {
+        callback();
+      }
+    }
+  }
+  escrever();
+}
+
+// Event listener para quando o modal for mostrado
+document.getElementById("modalInfo").addEventListener("show.bs.modal", function () {
+  // Limpar o conteúdo dos elementos antes de iniciar o efeito
+  primeiroConteudo.textContent = "";
+  segundoConteudo.textContent = "";
+  terceiroConteudo.textContent = "";
+  quartoConteudo.textContent = "";
+
+  // Iniciar o efeito de máquina de escrever para o primeiro conteúdo
+  efeitoMaquinaEscrever(primeiroConteudo, textoPrimeiro, velocidadeDigitacao, function () {
+    // Após o término do primeiro conteúdo, inicie o segundo
+    efeitoMaquinaEscrever(segundoConteudo, textoSegundo, velocidadeDigitacao, function () {
+      // Após o término do segundo conteúdo, inicie o terceiro
+      efeitoMaquinaEscrever(terceiroConteudo, textoTerceiro, velocidadeDigitacao, function () {
+        // Após o término do terceiro conteúdo, inicie o quarto
+        efeitoMaquinaEscrever(quartoConteudo, textoQuarto, velocidadeDigitacao);
+      });
+    });
+  });
+});
+
+  </script>
+  <script>
+    document.addEventListener("keydown", function (event) {
+  if (event.key === "x" || event.key === "X") {
+    // Abra o modal quando a tecla "X" for pressionada
+    $('#modalInfo').modal('show');
+  }
+});
+
+  </script>
+</body>
+
+</html>
