@@ -1,7 +1,6 @@
-import { showModal } from "./modalModule.js";
+import { showDescriptionModal } from "./modalModule.js";
 import { map } from "./mapModule.js";
 export const markers = [];
-
 
 //styles for icons
 export function createCustomIcon(iconUrl) {
@@ -18,33 +17,7 @@ export var redIcon = createCustomIcon('./img/iconRed.png');
 export var blueIcon = createCustomIcon('./img/iconBlue.png');
 export var greenIcon = createCustomIcon('./img/iconGreen.png');
 export var yellowIcon = createCustomIcon('./img/iconYellow.png');
-const iconMap = {
-    Structure: redIcon,
-    Mountain: blueIcon,
-    City: greenIcon,
-    Region: yellowIcon
-};
-
-
-
-//Daí não precisa de carregar todos ao mesmo tmepo....
-// Use a função fetchJSON para buscar a descrição completa com base no ID
-function fetchDescription(placeId) {
-    fetchJSON()
-        .then(places => {
-            const description = places.find(place => place.id === placeId)?.description;
-            if (description) {
-                // Exiba a descrição completa em um modal ou onde for apropriado
-                showModal(description);
-            } else {
-                console.error('Descrição não encontrada para o ID:', placeId);
-            }
-        })
-        .catch(error => {
-            console.error('Erro ao buscar a descrição:', error);
-        });
-}
-
+const iconMap = { Structure: redIcon, Mountain: blueIcon, City: greenIcon, Region: yellowIcon };
 
 export function createMarkers(places) {
     places.forEach(place => {
@@ -56,7 +29,7 @@ export function createMarkers(places) {
 
             const marker = L.marker([lat, lng], { icon: iconMap[place.type] });
             marker.type = place.type;
-            marker.options.place = place; // Adicione a propriedade place ao marcador
+            marker.options.place = place;
 
             marker.on("click", function () {
                 var pos = map.latLngToLayerPoint(marker.getLatLng());
@@ -72,8 +45,8 @@ export function createMarkers(places) {
             });
 
             marker.on('click', function () {
-                const placeId = place.id; // Obtém o ID do lugar
-                fetchDescription(placeId); // Chama a função para buscar a descrição com base no ID
+                const content = `<div> <h2>${place.name}</h2> <p>${place.description}</p> </div> `;
+                showDescriptionModal(content);
             });
             markers.push(marker);
         }
@@ -81,7 +54,15 @@ export function createMarkers(places) {
     return markers;
 }
 
-
-
+export function showMarkers(markers) {
+    markers.forEach(marker => {
+      marker.addTo(map);
+    });
+}
+export function hideMarkers(markers) {
+    markers.forEach(marker => {
+      marker.removeFrom(map);
+    });
+}
 
 
