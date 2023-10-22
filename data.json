@@ -880,15 +880,6 @@
             "description": "Era um porto dos Elfos na costa sul do Golfo de Lhûn. Conta-se que frota de Eärnur encheu os portos de Harlond e Forlond quando chegou em Lindon durante a Guerra de Angmar.",
             "coords": "3030,2210",
             "image": ""
-        },
-        {
-            "id": 107,
-            "name": "Harlond",
-            "type": "Structure",
-            "description": "Era um porto dos Elfos na costa norte do Golfo de Lhûn. Conta-se que frota de Eärnur encheu os portos de Harlond e Forlond quando chegou em Lindon durante a Guerra de Angmar.",
-            "coords": "3230,1980",
-            "image": ""
         }
-        
     ]
 }
