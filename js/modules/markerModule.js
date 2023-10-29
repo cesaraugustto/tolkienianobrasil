@@ -30,6 +30,8 @@ function isVisibleOnMap(marker, bounds) {
 export function createMarkers(places) {
     places.forEach(place => {
         const coords = place.coords.split(',');
+
+        if (place.type !== "River") {
             const lat = parseFloat(coords[0].trim());
             const lng = parseFloat(coords[1].trim());
 
@@ -54,7 +56,7 @@ export function createMarkers(places) {
             });
 
             markers.push(marker);
-        
+        }
     });
 
     map.on('moveend', handleMoveEnd);
@@ -82,10 +84,9 @@ export function hideMarkers() {
 }
 
 function filterMatch(type) {
-    const checkedCheckboxes = Array.from(filterCheckboxes);
-    return checkedCheckboxes.length === 0 || checkedCheckboxes.some(checkbox => checkbox.checked && checkbox.value === type);
+    const checkedCheckboxes = Array.from(filterCheckboxes).filter(checkbox => checkbox.checked);
+    return checkedCheckboxes.length === 0 || checkedCheckboxes.some(checkbox => checkbox.value === type);
 }
-
 
 function handleFilterChange() {
     isLoadingMarkers = true;
