@@ -30,19 +30,27 @@ function isVisibleOnMap(marker, bounds) {
 export function createMarkers(places) {
     places.forEach(place => {
         const coords = place.coords.split(',');
-
-        if (place.type !== "River") {
             const lat = parseFloat(coords[0].trim());
             const lng = parseFloat(coords[1].trim());
-
             const marker = L.marker([lat, lng], { icon: iconMap[place.type] });
             marker.type = place.type;
             marker.options.place = place;
+            marker.on("click", function () {
+                var pos = map.latLngToLayerPoint(marker.getLatLng());
+                pos.y -= 15;
+                var fx = new L.PosAnimation();
 
+                fx.once('end', function () {
+                    pos.y += 15;
+                    fx.run(marker._icon, pos, 0.8);
+                });
 
+                fx.run(marker._icon, pos, 0.3);
 
+                const content = `<div> <h2>${place.name}</h2> <p>${place.description}</p> </div>`;
+                showDescriptionModal(content);
+            });
             markers.push(marker);
-        }
     });
 
     map.on('moveend', handleMoveEnd);
