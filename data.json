@@ -861,20 +861,12 @@
             "id": 104,
             "name": "Himring",
             "type": "Mountain",
-            "description": "Era uma colina que permaneceu mesmo após a queda Beleriand no final da Primeira Era. Em dias antigos, era a principal fortaleza de Maedhros, da casa de Feanor, e só foi abandonada por sua familia durante as Nirnaeth Arnoediad. Após a guerra da Ira, as planicies ao redor da colina foram submersas, então o topo da colina foi tudo o que restou de Himring.",
-            "coords": "3630,1200",
-            "image": ""
-        },
-        {
-            "id": 105,
-            "name": "Himring",
-            "type": "Mountain",
             "description": "Era uma colina que permaneceu mesmo após a queda Beleriand no final da Primeira Era. Em dias antigos era a principal fortaleza de Maedhros, da casa de Feanor, e só foi abandonada por sua familia durante as Nirnaeth Arnoediad. Após a guerra da Ira, as planicies ao redor da colina foram submersas, então o topo da colina foi tudo o que restou de Himring.",
             "coords": "3630,1200",
             "image": ""
         },
         {
-            "id": 106,
+            "id": 105,
             "name": "Harlond",
             "type": "Structure",
             "description": "Era um porto dos Elfos na costa sul do Golfo de Lhûn. Conta-se que frota de Eärnur encheu os portos de Harlond e Forlond quando chegou em Lindon durante a Guerra de Angmar.",

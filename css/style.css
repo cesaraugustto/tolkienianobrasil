@@ -7,7 +7,14 @@
     font-family: 'Roboto', sans-serif;
     
   }
-
+  .custom-marker {
+    width: 26px;
+    height: 26px;
+    background-color: #FF5733;
+    border: 2px solid #FF0000;
+    border-radius: 50%;
+  }
+  
   body {
     font-family: 'Helvetica Neue', sans-serif;
   }

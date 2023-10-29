@@ -1,0 +1,9 @@
+/* styles.css */
+.custom-marker {
+    width: 26px;
+    height: 26px;
+    background-color: #FF5733;
+    border: 2px solid #FF0000;
+    border-radius: 50%;
+  }
+  
