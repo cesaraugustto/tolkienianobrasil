@@ -1,9 +1,13 @@
 import { showDescriptionModal } from "./modalModule.js";
 import { map } from "./mapModule.js";
-export const markers = [];
 
-//styles for icons
-export function createCustomIcon(iconUrl) {
+const markers = [];
+const loadedMarkers = [];
+const filterCheckboxes = document.querySelectorAll('.filter-checkbox');
+const searchInput = document.getElementById('search-input');
+let activeFilters = [];
+
+function createCustomIcon(iconUrl) {
     return L.icon({
         iconUrl: iconUrl,
         iconSize: [26, 26],
@@ -13,11 +17,46 @@ export function createCustomIcon(iconUrl) {
         shadowAnchor: [13, 26],
     });
 }
-export var redIcon = createCustomIcon('./img/iconRed.png');
-export var blueIcon = createCustomIcon('./img/iconBlue.png');
-export var greenIcon = createCustomIcon('./img/iconGreen.png');
-export var yellowIcon = createCustomIcon('./img/iconYellow.png');
-const iconMap = { Structure: redIcon, Mountain: blueIcon, City: greenIcon, Region: yellowIcon };
+
+export const redIcon = createCustomIcon('./img/iconRed.png');
+export const blueIcon = createCustomIcon('./img/iconBlue.png');
+export const greenIcon = createCustomIcon('./img/iconGreen.png');
+export const yellowIcon = createCustomIcon('./img/iconYellow.png');
+export const iconMap = { Structure: redIcon, Mountain: blueIcon, City: greenIcon, Region: yellowIcon };
+
+function handleMoveEnd() {
+    const visibleBounds = map.getBounds();
+  
+    markers.forEach(marker => {
+      if (isVisibleOnMap(marker, visibleBounds)) {
+        const typeMatch = activeFilters.includes(marker.type);
+        const searchMatch = searchInput.value.trim() === '' || marker.options.place.name.toLowerCase().includes(searchInput.value.trim().toLowerCase());
+        const shouldShow = typeMatch && searchMatch;
+  
+        if (shouldShow) {
+          if (!loadedMarkers.includes(marker)) {
+            marker.addTo(map);
+            loadedMarkers.push(marker);
+          }
+        } else {
+          if (loadedMarkers.includes(marker)) {
+            marker.removeFrom(map);
+            loadedMarkers.splice(loadedMarkers.indexOf(marker), 1);
+          }
+        }
+      } else {
+        if (loadedMarkers.includes(marker)) {
+          marker.removeFrom(map);
+          loadedMarkers.splice(loadedMarkers.indexOf(marker), 1);
+        }
+      }
+    });
+  }
+  
+
+function isVisibleOnMap(marker, bounds) {
+    return bounds.contains(marker.getLatLng());
+}
 
 export function createMarkers(places) {
     places.forEach(place => {
@@ -32,7 +71,7 @@ export function createMarkers(places) {
             marker.options.place = place;
 
             marker.on("click", function () {
-                var pos = map.latLngToLayerPoint(marker.getLatLng());
+                var pos = map.latLatLngToLayerPoint(marker.getLatLng());
                 pos.y -= 15;
                 var fx = new L.PosAnimation();
 
@@ -51,18 +90,63 @@ export function createMarkers(places) {
             markers.push(marker);
         }
     });
+
+    // Registre o ouvinte de evento para o movimento do mapa
+    map.on('moveend', handleMoveEnd);
+
+    // Registre os ouvintes de eventos para os filtros de tipo
+    filterCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function () {
+            handleFilterChange();
+        });
+    });
+
+    // Registre o ouvinte de evento para a pesquisa por texto
+    searchInput.addEventListener('input', function () {
+        handleFilterChange();
+    });
+
+    handleFilterChange();
+
     return markers;
 }
 
 export function showMarkers(markers) {
     markers.forEach(marker => {
-      marker.addTo(map);
+        if (isVisibleOnMap(marker, map.getBounds()) && activeFilters.includes(marker.type)) {
+            marker.addTo(map);
+            loadedMarkers.push(marker);
+        }
     });
 }
+
 export function hideMarkers(markers) {
     markers.forEach(marker => {
-      marker.removeFrom(map);
+        if (loadedMarkers.includes(marker)) {
+            marker.removeFrom(map);
+            loadedMarkers.splice(loadedMarkers.indexOf(marker), 1);
+        }
     });
 }
 
+function handleFilterChange() {
+    activeFilters = Array.from(filterCheckboxes)
+        .filter(checkbox => checkbox.checked)
+        .map(checkbox => checkbox.value);
 
+    const searchTerm = searchInput.value.trim().toLowerCase();
+
+    markers.forEach(marker => {
+        const typeMatch = activeFilters.includes(marker.type);
+        const searchMatch = searchTerm === "" || marker.options.place.name.toLowerCase().includes(searchTerm);
+        const shouldShow = typeMatch && searchMatch;
+
+        if (shouldShow && !loadedMarkers.includes(marker)) {
+            marker.addTo(map);
+            loadedMarkers.push(marker);
+        } else if (!shouldShow && loadedMarkers.includes(marker)) {
+            marker.removeFrom(map);
+            loadedMarkers.splice(loadedMarkers.indexOf(marker), 1);
+        }
+    });
+}
