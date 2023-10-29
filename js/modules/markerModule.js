@@ -32,9 +32,11 @@ export function createMarkers(places) {
         const coords = place.coords.split(',');
             const lat = parseFloat(coords[0].trim());
             const lng = parseFloat(coords[1].trim());
+
             const marker = L.marker([lat, lng], { icon: iconMap[place.type] });
             marker.type = place.type;
             marker.options.place = place;
+
             marker.on("click", function () {
                 var pos = map.latLngToLayerPoint(marker.getLatLng());
                 pos.y -= 15;
@@ -50,7 +52,9 @@ export function createMarkers(places) {
                 const content = `<div> <h2>${place.name}</h2> <p>${place.description}</p> </div>`;
                 showDescriptionModal(content);
             });
+
             markers.push(marker);
+        
     });
 
     map.on('moveend', handleMoveEnd);
@@ -78,9 +82,10 @@ export function hideMarkers() {
 }
 
 function filterMatch(type) {
-    const checkedCheckboxes = Array.from(filterCheckboxes).filter(checkbox => checkbox.checked);
-    return checkedCheckboxes.length === 0 || checkedCheckboxes.some(checkbox => checkbox.value === type);
+    const checkedCheckboxes = Array.from(filterCheckboxes);
+    return checkedCheckboxes.length === 0 || checkedCheckboxes.some(checkbox => checkbox.checked && checkbox.value === type);
 }
+
 
 function handleFilterChange() {
     isLoadingMarkers = true;
