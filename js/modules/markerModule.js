@@ -84,9 +84,10 @@ export function hideMarkers() {
 }
 
 function filterMatch(type) {
-    const checkedCheckboxes = Array.from(filterCheckboxes).filter(checkbox => checkbox.checked);
-    return checkedCheckboxes.length === 0 || checkedCheckboxes.some(checkbox => checkbox.value === type);
+    const checkedCheckboxes = Array.from(filterCheckboxes);
+    return checkedCheckboxes.length === 0 || checkedCheckboxes.some(checkbox => checkbox.checked && checkbox.value === type);
 }
+
 
 function handleFilterChange() {
     isLoadingMarkers = true;
