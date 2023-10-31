@@ -10,10 +10,8 @@ function createCustomIcon(iconUrl) {
     return L.icon({
         iconUrl: iconUrl,
         iconSize: [18, 18],
-        iconAnchor: [13, 18],
-        shadowUrl: './img/shadow.png',
-        shadowSize: [36, 36],
-        shadowAnchor: [13, 26],
+        iconAnchor: [9,9],
+    
     });
 }
 
