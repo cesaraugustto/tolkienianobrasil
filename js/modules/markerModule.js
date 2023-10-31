@@ -11,6 +11,9 @@ function createCustomIcon(iconUrl) {
         iconUrl: iconUrl,
         iconSize: [18, 18],
         iconAnchor: [9,9],
+        shadowUrl: './img/shadow.png',
+        shadowSize: [18,18],
+        shadowAnchor: [9,9],
     
     });
 }
