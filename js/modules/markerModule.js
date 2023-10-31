@@ -10,13 +10,13 @@ function createCustomIcon(iconUrl) {
     return L.icon({
         iconUrl: iconUrl,
         iconSize: [18, 18],
-        iconAnchor: [9,9],
+        iconAnchor: [15, 15], // 3 pixels à direita e 3 pixels abaixo do centro
         shadowUrl: './img/shadow.png',
-        shadowSize: [18,18],
-        shadowAnchor: [9,9],
-    
+        shadowSize: [18, 18],
+        shadowAnchor: [15, 15], // Mesmo deslocamento da sombra
     });
 }
+
 
 export const redIcon = createCustomIcon('./img/iconRed.png');
 export const blueIcon = createCustomIcon('./img/iconBlue.png');
