@@ -13,7 +13,7 @@ function createCustomIcon(iconUrl) {
         iconAnchor: [15, 15], // 3 pixels à direita e 3 pixels abaixo do centro
         shadowUrl: './img/shadow.png',
         shadowSize: [18, 18],
-        shadowAnchor: [9,9], // Mesmo deslocamento da sombra
+        shadowAnchor: [9, 14], // Mesmo deslocamento da sombra
     });
 }
 
