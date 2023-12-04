@@ -1,53 +1,62 @@
-import { mapOn, map } from "./modules/mapModule.js";
-import { showMarkers, hideMarkers, createMarkers, redIcon, blueIcon, greenIcon, yellowIcon } from "./modules/markerModule.js";
+export function mapOn() {
+  const imageUrl = './img/end.svg';
+  const imageHeight = 4384;
+  const windowHeight = window.innerHeight;
+  const minZoom = Math.log2(windowHeight / imageHeight);
+  const imageBounds = [[0, 0], [imageHeight, 7680]];
 
-const markers = [];
-const searchInput = document.getElementById('search-input');
-const filterCheckboxes = document.querySelectorAll('.filter-checkbox');
-
-mapOn();
-
-//listening changes for typeFilters
-filterCheckboxes.forEach(checkbox => {
-  checkbox.addEventListener('change', function (event) {
-    const checkbox = event.target;
-    const filterType = checkbox.value;
-
-    if (checkbox.checked) {
-      showMarkers(markers.filter(marker => marker.options.place.type === filterType));
-    } else {
-      hideMarkers(markers.filter(marker => marker.options.place.type === filterType));
-    }
+  const map = L.map('map', {
+    crs: L.CRS.Simple,
+    minZoom: minZoom,
+    maxZoom: 2,
+    zoomSnap: 0.5,
+    zoomDelta: 0.5,
+    zoomControl: false,
+    maxBounds: imageBounds,
+    maxBoundsViscosity: 1.0
   });
-});
 
-//listening changes for searchInput
-function filterMarkers(searchTerm) {
-  markers.forEach(marker => {
-    const placeName = marker.options.place.name.toLowerCase();
-    const shouldShow = placeName.includes(searchTerm);
+  L.imageOverlay(imageUrl, imageBounds).addTo(map);
 
-    if (shouldShow) {
-      marker.addTo(map);
-    }
-  });
+  map.setView([imageHeight / 2, 7680 / 2], minZoom);
+  map.invalidateSize();
+
+  const mapContainer = document.getElementById('map');
+  mapContainer.style.height = '100vh';
+  mapContainer.style.width = '100%';
+
+  fetch('./img/end.svg')
+    .then(response => response.text())
+    .then(svgData => {
+      const parser = new DOMParser();
+      const svg = parser.parseFromString(svgData, 'image/svg+xml');
+      const layers = svg.querySelectorAll('g');
+
+      layers.forEach(layer => {
+        const labelAttribute = layer.getAttribute('inkscape:label');
+        if (labelAttribute === 'mountain') {
+          const path = layer.querySelector('path');
+          if (path) {
+            path.style.fill = 'red'; // Altera a cor para vermelho
+
+            // Obtém o HTML do SVG modificado
+            const svgString = new XMLSerializer().serializeToString(svg);
+            // Define o SVG modificado como a nova imagem overlay do Leaflet
+            const updatedOverlay = L.imageOverlay("data:image/svg+xml;base64," + btoa(svgString), imageBounds);
+            map.eachLayer(function (layer) {
+              if (layer instanceof L.ImageOverlay) {
+                map.removeLayer(layer);
+              }
+            });
+            updatedOverlay.addTo(map);
+          } else {
+            console.log('Elemento path não encontrado dentro da camada "mountain"');
+          }
+        }
+      });
+    })
+    .catch(error => {
+      console.error('Erro ao carregar o SVG:', error);
+    });
 }
-searchInput.addEventListener('input', function () {
-  const searchTerm = searchInput.value.trim().toLowerCase();
-  hideMarkers(markers);
-  if (searchTerm === "") {
-    showMarkers(markers);
-  } else {
-    filterMarkers(searchTerm);
-  }
-});
-
-// Instashow for makers
-fetchJSON()
-  .then(places => {
-    markers.push(...createMarkers(places));
-    showMarkers(markers);
-  })
-  .catch(error => {
-    console.error('Error accessing JSON:', error);
-  });
+mapOn();
