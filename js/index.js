@@ -1,5 +1,26 @@
+function findElementsInSVG(svgData) {
+  const parser = new DOMParser();
+  const svg = parser.parseFromString(svgData, 'image/svg+xml');
+
+  const mountainsGroup = svg.querySelector('#Mountains');
+  
+  if (mountainsGroup) {
+    const ironHillsElement = mountainsGroup.querySelector('#IronHills');
+    if (ironHillsElement) {
+      console.log("Elemento 'IronHills' encontrado");
+      // Faça algo com o elemento encontrado, se necessário
+    } else {
+      console.log('Elemento "IronHills" não encontrado dentro do grupo "Mountains"');
+    }
+  } else {
+    console.log('Grupo "Mountains" não encontrado no SVG');
+  }
+}
+
+
+
 export function mapOn() {
-  const imageUrl = './img/end.svg';
+  const imageUrl = './img/resized_Full.svg';
   const imageHeight = 4384;
   const windowHeight = window.innerHeight;
   const minZoom = Math.log2(windowHeight / imageHeight);
@@ -25,38 +46,16 @@ export function mapOn() {
   mapContainer.style.height = '100vh';
   mapContainer.style.width = '100%';
 
-  fetch('./img/end.svg')
+  // Este seria o ponto em que você busca o arquivo SVG (substitua pelo seu fetch)
+  fetch('./img/Final_Map.svg')
     .then(response => response.text())
     .then(svgData => {
-      const parser = new DOMParser();
-      const svg = parser.parseFromString(svgData, 'image/svg+xml');
-      const layers = svg.querySelectorAll('g');
-
-      layers.forEach(layer => {
-        const labelAttribute = layer.getAttribute('inkscape:label');
-        if (labelAttribute === 'mountain') {
-          const path = layer.querySelector('path');
-          if (path) {
-            path.style.fill = 'red'; // Altera a cor para vermelho
-
-            // Obtém o HTML do SVG modificado
-            const svgString = new XMLSerializer().serializeToString(svg);
-            // Define o SVG modificado como a nova imagem overlay do Leaflet
-            const updatedOverlay = L.imageOverlay("data:image/svg+xml;base64," + btoa(svgString), imageBounds);
-            map.eachLayer(function (layer) {
-              if (layer instanceof L.ImageOverlay) {
-                map.removeLayer(layer);
-              }
-            });
-            updatedOverlay.addTo(map);
-          } else {
-            console.log('Elemento path não encontrado dentro da camada "mountain"');
-          }
-        }
-      });
+      //console.log(svgData); // Corrigindo a posição do console.log
+      findElementsInSVG(svgData);
     })
     .catch(error => {
       console.error('Erro ao carregar o SVG:', error);
     });
 }
+
 mapOn();
