@@ -9,8 +9,8 @@ let isLoadingMarkers = false;
 function createCustomIcon(iconUrl) {
     return L.icon({
         iconUrl: iconUrl,
-        iconSize: [18, 18],
-        iconAnchor: [15, 15], // 3 pixels à direita e 3 pixels abaixo do centro
+        iconSize: [22,24],
+        iconAnchor: [22,26], // 3 pixels à direita e 3 pixels abaixo do centro
         shadowUrl: './img/shadow.png',
         shadowSize: [18, 18],
         shadowAnchor: [14, 9], // Mesmo deslocamento da sombra
