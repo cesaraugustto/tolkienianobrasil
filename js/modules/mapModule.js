@@ -1,4 +1,4 @@
-var imageUrl = './img/map.jpg';
+var imageUrl = './img/final-map.png';
 var imageHeight = 4384;
 var windowHeight = window.innerHeight; // Height Window Chrome
 var minZoom = Math.log2(windowHeight / imageHeight);
