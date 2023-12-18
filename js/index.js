@@ -1,53 +1,61 @@
-import { mapOn, map } from "./modules/mapModule.js";
-import { showMarkers, hideMarkers, createMarkers, redIcon, blueIcon, greenIcon, yellowIcon } from "./modules/markerModule.js";
+function findElementsInSVG(svgData) {
+  const parser = new DOMParser();
+  const svg = parser.parseFromString(svgData, 'image/svg+xml');
 
-const markers = [];
-const searchInput = document.getElementById('search-input');
-const filterCheckboxes = document.querySelectorAll('.filter-checkbox');
+  const mountainsGroup = svg.querySelector('#Mountains');
+  
+  if (mountainsGroup) {
+    const ironHillsElement = mountainsGroup.querySelector('#IronHills');
+    if (ironHillsElement) {
+      console.log("Elemento 'IronHills' encontrado");
+      // Faça algo com o elemento encontrado, se necessário
+    } else {
+      console.log('Elemento "IronHills" não encontrado dentro do grupo "Mountains"');
+    }
+  } else {
+    console.log('Grupo "Mountains" não encontrado no SVG');
+  }
+}
+
+
+
+export function mapOn() {
+  const imageUrl = './img/resized_Full.svg';
+  const imageHeight = 4384;
+  const windowHeight = window.innerHeight;
+  const minZoom = Math.log2(windowHeight / imageHeight);
+  const imageBounds = [[0, 0], [imageHeight, 7680]];
+
+  const map = L.map('map', {
+    crs: L.CRS.Simple,
+    minZoom: minZoom,
+    maxZoom: 2,
+    zoomSnap: 0.5,
+    zoomDelta: 0.5,
+    zoomControl: false,
+    maxBounds: imageBounds,
+    maxBoundsViscosity: 1.0
+  });
+
+  L.imageOverlay(imageUrl, imageBounds).addTo(map);
+
+  map.setView([imageHeight / 2, 7680 / 2], minZoom);
+  map.invalidateSize();
+
+  const mapContainer = document.getElementById('map');
+  mapContainer.style.height = '100vh';
+  mapContainer.style.width = '100%';
+
+  // Este seria o ponto em que você busca o arquivo SVG (substitua pelo seu fetch)
+  fetch('./img/Final_Map.svg')
+    .then(response => response.text())
+    .then(svgData => {
+      //console.log(svgData); // Corrigindo a posição do console.log
+      findElementsInSVG(svgData);
+    })
+    .catch(error => {
+      console.error('Erro ao carregar o SVG:', error);
+    });
+}
 
 mapOn();
-
-//listening changes for typeFilters
-filterCheckboxes.forEach(checkbox => {
-  checkbox.addEventListener('change', function (event) {
-    const checkbox = event.target;
-    const filterType = checkbox.value;
-
-    if (checkbox.checked) {
-      showMarkers(markers.filter(marker => marker.options.place.type === filterType));
-    } else {
-      hideMarkers(markers.filter(marker => marker.options.place.type === filterType));
-    }
-  });
-});
-
-//listening changes for searchInput
-function filterMarkers(searchTerm) {
-  markers.forEach(marker => {
-    const placeName = marker.options.place.name.toLowerCase();
-    const shouldShow = placeName.includes(searchTerm);
-
-    if (shouldShow) {
-      marker.addTo(map);
-    }
-  });
-}
-searchInput.addEventListener('input', function () {
-  const searchTerm = searchInput.value.trim().toLowerCase();
-  hideMarkers(markers);
-  if (searchTerm === "") {
-    showMarkers(markers);
-  } else {
-    filterMarkers(searchTerm);
-  }
-});
-
-// Instashow for makers
-fetchJSON()
-  .then(places => {
-    markers.push(...createMarkers(places));
-    showMarkers(markers);
-  })
-  .catch(error => {
-    console.error('Error accessing JSON:', error);
-  });
