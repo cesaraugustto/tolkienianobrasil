@@ -98,7 +98,7 @@
         },
         {
             "id": 13,
-            "name": "Tower Hills",
+            "name": "Torres Brancas",
             "type": "Mountain",
             "description": "Um conjunto de montanhas caracterizadas por suas colinas suaves e gramados verdejantes, onde estão situadas as torres dos Elfos. As Colinas das Torres servem como um ponto de observação e vigia dos Portos Cinzentos, oferecendo uma vista panorâmica do mar e das terras além.",
             "coords": "3200,2400",
@@ -855,6 +855,22 @@
             "type": "City",
             "description": "A cidade dos Reis de Arnor, às margens do Nenuial, foi fundada por Elendil próximo às nascentes do Baranduin. Durante muitos séculos, serviu como a principal cidade dos Reis de Arnor e abrigou um dos três palantíri do Reino do Norte. Nos primórdios de Arnor, foi uma das maiores glórias da Terra-média.",
             "coords": "3485,2820",
+            "image": ""
+        },
+        {
+            "id": 104,
+            "name": "Himring",
+            "type": "Mountain",
+            "description": "Era uma colina que permaneceu mesmo após a queda Beleriand no final da Primeira Era. Em dias antigos era a principal fortaleza de Maedhros, da casa de Feanor, e só foi abandonada por sua familia durante as Nirnaeth Arnoediad. Após a guerra da Ira, as planicies ao redor da colina foram submersas, então o topo da colina foi tudo o que restou de Himring.",
+            "coords": "3630,1200",
+            "image": ""
+        },
+        {
+            "id": 105,
+            "name": "Harlond",
+            "type": "Structure",
+            "description": "Era um porto dos Elfos na costa sul do Golfo de Lhûn. Conta-se que frota de Eärnur encheu os portos de Harlond e Forlond quando chegou em Lindon durante a Guerra de Angmar.",
+            "coords": "3030,2210",
             "image": ""
         }
     ]

@@ -1,50 +1,32 @@
-import { showModal } from "./modalModule.js";
+import { showDescriptionModal } from "./modalModule.js";
 import { map } from "./mapModule.js";
-export const markers = [];
 
+const markers = [];
+const filterCheckboxes = document.querySelectorAll('.filter-checkbox');
+const searchInput = document.getElementById('search-input');
+let isLoadingMarkers = false;
 
-//styles for icons
-export function createCustomIcon(iconUrl) {
+function createCustomIcon(iconUrl) {
     return L.icon({
         iconUrl: iconUrl,
-        iconSize: [26, 26],
-        iconAnchor: [13, 26],
+        iconSize: [22,24],
+        iconAnchor: [22,26], // 3 pixels à direita e 3 pixels abaixo do centro
         shadowUrl: './img/shadow.png',
-        shadowSize: [36, 36],
-        shadowAnchor: [13, 26],
+        shadowSize: [18, 18],
+        shadowAnchor: [14, 9], // Mesmo deslocamento da sombra
     });
 }
-export var redIcon = createCustomIcon('./img/iconRed.png');
-export var blueIcon = createCustomIcon('./img/iconBlue.png');
-export var greenIcon = createCustomIcon('./img/iconGreen.png');
-export var yellowIcon = createCustomIcon('./img/iconYellow.png');
-const iconMap = {
-    Structure: redIcon,
-    Mountain: blueIcon,
-    City: greenIcon,
-    Region: yellowIcon
-};
 
 
+export const redIcon = createCustomIcon('./img/iconRed.png');
+export const blueIcon = createCustomIcon('./img/iconBlue.png');
+export const greenIcon = createCustomIcon('./img/iconGreen.png');
+export const yellowIcon = createCustomIcon('./img/iconYellow.png');
+export const iconMap = { Structure: redIcon, Mountain: blueIcon, City: greenIcon, Region: yellowIcon };
 
-//Daí não precisa de carregar todos ao mesmo tmepo....
-// Use a função fetchJSON para buscar a descrição completa com base no ID
-function fetchDescription(placeId) {
-    fetchJSON()
-        .then(places => {
-            const description = places.find(place => place.id === placeId)?.description;
-            if (description) {
-                // Exiba a descrição completa em um modal ou onde for apropriado
-                showModal(description);
-            } else {
-                console.error('Descrição não encontrada para o ID:', placeId);
-            }
-        })
-        .catch(error => {
-            console.error('Erro ao buscar a descrição:', error);
-        });
+function isVisibleOnMap(marker, bounds) {
+    return bounds.contains(marker.getLatLng());
 }
-
 
 export function createMarkers(places) {
     places.forEach(place => {
@@ -56,7 +38,7 @@ export function createMarkers(places) {
 
             const marker = L.marker([lat, lng], { icon: iconMap[place.type] });
             marker.type = place.type;
-            marker.options.place = place; // Adicione a propriedade place ao marcador
+            marker.options.place = place;
 
             marker.on("click", function () {
                 var pos = map.latLngToLayerPoint(marker.getLatLng());
@@ -69,19 +51,68 @@ export function createMarkers(places) {
                 });
 
                 fx.run(marker._icon, pos, 0.3);
+
+                const content = `<div> <h2>${place.name}</h2> <p>${place.description}</p> </div>`;
+                showDescriptionModal(content);
             });
 
-            marker.on('click', function () {
-                const placeId = place.id; // Obtém o ID do lugar
-                fetchDescription(placeId); // Chama a função para buscar a descrição com base no ID
-            });
             markers.push(marker);
         }
     });
+
+    map.on('moveend', handleMoveEnd);
+    filterCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', handleFilterChange);
+    });
+    searchInput.addEventListener('input', handleFilterChange);
+    handleMoveEnd(); // Chamando handleMoveEnd() inicialmente para carregar os marcadores visíveis.
+
     return markers;
 }
 
+export function showMarkers() {
+    markers.forEach(marker => {
+        if (isVisibleOnMap(marker, map.getBounds()) && filterMatch(marker.type) && searchMatch(marker)) {
+            marker.addTo(map);
+        }
+    });
+}
+
+export function hideMarkers() {
+    markers.forEach(marker => {
+        marker.removeFrom(map);
+    });
+}
+
+function filterMatch(type) {
+    const checkedCheckboxes = Array.from(filterCheckboxes);
+    return checkedCheckboxes.length === 0 || checkedCheckboxes.some(checkbox => checkbox.checked && checkbox.value === type);
+}
 
 
+function handleFilterChange() {
+    isLoadingMarkers = true;
+    hideMarkers();
 
+    setTimeout(() => {
+        showMarkers();
+        isLoadingMarkers = false;
+    }, 100);
+}
 
+function handleMoveEnd() {
+    markers.forEach(marker => {
+        if (isVisibleOnMap(marker, map.getBounds()) && filterMatch(marker.type) && searchMatch(marker)) {
+            marker.addTo(map);
+        } else {
+            marker.removeFrom(map);
+        }
+    });
+
+    isLoadingMarkers = false;
+}
+
+function searchMatch(marker) {
+    const searchTerm = searchInput.value.trim().toLowerCase();
+    return searchTerm === '' || marker.options.place.name.toLowerCase().includes(searchTerm);
+}
